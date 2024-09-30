@@ -1,0 +1,615 @@
+<?xml version="1.0" ?>
+<robot name="martha" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find martha_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find martha_description)/urdf/martha.trans" />
+<xacro:include filename="$(find martha_description)/urdf/martha.gazebo" />
+<xacro:include filename="$(find martha_description)/urdf/camera.xacro" />
+<xacro:include filename="$(find martha_description)/urdf/IMU.xacro" />
+
+<link name="base_link">
+  <inertial>
+    <origin xyz="-0.0006630369776697198 -0.009768004657093142 0.08921407799120112" rpy="0 0 0"/>
+    <mass value="1.7871284905258538"/>
+    <inertia ixx="0.008986" iyy="0.009333" izz="0.005235" ixy="0.000105" iyz="9.3e-05" ixz="-8.4e-05"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://martha_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://martha_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="r_shoulder_1">
+  <inertial>
+    <origin xyz="-0.01031281894625595 1.006563130415139e-07 -0.003392181082860851" rpy="0 0 0"/>
+    <mass value="0.06160861853585967"/>
+    <inertia ixx="2.9e-05" iyy="1.1e-05" izz="2.9e-05" ixy="-0.0" iyz="0.0" ixz="-2e-06"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.075737 0.013299 -0.16273" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://martha_description/meshes/r_shoulder_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.075737 0.013299 -0.16273" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://martha_description/meshes/r_shoulder_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="l_shoulder_1">
+  <inertial>
+    <origin xyz="0.010312334877242826 1.0065631233721617e-07 -0.003392181082860518" rpy="0 0 0"/>
+    <mass value="0.06160861853585967"/>
+    <inertia ixx="2.9e-05" iyy="1.1e-05" izz="2.9e-05" ixy="-0.0" iyz="-0.0" ixz="2e-06"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.075763 0.013299 -0.16273" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://martha_description/meshes/l_shoulder_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.075763 0.013299 -0.16273" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://martha_description/meshes/l_shoulder_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="r_arm_1">
+  <inertial>
+    <origin xyz="1.9347228869107114e-05 -0.020734437734457503 -0.04912725845579294" rpy="0 0 0"/>
+    <mass value="0.2020617023521814"/>
+    <inertia ixx="0.000302" iyy="0.000302" izz="3.9e-05" ixy="0.0" iyz="-1e-06" ixz="1e-06"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.098737 -0.007701 -0.14823" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://martha_description/meshes/r_arm_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.098737 -0.007701 -0.14823" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://martha_description/meshes/r_arm_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="l_arm_1">
+  <inertial>
+    <origin xyz="1.934722886826057e-05 -0.020734437734458534 -0.049127258455792466" rpy="0 0 0"/>
+    <mass value="0.2020617023521814"/>
+    <inertia ixx="0.000302" iyy="0.000302" izz="3.9e-05" ixy="0.0" iyz="-1e-06" ixz="1e-06"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.098763 -0.007701 -0.14823" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://martha_description/meshes/l_arm_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.098763 -0.007701 -0.14823" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://martha_description/meshes/l_arm_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="neck_1">
+  <inertial>
+    <origin xyz="-2.5755466409639717e-07 1.0065631294436939e-07 0.011845617124302071" rpy="0 0 0"/>
+    <mass value="0.020000175779140178"/>
+    <inertia ixx="4e-06" iyy="1e-05" izz="8e-06" ixy="-0.0" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-1.3e-05 0.013499 -0.191301" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://martha_description/meshes/neck_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-1.3e-05 0.013499 -0.191301" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://martha_description/meshes/neck_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="head_1">
+  <inertial>
+    <origin xyz="-0.020725854293897734 -0.023195347929327943 0.027449395978563967" rpy="0 0 0"/>
+    <mass value="0.16224455137688537"/>
+    <inertia ixx="0.000142" iyy="0.000129" izz="0.000132" ixy="-0.0" iyz="6e-05" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.021013 0.013499 -0.220301" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://martha_description/meshes/head_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.021013 0.013499 -0.220301" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://martha_description/meshes/head_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="l_hand_1">
+  <inertial>
+    <origin xyz="0.0009997579654939942 1.0065629232024198e-07 -0.05155814136788923" rpy="0 0 0"/>
+    <mass value="0.021001330912574206"/>
+    <inertia ixx="2.4e-05" iyy="2.3e-05" izz="1e-06" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.119513 0.013059 -0.04863" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://martha_description/meshes/l_hand_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.119513 0.013059 -0.04863" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://martha_description/meshes/l_hand_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="r_hand_1">
+  <inertial>
+    <origin xyz="-0.0010002420345059243 1.006563326161336e-07 -0.05155814136788962" rpy="0 0 0"/>
+    <mass value="0.021001330912574206"/>
+    <inertia ixx="2.4e-05" iyy="2.3e-05" izz="1e-06" ixy="0.0" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.119487 0.013059 -0.04863" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://martha_description/meshes/r_hand_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.119487 0.013059 -0.04863" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://martha_description/meshes/r_hand_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="l_hip_1">
+  <inertial>
+    <origin xyz="-2.4203449114357234e-07 0.0014520580619134752 -0.0157857763718715" rpy="0 0 0"/>
+    <mass value="0.02225889521246935"/>
+    <inertia ixx="1.3e-05" iyy="5e-06" izz="1e-05" ixy="0.0" iyz="1e-06" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.040013 0.013499 0.00575" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://martha_description/meshes/l_hip_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.040013 0.013499 0.00575" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://martha_description/meshes/l_hip_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="r_hip_1">
+  <inertial>
+    <origin xyz="-2.420344911782668e-07 0.0014520580619137562 -0.015785776371871493" rpy="0 0 0"/>
+    <mass value="0.02225889521246935"/>
+    <inertia ixx="1.3e-05" iyy="5e-06" izz="1e-05" ixy="0.0" iyz="1e-06" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.039987 0.013499 0.00575" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://martha_description/meshes/r_hip_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.039987 0.013499 0.00575" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://martha_description/meshes/r_hip_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="l_waist_1">
+  <inertial>
+    <origin xyz="1.356126801182328e-05 -0.001402000274064499 -0.012377754296471102" rpy="0 0 0"/>
+    <mass value="0.1875670107851206"/>
+    <inertia ixx="0.000141" iyy="5.5e-05" izz="0.000124" ixy="0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.040013 -0.008651 0.03975" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://martha_description/meshes/l_waist_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.040013 -0.008651 0.03975" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://martha_description/meshes/l_waist_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="r_waist_1">
+  <inertial>
+    <origin xyz="1.356126801182328e-05 -0.0014020002740642136 -0.012377754296471102" rpy="0 0 0"/>
+    <mass value="0.1875670107851206"/>
+    <inertia ixx="0.000141" iyy="5.5e-05" izz="0.000124" ixy="0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.039987 -0.008651 0.03975" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://martha_description/meshes/r_waist_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.039987 -0.008651 0.03975" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://martha_description/meshes/r_waist_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="r_thigh_1">
+  <inertial>
+    <origin xyz="0.02307735441395943 1.0318458368990813e-07 -0.07554784992266037" rpy="0 0 0"/>
+    <mass value="0.11557705181109862"/>
+    <inertia ixx="9.9e-05" iyy="0.000113" izz="2.7e-05" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.062587 0.010799 0.03975" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://martha_description/meshes/r_thigh_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.062587 0.010799 0.03975" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://martha_description/meshes/r_thigh_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="l_thigh_1">
+  <inertial>
+    <origin xyz="0.023077354413963403 1.0318458338112735e-07 -0.07554784992265909" rpy="0 0 0"/>
+    <mass value="0.11557705181109862"/>
+    <inertia ixx="9.9e-05" iyy="0.000113" izz="2.7e-05" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.017413 0.010799 0.03975" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://martha_description/meshes/l_thigh_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.017413 0.010799 0.03975" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://martha_description/meshes/l_thigh_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="l_shin_1">
+  <inertial>
+    <origin xyz="0.020749757857182218 -0.003248346965796862 -0.055792340756745856" rpy="0 0 0"/>
+    <mass value="0.035815952853816696"/>
+    <inertia ixx="4.9e-05" iyy="6.2e-05" izz="1.8e-05" ixy="0.0" iyz="2e-06" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.019763 0.010799 0.14025" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://martha_description/meshes/l_shin_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.019763 0.010799 0.14025" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://martha_description/meshes/l_shin_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="r_shin_1">
+  <inertial>
+    <origin xyz="0.020749757857178246 -0.0032483469657965548 -0.055792340756745384" rpy="0 0 0"/>
+    <mass value="0.035815952853816696"/>
+    <inertia ixx="4.9e-05" iyy="6.2e-05" izz="1.8e-05" ixy="0.0" iyz="2e-06" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.060237 0.010799 0.14025" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://martha_description/meshes/r_shin_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.060237 0.010799 0.14025" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://martha_description/meshes/r_shin_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="r_ankle_1">
+  <inertial>
+    <origin xyz="-0.022614045337022687 0.018047999724888516 0.012378173071369125" rpy="0 0 0"/>
+    <mass value="0.1875670107851206"/>
+    <inertia ixx="0.000141" iyy="5.5e-05" izz="0.000124" ixy="-0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.016887 0.010799 0.240275" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://martha_description/meshes/r_ankle_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.016887 0.010799 0.240275" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://martha_description/meshes/r_ankle_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="l_ankle_1">
+  <inertial>
+    <origin xyz="-0.022614045337019446 0.018047999724888176 0.012378173071368598" rpy="0 0 0"/>
+    <mass value="0.1875670107851206"/>
+    <inertia ixx="0.000141" iyy="5.5e-05" izz="0.000124" ixy="-0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.063113 0.010799 0.240275" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://martha_description/meshes/l_ankle_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.063113 0.010799 0.240275" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://martha_description/meshes/l_ankle_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="l_feet_1">
+  <inertial>
+    <origin xyz="-2.4862835438371755e-07 0.014015228874382377 -0.03218634292185488" rpy="0 0 0"/>
+    <mass value="0.07003381761423272"/>
+    <inertia ixx="0.000114" iyy="2.5e-05" izz="0.000121" ixy="-0.0" iyz="1e-06" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.040513 0.033499 0.240275" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://martha_description/meshes/l_feet_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.040513 0.033499 0.240275" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://martha_description/meshes/l_feet_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="r_feet_1">
+  <inertial>
+    <origin xyz="-2.486283565833469e-07 0.014015228874382713 -0.03218634292185443" rpy="0 0 0"/>
+    <mass value="0.07003381761423272"/>
+    <inertia ixx="0.000114" iyy="2.5e-05" izz="0.000121" ixy="-0.0" iyz="1e-06" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.039487 0.033499 0.240275" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://martha_description/meshes/r_feet_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.039487 0.033499 0.240275" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://martha_description/meshes/r_feet_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="r_sho_pitch_link" type="revolute">
+  <origin xyz="-0.075737 -0.013299 0.16273" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="r_shoulder_1"/>
+  <axis xyz="-1.0 0.0 0.0"/>
+  <limit lower="-3.14159" upper="3.14159" effort="1000.0" velocity="0.01"/>
+</joint>
+
+<joint name="l_sho_pitch_link" type="revolute">
+  <origin xyz="0.075763 -0.013299 0.16273" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="l_shoulder_1"/>
+  <axis xyz="1.0 -0.0 0.0"/>
+  <limit lower="-3.14159" upper="3.14159" effort="1000.0" velocity="0.01"/>
+</joint>
+
+<joint name="r_sho_roll_link" type="revolute">
+  <origin xyz="-0.023 0.021 -0.0145" rpy="0 0 0"/>
+  <parent link="r_shoulder_1"/>
+  <child link="r_arm_1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+  <limit lower="-3.14159" upper="3.14159" effort="1000.0" velocity="0.01"/>
+</joint>
+
+<joint name="l_sho_roll_link" type="revolute">
+  <origin xyz="0.023 0.021 -0.0145" rpy="0 0 0"/>
+  <parent link="l_shoulder_1"/>
+  <child link="l_arm_1"/>
+  <axis xyz="0.0 1.0 -0.0"/>
+  <limit lower="-3.14159" upper="3.14159" effort="1000.0" velocity="0.01"/>
+</joint>
+
+<joint name="head_pan_link" type="revolute">
+  <origin xyz="1.3e-05 -0.013499 0.191301" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="neck_1"/>
+  <axis xyz="0.0 0.0 1.0"/>
+  <limit lower="-3.14159" upper="3.14159" effort="1000.0" velocity="0.01"/>
+</joint>
+
+<joint name="head_tilt_link" type="revolute">
+  <origin xyz="0.021 0.0 0.029" rpy="0 0 0"/>
+  <parent link="neck_1"/>
+  <child link="head_1"/>
+  <axis xyz="1.0 -0.0 -0.0"/>
+  <limit lower="-3.14159" upper="3.14159" effort="1000.0" velocity="0.01"/>
+</joint>
+
+<joint name="l_el_link" type="revolute">
+  <origin xyz="0.02075 -0.02076 -0.0996" rpy="0 0 0"/>
+  <parent link="l_arm_1"/>
+  <child link="l_hand_1"/>
+  <axis xyz="1.0 0.0 0.0"/>
+  <limit lower="-3.14159" upper="3.14159" effort="1000.0" velocity="0.01"/>
+</joint>
+
+<joint name="r_el_link" type="revolute">
+  <origin xyz="-0.02075 -0.02076 -0.0996" rpy="0 0 0"/>
+  <parent link="r_arm_1"/>
+  <child link="r_hand_1"/>
+  <axis xyz="1.0 -0.0 -0.0"/>
+  <limit lower="-3.14159" upper="3.14159" effort="1000.0" velocity="0.01"/>
+</joint>
+
+<joint name="l_hip_yaw_link" type="revolute">
+  <origin xyz="0.040013 -0.013499 -0.00575" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="l_hip_1"/>
+  <axis xyz="-0.0 -0.0 -1.0"/>
+  <limit lower="-3.14159" upper="3.14159" effort="1000.0" velocity="0.01"/>
+</joint>
+
+<joint name="r_hip_yaw_link" type="revolute">
+  <origin xyz="-0.039987 -0.013499 -0.00575" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="r_hip_1"/>
+  <axis xyz="-0.0 -0.0 -1.0"/>
+  <limit lower="-3.14159" upper="3.14159" effort="1000.0" velocity="0.01"/>
+</joint>
+
+<joint name="l_hip_roll_link" type="revolute">
+  <origin xyz="0.0 0.02215 -0.034" rpy="0 0 0"/>
+  <parent link="l_hip_1"/>
+  <child link="l_waist_1"/>
+  <axis xyz="0.0 -1.0 0.0"/>
+  <limit lower="-3.14159" upper="3.14159" effort="1000.0" velocity="0.01"/>
+</joint>
+
+<joint name="r_hip_roll_link" type="revolute">
+  <origin xyz="0.0 0.02215 -0.034" rpy="0 0 0"/>
+  <parent link="r_hip_1"/>
+  <child link="r_waist_1"/>
+  <axis xyz="-0.0 -1.0 0.0"/>
+  <limit lower="-3.14159" upper="3.14159" effort="1000.0" velocity="0.01"/>
+</joint>
+
+<joint name="r_hip_pitch_link" type="revolute">
+  <origin xyz="-0.0226 -0.01945 0.0" rpy="0 0 0"/>
+  <parent link="r_waist_1"/>
+  <child link="r_thigh_1"/>
+  <axis xyz="1.0 0.0 0.0"/>
+  <limit lower="-3.14159" upper="3.14159" effort="1000.0" velocity="0.01"/>
+</joint>
+
+<joint name="l_hip_pitch_link" type="revolute">
+  <origin xyz="-0.0226 -0.01945 0.0" rpy="0 0 0"/>
+  <parent link="l_waist_1"/>
+  <child link="l_thigh_1"/>
+  <axis xyz="1.0 0.0 0.0"/>
+  <limit lower="-3.14159" upper="3.14159" effort="1000.0" velocity="0.01"/>
+</joint>
+
+<joint name="l_knee_link" type="revolute">
+  <origin xyz="0.00235 0.0 -0.1005" rpy="0 0 0"/>
+  <parent link="l_thigh_1"/>
+  <child link="l_shin_1"/>
+  <axis xyz="-1.0 -0.0 -0.0"/>
+  <limit lower="-3.14159" upper="3.14159" effort="1000.0" velocity="0.01"/>
+</joint>
+
+<joint name="r_knee_link" type="revolute">
+  <origin xyz="0.00235 0.0 -0.1005" rpy="0 0 0"/>
+  <parent link="r_thigh_1"/>
+  <child link="r_shin_1"/>
+  <axis xyz="-1.0 -0.0 -0.0"/>
+  <limit lower="-3.14159" upper="3.14159" effort="1000.0" velocity="0.01"/>
+</joint>
+
+<joint name="r_ank_pitch_link" type="revolute">
+  <origin xyz="0.04335 0.0 -0.100025" rpy="0 0 0"/>
+  <parent link="r_shin_1"/>
+  <child link="r_ankle_1"/>
+  <axis xyz="1.0 0.0 0.0"/>
+  <limit lower="-3.14159" upper="3.14159" effort="1000.0" velocity="0.01"/>
+</joint>
+
+<joint name="l_ank_pitch_link" type="revolute">
+  <origin xyz="0.04335 0.0 -0.100025" rpy="0 0 0"/>
+  <parent link="l_shin_1"/>
+  <child link="l_ankle_1"/>
+  <axis xyz="1.0 0.0 -0.0"/>
+  <limit lower="-3.14159" upper="3.14159" effort="1000.0" velocity="0.01"/>
+</joint>
+
+<joint name="l_ank_roll_link" type="revolute">
+  <origin xyz="-0.0226 -0.0227 0.0" rpy="0 0 0"/>
+  <parent link="l_ankle_1"/>
+  <child link="l_feet_1"/>
+  <axis xyz="0.0 -1.0 0.0"/>
+  <limit lower="-3.14159" upper="3.14159" effort="1000.0" velocity="0.01"/>
+</joint>
+
+<joint name="r_ank_roll_link" type="revolute">
+  <origin xyz="-0.0226 -0.0227 0.0" rpy="0 0 0"/>
+  <parent link="r_ankle_1"/>
+  <child link="r_feet_1"/>
+  <axis xyz="0.0 -1.0 0.0"/>
+  <limit lower="-3.14159" upper="3.14159" effort="1000.0" velocity="0.01"/>
+</joint>
+
+<xacro:imu_sensor parent="base_link" ns="martha" origin="0 0 0 0 0 0"/>
+
+<xacro:camera_sensor parent="cabeca_1" camera_name="front_camera" ns="martha" origin="-0.02060 -0.050864 0.047202 0 0 -1.57"/>
+
+</robot>
