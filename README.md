@@ -56,7 +56,7 @@ source devel/setup.bash
 
 Dentro da raiz do repositorio, realize a build da imagem docker
 
-`docker build docker -t martha_sim:1.0`
+`docker build -t martha_sim:1.0 .`
 
 Dentro da imagem docker execute a simulação
 
