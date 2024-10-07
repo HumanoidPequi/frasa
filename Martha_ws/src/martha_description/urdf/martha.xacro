@@ -424,6 +424,15 @@
     <geometry>
       <mesh filename="package://martha_description/meshes/l_feet_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
+    <surface>
+      <contact>
+          <ode>
+            <kp>1e15</kp>
+            <kd>1e13</kd>
+            <min_depth>0.8</min_depth>            
+          </ode>
+        </contact>
+    </surface>
   </collision>
 </link>
 
@@ -446,167 +455,18 @@
       <mesh filename="package://martha_description/meshes/r_feet_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
+  <surface>
+      <contact>
+          <ode>
+            <kp>1e15</kp>
+            <kd>1e13</kd>
+            <contact_max_correcting_vel>0.8</min_depth>   
+          </ode>
+        </contact>
+    </surface>
 </link>
 
-<joint name="r_sho_pitch_link" type="revolute">
-  <origin xyz="-0.075737 -0.013299 0.16273" rpy="0 0 0"/>
-  <parent link="base_link"/>
-  <child link="r_shoulder_1"/>
-  <axis xyz="-1.0 0.0 0.0"/>
-  <limit lower="-3.14159" upper="3.14159" effort="1000.0" velocity="0.01"/>
-</joint>
-
-<joint name="l_sho_pitch_link" type="revolute">
-  <origin xyz="0.075763 -0.013299 0.16273" rpy="0 0 0"/>
-  <parent link="base_link"/>
-  <child link="l_shoulder_1"/>
-  <axis xyz="1.0 -0.0 0.0"/>
-  <limit lower="-3.14159" upper="3.14159" effort="1000.0" velocity="0.01"/>
-</joint>
-
-<joint name="r_sho_roll_link" type="revolute">
-  <origin xyz="-0.023 0.021 -0.0145" rpy="0 0 0"/>
-  <parent link="r_shoulder_1"/>
-  <child link="r_arm_1"/>
-  <axis xyz="0.0 1.0 0.0"/>
-  <limit lower="-3.14159" upper="3.14159" effort="1000.0" velocity="0.01"/>
-</joint>
-
-<joint name="l_sho_roll_link" type="revolute">
-  <origin xyz="0.023 0.021 -0.0145" rpy="0 0 0"/>
-  <parent link="l_shoulder_1"/>
-  <child link="l_arm_1"/>
-  <axis xyz="0.0 1.0 -0.0"/>
-  <limit lower="-3.14159" upper="3.14159" effort="1000.0" velocity="0.01"/>
-</joint>
-
-<joint name="head_pan_link" type="revolute">
-  <origin xyz="1.3e-05 -0.013499 0.191301" rpy="0 0 0"/>
-  <parent link="base_link"/>
-  <child link="neck_1"/>
-  <axis xyz="0.0 0.0 1.0"/>
-  <limit lower="-3.14159" upper="3.14159" effort="1000.0" velocity="0.01"/>
-</joint>
-
-<joint name="head_tilt_link" type="revolute">
-  <origin xyz="0.021 0.0 0.029" rpy="0 0 0"/>
-  <parent link="neck_1"/>
-  <child link="head_1"/>
-  <axis xyz="1.0 -0.0 -0.0"/>
-  <limit lower="-3.14159" upper="3.14159" effort="1000.0" velocity="0.01"/>
-</joint>
-
-<joint name="l_el_link" type="revolute">
-  <origin xyz="0.02075 -0.02076 -0.0996" rpy="0 0 0"/>
-  <parent link="l_arm_1"/>
-  <child link="l_hand_1"/>
-  <axis xyz="1.0 0.0 0.0"/>
-  <limit lower="-3.14159" upper="3.14159" effort="1000.0" velocity="0.01"/>
-</joint>
-
-<joint name="r_el_link" type="revolute">
-  <origin xyz="-0.02075 -0.02076 -0.0996" rpy="0 0 0"/>
-  <parent link="r_arm_1"/>
-  <child link="r_hand_1"/>
-  <axis xyz="1.0 -0.0 -0.0"/>
-  <limit lower="-3.14159" upper="3.14159" effort="1000.0" velocity="0.01"/>
-</joint>
-
-<joint name="l_hip_yaw_link" type="revolute">
-  <origin xyz="0.040013 -0.013499 -0.00575" rpy="0 0 0"/>
-  <parent link="base_link"/>
-  <child link="l_hip_1"/>
-  <axis xyz="-0.0 -0.0 -1.0"/>
-  <limit lower="-3.14159" upper="3.14159" effort="1000.0" velocity="0.01"/>
-</joint>
-
-<joint name="r_hip_yaw_link" type="revolute">
-  <origin xyz="-0.039987 -0.013499 -0.00575" rpy="0 0 0"/>
-  <parent link="base_link"/>
-  <child link="r_hip_1"/>
-  <axis xyz="-0.0 -0.0 -1.0"/>
-  <limit lower="-3.14159" upper="3.14159" effort="1000.0" velocity="0.01"/>
-</joint>
-
-<joint name="l_hip_roll_link" type="revolute">
-  <origin xyz="0.0 0.02215 -0.034" rpy="0 0 0"/>
-  <parent link="l_hip_1"/>
-  <child link="l_waist_1"/>
-  <axis xyz="0.0 -1.0 0.0"/>
-  <limit lower="-3.14159" upper="3.14159" effort="1000.0" velocity="0.01"/>
-</joint>
-
-<joint name="r_hip_roll_link" type="revolute">
-  <origin xyz="0.0 0.02215 -0.034" rpy="0 0 0"/>
-  <parent link="r_hip_1"/>
-  <child link="r_waist_1"/>
-  <axis xyz="-0.0 -1.0 0.0"/>
-  <limit lower="-3.14159" upper="3.14159" effort="1000.0" velocity="0.01"/>
-</joint>
-
-<joint name="r_hip_pitch_link" type="revolute">
-  <origin xyz="-0.0226 -0.01945 0.0" rpy="0 0 0"/>
-  <parent link="r_waist_1"/>
-  <child link="r_thigh_1"/>
-  <axis xyz="1.0 0.0 0.0"/>
-  <limit lower="-3.14159" upper="3.14159" effort="1000.0" velocity="0.01"/>
-</joint>
-
-<joint name="l_hip_pitch_link" type="revolute">
-  <origin xyz="-0.0226 -0.01945 0.0" rpy="0 0 0"/>
-  <parent link="l_waist_1"/>
-  <child link="l_thigh_1"/>
-  <axis xyz="1.0 0.0 0.0"/>
-  <limit lower="-3.14159" upper="3.14159" effort="1000.0" velocity="0.01"/>
-</joint>
-
-<joint name="l_knee_link" type="revolute">
-  <origin xyz="0.00235 0.0 -0.1005" rpy="0 0 0"/>
-  <parent link="l_thigh_1"/>
-  <child link="l_shin_1"/>
-  <axis xyz="-1.0 -0.0 -0.0"/>
-  <limit lower="-3.14159" upper="3.14159" effort="1000.0" velocity="0.01"/>
-</joint>
-
-<joint name="r_knee_link" type="revolute">
-  <origin xyz="0.00235 0.0 -0.1005" rpy="0 0 0"/>
-  <parent link="r_thigh_1"/>
-  <child link="r_shin_1"/>
-  <axis xyz="-1.0 -0.0 -0.0"/>
-  <limit lower="-3.14159" upper="3.14159" effort="1000.0" velocity="0.01"/>
-</joint>
-
-<joint name="r_ank_pitch_link" type="revolute">
-  <origin xyz="0.04335 0.0 -0.100025" rpy="0 0 0"/>
-  <parent link="r_shin_1"/>
-  <child link="r_ankle_1"/>
-  <axis xyz="1.0 0.0 0.0"/>
-  <limit lower="-3.14159" upper="3.14159" effort="1000.0" velocity="0.01"/>
-</joint>
-
-<joint name="l_ank_pitch_link" type="revolute">
-  <origin xyz="0.04335 0.0 -0.100025" rpy="0 0 0"/>
-  <parent link="l_shin_1"/>
-  <child link="l_ankle_1"/>
-  <axis xyz="1.0 0.0 -0.0"/>
-  <limit lower="-3.14159" upper="3.14159" effort="1000.0" velocity="0.01"/>
-</joint>
-
-<joint name="l_ank_roll_link" type="revolute">
-  <origin xyz="-0.0226 -0.0227 0.0" rpy="0 0 0"/>
-  <parent link="l_ankle_1"/>
-  <child link="l_feet_1"/>
-  <axis xyz="0.0 -1.0 0.0"/>
-  <limit lower="-3.14159" upper="3.14159" effort="1000.0" velocity="0.01"/>
-</joint>
-
-<joint name="r_ank_roll_link" type="revolute">
-  <origin xyz="-0.0226 -0.0227 0.0" rpy="0 0 0"/>
-  <parent link="r_ankle_1"/>
-  <child link="r_feet_1"/>
-  <axis xyz="0.0 -1.0 0.0"/>
-  <limit lower="-3.14159" upper="3.14159" effort="1000.0" velocity="0.01"/>
-</joint>
+<xacro:include filename="$(find martha_description)/urdf/martha_joints.xacro" />
 
 <xacro:imu_sensor parent="base_link" ns="martha" origin="0 0 0 0 0 0"/>
 
