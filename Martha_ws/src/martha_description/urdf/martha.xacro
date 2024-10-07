@@ -460,7 +460,6 @@
           <ode>
             <kp>1e15</kp>
             <kd>1e13</kd>
-            <contact_max_correcting_vel>0.8</min_depth>   
           </ode>
         </contact>
     </surface>
