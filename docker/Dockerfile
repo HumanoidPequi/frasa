@@ -15,6 +15,8 @@ RUN apt-get update && apt-get install -y \
     ros-$ROS_DISTRO-ros-controllers \
     ros-$ROS_DISTRO-robot-state-publisher \
     ros-$ROS_DISTRO-xacro \
+    ros-$ROS_DISTRO-gazebo-ros-pkgs \
+    ros-$ROS_DISTRO-gazebo-plugins \
     ros-$ROS_DISTRO-gazebo-ros \
     ros-$ROS_DISTRO-rviz \
     && rm -rf /var/lib/apt/lists/*
