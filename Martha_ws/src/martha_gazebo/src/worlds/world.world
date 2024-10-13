@@ -50,13 +50,14 @@
           <geometry>
             <plane>
               <normal>0 0 1</normal>
-              <size>300 300</size>
+              <size>22.2 16.2</size>
             </plane>
           </geometry>
           <material>
             <script>
-              <uri>file://media/materials/scripts/gazebo.material</uri>
-              <name>Gazebo/Grey</name>
+              <uri>model://robocup09_spl_field/materials/scripts/</uri>
+              <uri>model://robocup09_spl_field/materials/textures/</uri>
+              <name>RoboCup/Carpet</name>
             </script>
           </material>
         </visual>

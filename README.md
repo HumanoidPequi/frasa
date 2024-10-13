@@ -38,6 +38,12 @@ Este projeto foi desenvolvido para fornecer um ambiente pronto para desenvolvime
 Para clonar o Workspace execute
 `git clone git@github.com:HumanoidPequi/marta_simulation.git`
 
+instale também o `gazebo-ros-pkgs` e o `gazebo-plugins` com o comando
+
+```
+sudo apt-get install ros-noetic-gazebo-ros-pkgs ros-noetic-gazebo-plugins
+```
+
 Para compilar o workspace, dentro do repositorio marta_simulation acesse o diretorio Martha_ws e execute o build do workspace da seguinte forma:
 
 ```
