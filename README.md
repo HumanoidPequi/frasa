@@ -72,6 +72,30 @@ Dentro da imagem docker execute a simulação
 Para executar a simulação, tanto docker quanto nativo, execute
 `roslaunch martha_gazebo gazebo.launch`
 
+## Estruturação dos controladores de posição
+
+A martha possui 20 graus de liberdade, sendo cada grau de liberdade um link como mostrado na figura abaixo:
+
+<img src="doc/martha_tfs.png" alt="martha_tfs" width="400"/>
+
+alem disso, cada link possui um controlador de posição, ou seja, para mudar a angulação de um dymaixel é necessário publicar o valor de ângulo desejado em um determinado topico da martha simulada. Os controladores de posição seguem a seguinte nomeclatura:
+
+```
+<l ou r>_<localização da junta>_<rotação roll, pitch ou yaw da junta>_position
+```
+
+Esses topicos são visualizaveis com o `rqt_graph` : 
+
+<img src="doc/rosgraph.png" alt="drawing" width="400"/>
+
+A posição dos controladores são descritos nas seguintes imagens:
+
+<img src="doc/martha_head_links.png" alt="drawing" width="200"/>
+<img src="doc/martha_arm_links.png" alt="drawing" width="200"/>
+<img src="doc/martha_leg_links.png" alt="drawing" width="200"/>
+
+Para o lado direito, basta trocar l por r
+
 ## Contribuindo
 
 Contribuições são bem-vindas! Por favor, envie um pull request ou abra uma issue se você encontrar problemas ou tiver sugestões para melhorias.
