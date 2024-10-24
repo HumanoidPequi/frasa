@@ -180,7 +180,7 @@
   <origin xyz="-0.0226 -0.01945 0.0" rpy="0 0 0"/>
   <parent link="r_waist_1"/>
   <child link="r_thigh_1"/>
-  <axis xyz="1.0 0.0 0.0"/>
+  <axis xyz="-1.0 0.0 0.0"/>
   <limit lower="-3.14159" upper="3.14159" effort="1000.0" velocity="0.01"/>
   <physics>
       <ode>
@@ -194,7 +194,7 @@
   <origin xyz="-0.0226 -0.01945 0.0" rpy="0 0 0"/>
   <parent link="l_waist_1"/>
   <child link="l_thigh_1"/>
-  <axis xyz="1.0 0.0 0.0"/>
+  <axis xyz="-1.0 0.0 0.0"/>
   <limit lower="-3.14159" upper="3.14159" effort="1000.0" velocity="0.01"/>
   <physics>
       <ode>
@@ -208,7 +208,7 @@
   <origin xyz="0.00235 0.0 -0.1005" rpy="0 0 0"/>
   <parent link="l_thigh_1"/>
   <child link="l_shin_1"/>
-  <axis xyz="-1.0 -0.0 -0.0"/>
+  <axis xyz="1.0 -0.0 -0.0"/>
   <limit lower="-3.14159" upper="3.14159" effort="1000.0" velocity="0.01"/>
   <physics>
       <ode>
@@ -222,7 +222,7 @@
   <origin xyz="0.00235 0.0 -0.1005" rpy="0 0 0"/>
   <parent link="r_thigh_1"/>
   <child link="r_shin_1"/>
-  <axis xyz="-1.0 -0.0 -0.0"/>
+  <axis xyz="1.0 -0.0 -0.0"/>
   <limit lower="-3.14159" upper="3.14159" effort="1000.0" velocity="0.01"/>
   <physics>
       <ode>
@@ -236,7 +236,7 @@
   <origin xyz="0.04335 0.0 -0.100025" rpy="0 0 0"/>
   <parent link="r_shin_1"/>
   <child link="r_ankle_1"/>
-  <axis xyz="1.0 0.0 0.0"/>
+  <axis xyz="-1.0 0.0 0.0"/>
   <limit lower="-3.14159" upper="3.14159" effort="1000.0" velocity="0.01"/>
   <physics>
       <ode>
@@ -250,7 +250,7 @@
   <origin xyz="0.04335 0.0 -0.100025" rpy="0 0 0"/>
   <parent link="l_shin_1"/>
   <child link="l_ankle_1"/>
-  <axis xyz="1.0 0.0 -0.0"/>
+  <axis xyz="-1.0 0.0 -0.0"/>
   <limit lower="-3.14159" upper="3.14159" effort="1000.0" velocity="0.01"/>
   <physics>
       <ode>
