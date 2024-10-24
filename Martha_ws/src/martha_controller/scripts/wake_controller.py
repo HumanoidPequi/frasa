@@ -1,134 +1,75 @@
+#!/usr/bin/env python
+
 import rospy
-from sensor_msgs.msg import Imu
 from std_msgs.msg import Float64
 import numpy as np
 
-class FallDetection:
-    def __init__(self):
-        rospy.Subscriber("/martha/imu", Imu, self.imu_callback)
-        self.is_fallen = False
-        self.threshold = 0.5  # Ajustar conforme necessário
+l1 = 0.3  # Comprimento da coxa
+l2 = 0.3  # Comprimento da perna
+l_arm = 0.25  # Comprimento do braço superior
+l_forearm = 0.25  # Comprimento do antebraço
 
-    def imu_callback(self, data):
-        acc = data.linear_acceleration
-        acc_vector = np.array([acc.x, acc.y, acc.z])
-        acc_magnitude = np.linalg.norm(acc_vector)
+pub_hip_esquerdo = rospy.Publisher('/humanoid/quadril_esquerdo_rX_position_controller/command', Float64, queue_size=10)
+pub_hip_direito = rospy.Publisher('/humanoid/quadril_direito_rX_position_controller/command', Float64, queue_size=10)
+pub_knee_esquerdo = rospy.Publisher('/humanoid/joelho_esquerdo_rX_position_controller/command', Float64, queue_size=10)
+pub_knee_direito = rospy.Publisher('/humanoid/joelho_direito_rX_position_controller/command', Float64, queue_size=10)
+pub_shoulder_esquerdo = rospy.Publisher('/humanoid/ombro_esquerdo_rX_position_controller/command', Float64, queue_size=10)
+pub_shoulder_direito = rospy.Publisher('/humanoid/ombro_direito_rX_position_controller/command', Float64, queue_size=10)
+pub_elbow_esquerdo = rospy.Publisher('/humanoid/mao_esquerda_position_controller/command', Float64, queue_size=10)
+pub_elbow_direito = rospy.Publisher('/humanoid/mao_direita_position_controller/command', Float64, queue_size=10)
 
-        # Verifica se o robô caiu
-        if acc_magnitude < self.threshold:
-            self.is_fallen = True
-        else:
-            self.is_fallen = False
+def calcular_angulo_levantar_de_frente():
+    angulos_levantamento_frente = {
+        'hip': [-np.pi/4, -np.pi/6, 0, np.pi/6, np.pi/4],  # Ângulos do quadril
+        'knee': [np.pi/2, np.pi/3, np.pi/4, np.pi/6, 0],  # Ângulos do joelho
+        'shoulder': [-np.pi/4, -np.pi/6, 0, np.pi/6, np.pi/4],  # Ângulos do ombro
+        'elbow': [np.pi/4, np.pi/6, 0, -np.pi/6, -np.pi/4]  # Ângulos do cotovelo
+    }
+    return angulos_levantamento_frente
 
-    def is_robot_fallen(self):
-        return self.is_fallen
+def calcular_angulo_levantar_de_tras():
+    angulos_levantamento_tras = {
+        'hip': [np.pi/4, np.pi/6, 0, -np.pi/6, -np.pi/4],  # Ângulos do quadril
+        'knee': [np.pi/6, np.pi/4, np.pi/3, np.pi/2, np.pi],  # Ângulos do joelho
+        'shoulder': [np.pi/4, np.pi/6, 0, -np.pi/6, -np.pi/4],  # Ângulos do ombro
+        'elbow': [-np.pi/4, -np.pi/6, 0, np.pi/6, np.pi/4]  # Ângulos do cotovelo
+    }
+    return angulos_levantamento_tras
 
-class GetUp:
-    def __init__(self):
-        # Publicadores para as articulações especificadas
-        self.joint_publishers = {
-            'base_link': rospy.Publisher('/martha/base_link_position/command', Float64, queue_size=10),
-            'pescoco_1': rospy.Publisher('/martha/pescoco_1_position/command', Float64, queue_size=10),
-            'cabeca_1': rospy.Publisher('/martha/cabeca_1_position/command', Float64, queue_size=10),
-            'ombro_esquerdo_1': rospy.Publisher('/martha/ombro_esquerdo_1_position/command', Float64, queue_size=10),
-            'ombro_direito_1': rospy.Publisher('/martha/ombro_direito_1_position/command', Float64, queue_size=10),
-            'braco_esquerdo_1': rospy.Publisher('/martha/braco_esquerdo_1_position/command', Float64, queue_size=10),
-            'braco_direito_1': rospy.Publisher('/martha/braco_direito_1_position/command', Float64, queue_size=10),
-            'mao_esquerda_1': rospy.Publisher('/martha/mao_esquerda_1_position/command', Float64, queue_size=10),
-            'mao_direita_1': rospy.Publisher('/martha/mao_direita_1_position/command', Float64, queue_size=10),
-            'quadril_esquerdo_1': rospy.Publisher('/martha/quadril_esquerdo_1_position/command', Float64, queue_size=10),
-            'coxa_esquerda_1': rospy.Publisher('/martha/coxa_esquerda_1_position/command', Float64, queue_size=10),
-            'canela_esquerda_2_1': rospy.Publisher('/martha/canela_esquerda_2_1_position/command', Float64, queue_size=10),
-            'canela_esquerda_1': rospy.Publisher('/martha/canela_esquerda_1_position/command', Float64, queue_size=10),
-            'calcanhar_esquerdo_1': rospy.Publisher('/martha/calcanhar_esquerdo_1_position/command', Float64, queue_size=10),
-            'pe_esquerdo_1': rospy.Publisher('/martha/pe_esquerdo_1_position/command', Float64, queue_size=10),
-            'pe_direito_1': rospy.Publisher('/martha/pe_direito_1_position/command', Float64, queue_size=10),
-            'calcanhar_direito_1': rospy.Publisher('/martha/calcanhar_direito_1_position/command', Float64, queue_size=10),
-            'canela_direita_2_1': rospy.Publisher('/martha/canela_direita_2_1_position/command', Float64, queue_size=10),
-            'canela_direita_1': rospy.Publisher('/martha/canela_direita_1_position/command', Float64, queue_size=10),
-            'coxa_direita_1': rospy.Publisher('/martha/coxa_direita_1_position/command', Float64, queue_size=10),
-            'quadril_direito_1': rospy.Publisher('/martha/quadril_direito_1_position/command', Float64, queue_size=10),
-        }
-
-    def get_up(self):
-        # Sequência de ângulos para levantar o robô
-        sequences = [
-            {
-                'base_link': 0.0, 'pescoco_1': 0.0, 'cabeca_1': 0.0,
-                'ombro_esquerdo_1': -1.0, 'ombro_direito_1': -1.0,
-                'braco_esquerdo_1': 0.5, 'braco_direito_1': 0.5,
-                'mao_esquerda_1': 0.0, 'mao_direita_1': 0.0,
-                'quadril_esquerdo_1': 0.5, 'coxa_esquerda_1': 0.5,
-                'canela_esquerda_2_1': 1.0, 'canela_esquerda_1': 0.5,
-                'calcanhar_esquerdo_1': 0.0, 'pe_esquerdo_1': 0.0,
-                'pe_direito_1': 0.0, 'calcanhar_direito_1': 0.0,
-                'canela_direita_2_1': 1.0, 'canela_direita_1': 0.5,
-                'coxa_direita_1': 0.5, 'quadril_direito_1': 0.5
-            },
-            {
-                'base_link': 0.0, 'pescoco_1': 0.1, 'cabeca_1': 0.1,
-                'ombro_esquerdo_1': -0.8, 'ombro_direito_1': -0.8,
-                'braco_esquerdo_1': 0.4, 'braco_direito_1': 0.4,
-                'mao_esquerda_1': 0.1, 'mao_direita_1': 0.1,
-                'quadril_esquerdo_1': 0.4, 'coxa_esquerda_1': 0.4,
-                'canela_esquerda_2_1': 0.9, 'canela_esquerda_1': 0.4,
-                'calcanhar_esquerdo_1': 0.1, 'pe_esquerdo_1': 0.1,
-                'pe_direito_1': 0.1, 'calcanhar_direito_1': 0.1,
-                'canela_direita_2_1': 0.9, 'canela_direita_1': 0.4,
-                'coxa_direita_1': 0.4, 'quadril_direito_1': 0.4
-            },
-            {
-                'base_link': 0.0, 'pescoco_1': 0.2, 'cabeca_1': 0.2,
-                'ombro_esquerdo_1': -0.6, 'ombro_direito_1': -0.6,
-                'braco_esquerdo_1': 0.3, 'braco_direito_1': 0.3,
-                'mao_esquerda_1': 0.2, 'mao_direita_1': 0.2,
-                'quadril_esquerdo_1': 0.3, 'coxa_esquerda_1': 0.3,
-                'canela_esquerda_2_1': 0.8, 'canela_esquerda_1': 0.3,
-                'calcanhar_esquerdo_1': 0.2, 'pe_esquerdo_1': 0.2,
-                'pe_direito_1': 0.2, 'calcanhar_direito_1': 0.2,
-                'canela_direita_2_1': 0.8, 'canela_direita_1': 0.3,
-                'coxa_direita_1': 0.3, 'quadril_direito_1': 0.3
-            },
-            {
-                'base_link': 0.0, 'pescoco_1': 0.3, 'cabeca_1': 0.3,
-                'ombro_esquerdo_1': -0.4, 'ombro_direito_1': -0.4,
-                'braco_esquerdo_1': 0.2, 'braco_direito_1': 0.2,
-                'mao_esquerda_1': 0.3, 'mao_direita_1': 0.3,
-                'quadril_esquerdo_1': 0.2, 'coxa_esquerda_1': 0.2,
-                'canela_esquerda_2_1': 0.7, 'canela_esquerda_1': 0.2,
-                'calcanhar_esquerdo_1': 0.3, 'pe_esquerdo_1': 0.3,
-                'pe_direito_1': 0.3, 'calcanhar_direito_1': 0.3,
-                'canela_direita_2_1': 0.7, 'canela_direita_1': 0.2,
-                'coxa_direita_1': 0.2, 'quadril_direito_1': 0.2
-            },
-            {
-                'base_link': 0.0, 'pescoco_1': 0.4, 'cabeca_1': 0.4,
-                'ombro_esquerdo_1': -0.2, 'ombro_direito_1': -0.2,
-                'braco_esquerdo_1': 0.1, 'braco_direito_1': 0.1,
-                'mao_esquerda_1': 0.4, 'mao_direita_1': 0.4,
-                'quadril_esquerdo_1': 0.1, 'coxa_esquerda_1': 0.1,
-                'canela_esquerda_2_1': 0.6, 'canela_esquerda_1': 0.1,
-                'calcanhar_esquerdo_1': 0.4, 'pe_esquerdo_1': 0.4,
-                'pe_direito_1': 0.4, 'calcanhar_direito_1': 0.4,
-                'canela_direita_2_1': 0.6, 'canela_direita_1': 0.1,
-                'coxa_direita_1': 0.1, 'quadril_direito_1': 0.1
-            },
-        ]
-
-        for step in sequences:
-            for joint, position in step.items():
-                self.joint_publishers[joint].publish(Float64(position))
-                rospy.sleep(0.5)  # Tempo de espera para permitir o movimento
-
-if __name__ == '__main__':
-    rospy.init_node('fall_detection_and_getup_martha')
-
-    fall_detection = FallDetection()
-    get_up_controller = GetUp()
-
-    rate = rospy.Rate(10)  # 10 Hz
-    while not rospy.is_shutdown():
-        if fall_detection.is_robot_fallen():
-            rospy.loginfo("Robô caiu. Iniciando sequência de levantamento.")
-            get_up_controller.get_up()
+def publicar_angulos(angulos_levantamento):
+    rate = rospy.Rate(1)
+    for i in range(len(angulos_levantamento['hip'])):
+        pub_hip_esquerdo.publish(angulos_levantamento['hip'][i])
+        pub_hip_direito.publish(angulos_levantamento['hip'][i])
+        pub_knee_esquerdo.publish(angulos_levantamento['knee'][i])
+        pub_knee_direito.publish(angulos_levantamento['knee'][i])
+        
+        pub_shoulder_esquerdo.publish(angulos_levantamento['shoulder'][i])
+        pub_shoulder_direito.publish(angulos_levantamento['shoulder'][i])
+        pub_elbow_esquerdo.publish(angulos_levantamento['elbow'][i])
+        pub_elbow_direito.publish(angulos_levantamento['elbow'][i])
+        
+        rospy.loginfo(f"Publicando ângulos - Fase {i+1}")
         rate.sleep()
+
+def main():
+    rospy.init_node('humanoid_lift_node')
+
+    movimento = input("Digite 'frente' para levantar de frente ou 'tras' para levantar de trás: ")
+
+    if movimento == 'frente':
+        angulos_frente = calcular_angulo_levantar_de_frente()
+        rospy.loginfo("Levantar de frente...")
+        publicar_angulos(angulos_frente)
+    elif movimento == 'tras':
+        angulos_tras = calcular_angulo_levantar_de_tras()
+        rospy.loginfo("Levantar de trás...")
+        publicar_angulos(angulos_tras)
+    else:
+        rospy.loginfo("Movimento inválido.")
+
+if __name__ == "__main__":
+    try:
+        main()
+    except rospy.ROSInterruptException:
+        pass
