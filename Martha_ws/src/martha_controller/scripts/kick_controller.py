@@ -1,84 +1,133 @@
 #!/usr/bin/env python
-
 import rospy
-from trajectory_msgs.msg import JointTrajectory, JointTrajectoryPoint
-from std_msgs.msg import Header, Bool
-import math
+from std_msgs.msg import Float64
+import time
 
-class KickController:
+class HumanoidKick:
     def __init__(self):
-        rospy.init_node('kick_controller', anonymous=True)
+        rospy.init_node('humanoid_kick_node', anonymous=True)
+        self.rate = rospy.Rate(10)  # Frequência de publicação em Hz
 
-        
-        self.kick_sub = rospy.Subscriber('/kick_command', Bool, self.kick_callback)
-        self.pub = rospy.Publisher('/humanoid/joint_trajectory_controller/command', JointTrajectory, queue_size=10)
+        # Inicialização dos publicadores das juntas
+        self.init_publishers()
 
-        
-        self.thigh_length = 0.4  # Comprimento da coxa 
-        self.shin_length = 0.4   # Comprimento da perna 
+    def init_publishers(self):
+        # Publicadores para as juntas necessárias
+        self.pub_l_hip_roll = rospy.Publisher('/martha/l_hip_roll_position/command', Float64, queue_size=10)
+        self.pub_r_hip_roll = rospy.Publisher('/martha/r_hip_roll_position/command', Float64, queue_size=10)
 
-        # Perna direita
-        self.joint_names = ['r_hip_yaw_link', 'r_hip_roll_link', 'r_hip_pitch_link', 'r_knee_link']
+        self.pub_l_hip_pitch = rospy.Publisher('/martha/l_hip_pitch_position/command', Float64, queue_size=10)
+        self.pub_r_hip_pitch = rospy.Publisher('/martha/r_hip_pitch_position/command', Float64, queue_size=10)
 
-    def kick_callback(self, data):
-        if data.data:
-            
-            target_position = [0.3, -0.5]  # Exemplo de coordenadas alvo para o pé
-            joint_angles = self.inverse_kinematics(target_position)
-            self.perform_kick(joint_angles)
+        self.pub_l_knee = rospy.Publisher('/martha/l_knee_position/command', Float64, queue_size=10)
+        self.pub_r_knee = rospy.Publisher('/martha/r_knee_position/command', Float64, queue_size=10)
 
-    def inverse_kinematics(self, target_position):
-        x, y = target_position
+        self.pub_l_ank_pitch = rospy.Publisher('/martha/l_ank_pitch_position/command', Float64, queue_size=10)
+        self.pub_r_ank_pitch = rospy.Publisher('/martha/r_ank_pitch_position/command', Float64, queue_size=10)
 
-        # Calcular a distância até o ponto alvo
-        distance = math.sqrt(x**2 + y**2)
+        self.pub_l_ank_roll = rospy.Publisher('/martha/l_ank_roll_position/command', Float64, queue_size=10)
+        self.pub_r_ank_roll = rospy.Publisher('/martha/r_ank_roll_position/command', Float64, queue_size=10)
 
-        # Verificar se o alvo está dentro do alcance da perna
-        if distance > (self.thigh_length + self.shin_length):
-            raise ValueError("Target position is out of reach")
+        # Publicadores para compensação do tronco
+        self.pub_l_sho_roll = rospy.Publisher('/martha/l_sho_roll_position/command', Float64, queue_size=10)
+        self.pub_r_sho_roll = rospy.Publisher('/martha/r_sho_roll_position/command', Float64, queue_size=10)
 
-        # Lei dos Cossenos para calcular o ângulo do joelho
-        cos_knee_angle = (x**2 + y**2 - self.thigh_length**2 - self.shin_length**2) / (2 * self.thigh_length * self.shin_length)
-        knee_angle = math.acos(cos_knee_angle)
+    def kick(self, leg='right'):
+        if leg == 'right':
+            self.kick_right_leg()
+        elif leg == 'left':
+            self.kick_left_leg()
+        else:
+            rospy.logerr("Leg must be 'right' or 'left'.")
 
-        # Lei dos Cossenos para calcular o ângulo do quadril
-        alpha = math.atan2(y, x)
-        cos_hip_angle = (x**2 + y**2 + self.thigh_length**2 - self.shin_length**2) / (2 * self.thigh_length * distance)
-        hip_angle = alpha - math.acos(cos_hip_angle)
+    def kick_right_leg(self):
+        rospy.loginfo("Iniciando chute com a perna direita.")
 
-        # Consideração para ângulo do quadril em Yaw e Roll (aproximado)
-        hip_yaw_angle = 0.0  # Ajuste este valor se precisar de rotação no eixo Yaw
-        hip_roll_angle = 0.0  # Ajuste este valor para controlar a rotação lateral
+        # Passo 1: Transferir o peso para a perna esquerda
+        rospy.loginfo("Transferindo peso para a perna esquerda.")
+        self.pub_l_hip_roll.publish(Float64(data=-0.1))  # Inclinar o quadril esquerdo para a esquerda
+        self.pub_r_hip_roll.publish(Float64(data=-0.1))  # Levantar quadril direito
+        self.pub_l_sho_roll.publish(Float64(data=0.1))   # Inclinar o ombro esquerdo para a direita
+        self.pub_r_sho_roll.publish(Float64(data=-0.1))  # Inclinar o ombro direito para a esquerda
+        time.sleep(1)  # Esperar para estabilizar
 
-        return [hip_yaw_angle, hip_roll_angle, hip_angle, knee_angle]
+        # Passo 2: Levantar a perna direita
+        rospy.loginfo("Levantando a perna direita.")
+        self.pub_r_hip_pitch.publish(Float64(data=-0.5))  # Levantar coxa
+        self.pub_r_knee.publish(Float64(data=0.5))        # Dobrar joelho
+        self.pub_r_ank_pitch.publish(Float64(data=0.0))   # Ajustar tornozelo
+        time.sleep(1)
 
-    def move_to_position(self, joint_angles, duration):
-        trajectory = JointTrajectory()
-        trajectory.header = Header()
-        trajectory.joint_names = self.joint_names
+        # Passo 3: Movimento de chute
+        rospy.loginfo("Executando o chute.")
+        self.pub_r_knee.publish(Float64(data=-0.2))       # Estender joelho rapidamente
+        time.sleep(0.5)
 
-        point = JointTrajectoryPoint()
-        point.positions = joint_angles
-        point.time_from_start = rospy.Duration(duration)
+        # Passo 4: Retornar a perna direita
+        rospy.loginfo("Retornando a perna direita à posição inicial.")
+        self.pub_r_knee.publish(Float64(data=0.0))
+        self.pub_r_hip_pitch.publish(Float64(data=0.0))
+        time.sleep(1)
 
-        trajectory.points = [point]
-        self.pub.publish(trajectory)
+        # Passo 5: Recentralizar o centro de massa
+        rospy.loginfo("Recentralizando o centro de massa.")
+        self.pub_l_hip_roll.publish(Float64(data=0.0))
+        self.pub_r_hip_roll.publish(Float64(data=0.0))
+        self.pub_l_sho_roll.publish(Float64(data=0.0))
+        self.pub_r_sho_roll.publish(Float64(data=0.0))
+        time.sleep(1)
 
-    def perform_kick(self, joint_angles):
-        rospy.loginfo("Starting kick sequence")
+        rospy.loginfo("Chute com a perna direita concluído.")
 
-        # Posição de equilíbrio inicial
-        balance_positions = [0.0, 0.0, 0.0, 0.0]
-        self.move_to_position(balance_positions, 1.0)
-        rospy.sleep(1.0)
+    def kick_left_leg(self):
+        rospy.loginfo("Iniciando chute com a perna esquerda.")
 
-        # Executar o chute com os ângulos calculados
-        self.move_to_position(joint_angles, 1.0)
-        rospy.sleep(1.0)
+        # Passo 1: Transferir o peso para a perna direita
+        rospy.loginfo("Transferindo peso para a perna direita.")
+        self.pub_r_hip_roll.publish(Float64(data=0.1))   # Inclinar o quadril direito para a direita
+        self.pub_l_hip_roll.publish(Float64(data=0.1))   # Levantar quadril esquerdo
+        self.pub_r_sho_roll.publish(Float64(data=-0.1))  # Inclinar o ombro direito para a esquerda
+        self.pub_l_sho_roll.publish(Float64(data=0.1))   # Inclinar o ombro esquerdo para a direita
+        time.sleep(1)  # Esperar para estabilizar
 
-        # Retornar à posição inicial após o chute
-        self.move_to_position(balance_positions, 1.0)
-        rospy.sleep(1.0)
+        # Passo 2: Levantar a perna esquerda
+        rospy.loginfo("Levantando a perna esquerda.")
+        self.pub_l_hip_pitch.publish(Float64(data=-0.5))  # Levantar coxa
+        self.pub_l_knee.publish(Float64(data=0.5))        # Dobrar joelho
+        self.pub_l_ank_pitch.publish(Float64(data=0.0))   # Ajustar tornozelo
+        time.sleep(1)
 
-        rospy.loginfo("Kick sequence complete")
+        # Passo 3: Movimento de chute
+        rospy.loginfo("Executando o chute.")
+        self.pub_l_knee.publish(Float64(data=-0.2))       # Estender joelho rapidamente
+        time.sleep(0.5)
 
+        # Passo 4: Retornar a perna esquerda
+        rospy.loginfo("Retornando a perna esquerda à posição inicial.")
+        self.pub_l_knee.publish(Float64(data=0.0))
+        self.pub_l_hip_pitch.publish(Float64(data=0.0))
+        time.sleep(1)
+
+        # Passo 5: Recentralizar o centro de massa
+        rospy.loginfo("Recentralizando o centro de massa.")
+        self.pub_r_hip_roll.publish(Float64(data=0.0))
+        self.pub_l_hip_roll.publish(Float64(data=0.0))
+        self.pub_r_sho_roll.publish(Float64(data=0.0))
+        self.pub_l_sho_roll.publish(Float64(data=0.0))
+        time.sleep(1)
+
+        rospy.loginfo("Chute com a perna esquerda concluído.")
+
+    def run(self):
+        while not rospy.is_shutdown():
+            self.kick(leg='right')  # Chutar com a perna direita
+            time.sleep(2)           # Pausa entre os chutes
+            self.kick(leg='left')   # Chutar com a perna esquerda
+            time.sleep(2)
+
+if __name__ == '__main__':
+    try:
+        humanoid_kick = HumanoidKick()
+        humanoid_kick.run()
+    except rospy.ROSInterruptException:
+        pass
