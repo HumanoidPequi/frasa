@@ -2,6 +2,7 @@
 import rospy
 from std_msgs.msg import Float64
 import time
+import math
 
 class HumanoidKick:
     def __init__(self):
@@ -40,88 +41,93 @@ class HumanoidKick:
         else:
             rospy.logerr("Leg must be 'right' or 'left'.")
 
-    def kick_right_leg(self):
-        rospy.loginfo("Iniciando chute com a perna direita.")
+    # def kick_right_leg(self):
+    #     rospy.loginfo("Iniciando chute com a perna direita.")
 
-        # Passo 1: Transferir o peso para a perna esquerda
-        rospy.loginfo("Transferindo peso para a perna esquerda.")
-        self.pub_l_hip_roll.publish(Float64(data=-0.1))  # Inclinar o quadril esquerdo para a esquerda
-        self.pub_r_hip_roll.publish(Float64(data=-0.1))  # Levantar quadril direito
-        self.pub_l_sho_roll.publish(Float64(data=0.1))   # Inclinar o ombro esquerdo para a direita
-        self.pub_r_sho_roll.publish(Float64(data=-0.1))  # Inclinar o ombro direito para a esquerda
-        time.sleep(1)  # Esperar para estabilizar
+    #     # Passo 1: Transferir o peso para a perna esquerda
+    #     rospy.loginfo("Transferindo peso para a perna esquerda.")
+    #     self.pub_l_hip_roll.publish(Float64(data=math.radians(25)))  # Inclinar o quadril esquerdo para a esquerda
+    #     self.pub_r_hip_roll.publish(Float64(data=math.radians(50)))  # Levantar quadril direito
+    #     self.pub_l_sho_roll.publish(Float64(data=math.radians(50)))   # Inclinar o ombro esquerdo para a direita
+    #     self.pub_r_sho_roll.publish(Float64(data=math.radians(50)))  # Inclinar o ombro direito para a esquerda
+    #     time.sleep(1)  # Esperar para estabilizar
 
-        # Passo 2: Levantar a perna direita
-        rospy.loginfo("Levantando a perna direita.")
-        self.pub_r_hip_pitch.publish(Float64(data=-0.5))  # Levantar coxa
-        self.pub_r_knee.publish(Float64(data=0.5))        # Dobrar joelho
-        self.pub_r_ank_pitch.publish(Float64(data=0.0))   # Ajustar tornozelo
-        time.sleep(1)
+    #     # Passo 2: Levantar a perna direita
+    #     rospy.loginfo("Levantando a perna direita.")
+    #     self.pub_r_hip_pitch.publish(Float64(data=-0.5))  # Levantar coxa
+    #     self.pub_r_knee.publish(Float64(data=0.5))        # Dobrar joelho
+    #     self.pub_r_ank_pitch.publish(Float64(data=0.0))   # Ajustar tornozelo
+    #     time.sleep(1)
 
-        # Passo 3: Movimento de chute
-        rospy.loginfo("Executando o chute.")
-        self.pub_r_knee.publish(Float64(data=-0.2))       # Estender joelho rapidamente
-        time.sleep(0.5)
+    #     # Passo 3: Movimento de chute
+    #     rospy.loginfo("Executando o chute.")
+    #     self.pub_r_knee.publish(Float64(data=-0.2))       # Estender joelho rapidamente
+    #     time.sleep(0.5)
 
-        # Passo 4: Retornar a perna direita
-        rospy.loginfo("Retornando a perna direita à posição inicial.")
-        self.pub_r_knee.publish(Float64(data=0.0))
-        self.pub_r_hip_pitch.publish(Float64(data=0.0))
-        time.sleep(1)
+    #     # Passo 4: Retornar a perna direita
+    #     rospy.loginfo("Retornando a perna direita à posição inicial.")
+    #     self.pub_r_knee.publish(Float64(data=0.0))
+    #     self.pub_r_hip_pitch.publish(Float64(data=0.0))
+    #     time.sleep(1)
 
-        # Passo 5: Recentralizar o centro de massa
-        rospy.loginfo("Recentralizando o centro de massa.")
-        self.pub_l_hip_roll.publish(Float64(data=0.0))
-        self.pub_r_hip_roll.publish(Float64(data=0.0))
-        self.pub_l_sho_roll.publish(Float64(data=0.0))
-        self.pub_r_sho_roll.publish(Float64(data=0.0))
-        time.sleep(1)
+    #     # Passo 5: Recentralizar o centro de massa
+    #     rospy.loginfo("Recentralizando o centro de massa.")
+    #     self.pub_l_hip_roll.publish(Float64(data=0.0))
+    #     self.pub_r_hip_roll.publish(Float64(data=0.0))
+    #     self.pub_l_sho_roll.publish(Float64(data=0.0))
+    #     self.pub_r_sho_roll.publish(Float64(data=0.0))
+    #     time.sleep(1)
 
-        rospy.loginfo("Chute com a perna direita concluído.")
+    #     rospy.loginfo("Chute com a perna direita concluído.")
 
     def kick_left_leg(self):
         rospy.loginfo("Iniciando chute com a perna esquerda.")
 
         # Passo 1: Transferir o peso para a perna direita
         rospy.loginfo("Transferindo peso para a perna direita.")
-        self.pub_r_hip_roll.publish(Float64(data=0.1))   # Inclinar o quadril direito para a direita
-        self.pub_l_hip_roll.publish(Float64(data=0.1))   # Levantar quadril esquerdo
-        self.pub_r_sho_roll.publish(Float64(data=-0.1))  # Inclinar o ombro direito para a esquerda
-        self.pub_l_sho_roll.publish(Float64(data=0.1))   # Inclinar o ombro esquerdo para a direita
+        self.pub_r_sho_roll.publish(data=math.radians(45))  # Inclinar o ombro direito para a esquerda
+        self.pub_l_sho_roll.publish(data=math.radians(-45))   # Inclinar o ombro esquerdo para a direita
+        time.sleep(2)  # Esperar para estabilizar
+        self.pub_r_hip_roll.publish(data=math.radians(10))   # Inclinar o quadril direito para a direita
+        self.pub_l_hip_roll.publish(data=math.radians(10))   # Levantar quadril esquerdo
         time.sleep(1)  # Esperar para estabilizar
 
-        # Passo 2: Levantar a perna esquerda
+        # #Passo 2: Levantar a perna esquerda
         rospy.loginfo("Levantando a perna esquerda.")
-        self.pub_l_hip_pitch.publish(Float64(data=-0.5))  # Levantar coxa
-        self.pub_l_knee.publish(Float64(data=0.5))        # Dobrar joelho
-        self.pub_l_ank_pitch.publish(Float64(data=0.0))   # Ajustar tornozelo
+        self.pub_l_hip_pitch.publish(data=math.radians(10))  # Levantar coxa
+        self.pub_l_knee.publish(data=math.radians(10))        # Dobrar joelho
+        time.sleep(1)
+        rospy.loginfo("Levantando a perna esquerda.-parte 2")
+        self.pub_l_hip_pitch.publish(data=math.radians(-25))  # Levantar coxa
+        self.pub_l_knee.publish(data=math.radians(25))        # Dobrar joelho
+        self.pub_l_ank_pitch.publish(data=math.radians(5))   # Ajustar tornozelo
         time.sleep(1)
 
-        # Passo 3: Movimento de chute
-        rospy.loginfo("Executando o chute.")
-        self.pub_l_knee.publish(Float64(data=-0.2))       # Estender joelho rapidamente
-        time.sleep(0.5)
+        # # Passo 3: Movimento de chute
+        # rospy.loginfo("Executando o chute.")
+        # self.pub_l_knee.publish(data=math.radians(-11))       # Estender joelho rapidamente
+        # time.sleep(0.5)
 
-        # Passo 4: Retornar a perna esquerda
-        rospy.loginfo("Retornando a perna esquerda à posição inicial.")
-        self.pub_l_knee.publish(Float64(data=0.0))
-        self.pub_l_hip_pitch.publish(Float64(data=0.0))
-        time.sleep(1)
+        # # Passo 4: Retornar a perna esquerda
+        # rospy.loginfo("Retornando a perna esquerda à posição inicial.")
+        # self.pub_l_knee.publish(Float64(data=0.0))
+        # self.pub_l_hip_pitch.publish(Float64(data=0.0))
+        # time.sleep(1)
 
         # Passo 5: Recentralizar o centro de massa
         rospy.loginfo("Recentralizando o centro de massa.")
-        self.pub_r_hip_roll.publish(Float64(data=0.0))
-        self.pub_l_hip_roll.publish(Float64(data=0.0))
-        self.pub_r_sho_roll.publish(Float64(data=0.0))
-        self.pub_l_sho_roll.publish(Float64(data=0.0))
+        self.pub_r_hip_roll.publish(data=math.radians(10))
+        self.pub_l_hip_roll.publish(data=math.radians(10))
+        self.pub_r_sho_roll.publish(data=math.radians(10))
+        self.pub_l_sho_roll.publish(data=math.radians(10))
         time.sleep(1)
 
         rospy.loginfo("Chute com a perna esquerda concluído.")
 
     def run(self):
         while not rospy.is_shutdown():
-            self.kick(leg='right')  # Chutar com a perna direita
-            time.sleep(2)           # Pausa entre os chutes
+            #self.kick(leg='right')  # Chutar com a perna direita
+            #time.sleep(2)           # Pausa entre os chutes
             self.kick(leg='left')   # Chutar com a perna esquerda
             time.sleep(2)
 
@@ -131,3 +137,11 @@ if __name__ == '__main__':
         humanoid_kick.run()
     except rospy.ROSInterruptException:
         pass
+
+#mov = [[20 valores],[],[],[]]
+# for i in range(0, 19):
+#    rospy.pub_sub(mov[i][])
+
+#o que fazer: a matriz mov deve ser preenchida com os valores de cada movimento, com um numero de "frames que eu definirei
+# e depois, o robo deve executar cada movimento, um por um, com um delay de 0.5s entre cada movimento
+# e também trocar a publicação de tópicos separados por uma lista com os valores de cada movimento"
