@@ -2,6 +2,21 @@
 
 import rospy
 from std_msgs.msg import Float64
+import time
+
+def move_joint_smoothly(publisher, start_position, end_position, duration):
+    
+    #Move a articulação suavemente de start_position para end_position em 'duration' segundos.
+    
+    rate = 50  # Hz, número de atualizações por segundo
+    steps = rate * duration  # Número total de passos para completar o movimento
+    delta_position = (end_position - start_position) / steps  # Incremento por passo
+
+    for i in range(int(steps)):
+        current_position = start_position + delta_position * i
+        publisher.publish(Float64(current_position))
+        time.sleep(1.0 / rate)  # Espera o tempo necessário para a próxima atualização
+
 
 def set_joint_positions():
     rospy.init_node('martha_fall_right', anonymous=True)
@@ -29,28 +44,38 @@ def set_joint_positions():
     pub_l_ankle_pitch = rospy.Publisher('/martha/l_ank_pitch_position/command', Float64, queue_size=10)
     pub_l_ankle_roll = rospy.Publisher('/martha/l_ank_roll_position/command', Float64, queue_size=10)
     #teszteeeeeeeeeeeeeeeee
-
+    
 
     rospy.sleep(1)  # Dar tempo para os publishers inicializarem
 
-    # Levanta o braço direito
-    pub_r_shoulder_pitch.publish(1.5)  # Posição elevada
-    pub_r_shoulder_roll.publish(-0.5)  # Para o lado direito
-    pub_r_elbow.publish(-1.0)          # Dobra o cotovelo
+    # Levanta o braço direito lentamente
+    start_position_r_shoulder_pitch = 0.0  # Posição inicial
+    end_position_r_shoulder_pitch = 2.8    # Posição final (levantado)
+    duration = 2.0                         # Tempo para levantar o braço
+
+    # Mover o braço direito suavemente ao longo de 5 segundos
+    move_joint_smoothly(pub_r_shoulder_pitch, start_position_r_shoulder_pitch, end_position_r_shoulder_pitch, duration)
+
+    # Publicar posições fixas para as outras articulações
+    pub_r_shoulder_roll.publish(0.0)  # Para o lado direito
+    pub_r_elbow.publish(0.0)          # Dobra o cotovelo
+
 
     # Coloca o braço esquerdo para baixo
-    pub_l_shoulder_pitch.publish(-1.5)
-    pub_l_shoulder_roll.publish(0.5)
+    pub_l_shoulder_pitch.publish(0.0)
+    pub_l_shoulder_roll.publish(0.0)
     pub_l_elbow.publish(0.0)
 
+    rospy.sleep(1)
+
     # Mover as pernas para cair para o lado direito
-    pub_r_hip_roll.publish(-0.5)
-    pub_r_ankle_roll.publish(-0.5)
+    pub_r_hip_roll.publish(0.5)
+    pub_r_ankle_roll.publish(-0.3)
 
     pub_l_hip_roll.publish(0.5)
-    pub_l_ankle_roll.publish(0.5)
+    pub_l_ankle_roll.publish(-0.3)
 
-    rospy.sleep(1)  # Espera para que as posições sejam atingidas
+    rospy.sleep(5)  # Espera para que as posições sejam atingidas
 
 if __name__ == '__main__':
     try:
