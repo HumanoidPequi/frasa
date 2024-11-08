@@ -43,7 +43,7 @@ def set_joint_positions():
     pub_l_knee = rospy.Publisher('/martha/l_knee_position/command', Float64, queue_size=10)
     pub_l_ankle_pitch = rospy.Publisher('/martha/l_ank_pitch_position/command', Float64, queue_size=10)
     pub_l_ankle_roll = rospy.Publisher('/martha/l_ank_roll_position/command', Float64, queue_size=10)
-    #teszteeeeeeeeeeeeeeeee
+
     
 
     rospy.sleep(1)  # Dar tempo para os publishers inicializarem
