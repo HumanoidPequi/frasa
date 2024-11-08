@@ -50,7 +50,7 @@ def set_joint_positions():
 
     # Levanta o braço esquerdo lentamente
     start_position_l_shoulder_pitch = 0.0  # Posição inicial
-    end_position_l_shoulder_pitch = 2.8    # Posição final (levantado)
+    end_position_l_shoulder_pitch = -2.8    # Posição final (levantado)
     duration = 2.0                         # Tempo para levantar o braço
 
     # Mover o braço esquerdo suavemente ao longo de 5 segundos
@@ -69,11 +69,11 @@ def set_joint_positions():
     rospy.sleep(1)
 
     # Mover as pernas para cair para o lado esquerdo
-    pub_l_hip_roll.publish(0.5)
-    pub_l_ankle_roll.publish(-0.3)
+    pub_l_hip_roll.publish(-0.5)
+    pub_l_ankle_roll.publish(0.3)
 
-    pub_r_hip_roll.publish(0.5)
-    pub_r_ankle_roll.publish(-0.3)
+    pub_r_hip_roll.publish(-0.5)
+    pub_r_ankle_roll.publish(0.3)
 
     rospy.sleep(5)  # Espera para que as posições sejam atingidas
 
