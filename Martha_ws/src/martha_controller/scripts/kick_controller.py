@@ -102,7 +102,8 @@ class HumanoidKick:
         self.smooth_move(self.pub_r_sho_roll, 0.0, math.radians(45), 2.0)  # Inclinar ombro direito para a esquerda em 2 segundos
         self.smooth_move(self.pub_l_sho_roll, 0.0, math.radians(-45), 2.0)  # Inclinar ombro esquerdo para a direita em 2 segundos
 
-        self.smooth_move(self.pub_r_hip_roll, 0.0, math.radians(10), 1.0)   # Inclinar quadril direito para a direita em 1 segundo
+        self.smooth_move(self.pub_r_hip_roll, 0.0, math.radians(-10), 1.0)   # Inclinar quadril direito para a direita em 1 segundo
+        self.smooth_move(self.pub_r_ank_roll, 0.0, math.radians(15), 1.0)   # Inclinar tornozelo direito para a direita em 1 segundo
         self.smooth_move(self.pub_l_hip_roll, 0.0, math.radians(10), 1.0)   # Levantar quadril esquerdo em 1 segundo
 
         # Tempo extra para estabilizar
@@ -112,10 +113,10 @@ class HumanoidKick:
         rospy.loginfo("Levantando a perna esquerda suavemente.")
         
         # Movimentação suave da perna esquerda (quadril, joelho e tornozelo)
-        self.smooth_move(self.pub_l_hip_yaw, 0.0, math.radians(-45), 1.5)  # Levantar coxa pro lado em 1.5 segundos
-        #self.smooth_move(self.pub_l_hip_pitch, 0.0, math.radians(90), 1.5)  # Levantar coxa suavemente em 1.5 segundos
-        #self.smooth_move(self.pub_l_knee, 0.0, math.radians(45), 1.5)       # Dobrar joelho suavemente em 1.5 segundos
-        #self.smooth_move(self.pub_l_hip_yaw, 0.0, math.radians(25), 1.5)  # Volta a coxa  em 1.5 segundos
+        self.smooth_move(self.pub_l_hip_roll, 0.0, math.radians(45), 2)  # Levantar coxa pro lado em 1.5 segundos
+        self.smooth_move(self.pub_l_hip_pitch, 0.0, math.radians(90), 1.5)  # Levantar coxa suavemente em 1.5 segundos
+        self.smooth_move(self.pub_l_knee, 0.0, math.radians(45), 1.5)       # Dobrar joelho suavemente em 1.5 segundos
+        self.smooth_move(self.pub_l_hip_yaw, 0.0, math.radians(25), 1.5)  # Volta a coxa  em 1.5 segundos
 
         # Recentralizar o centro de massa
         rospy.loginfo("Recentralizando o centro de massa.")
