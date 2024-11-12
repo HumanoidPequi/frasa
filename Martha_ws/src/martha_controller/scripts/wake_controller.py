@@ -123,7 +123,7 @@ def levantar_de_frente():
         1.0, -1.0,     # Ombros: estender para empurrar o chão
         1.5, 1.5,      # Joelhos: dobrar para trazer o peso para frente
         1.0, 1.0,      # Quadris: inclinar levemente para frente
-        0.5, 0.5       # Tornozelos: inclinar para frente para auxiliar no equilíbrio
+        1.0, 1.0       # Tornozelos: inclinar para frente para auxiliar no equilíbrio
     ]
     move_joints_smoothly(publishers_step2, start_positions_step2, end_positions_step2, 2)
 
@@ -145,7 +145,7 @@ def levantar_de_frente():
         1.5, 1.5,      # Joelhos: posição final do passo 2
         0.0, 0.0,      # Ombros roll: posição inicial para elevação
         1.0, -1.0,     # Ombros pitch: posição inicial para elevação
-        0.0, 0.0,      # Cotovelos: posição final do passo 2
+        -2.0, -2.0,      # Cotovelos: posição final do passo 2
         0.5, 0.5       # Tornozelos: posição final do passo 2 para auxiliar no equilíbrio
     ]
     end_positions_step3 = [
