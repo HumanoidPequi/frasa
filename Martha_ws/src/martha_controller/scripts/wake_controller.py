@@ -3,6 +3,10 @@
 import rospy
 from std_msgs.msg import Float64
 import time
+import math
+
+def rad_to_deg(radian):
+    return radian * (180.0 / math.pi)
 
 def move_joints_smoothly(publishers, start_positions, end_positions, duration):
     # Move múltiplas articulações suavemente de start_positions para end_positions em 'duration' segundos.
@@ -19,71 +23,158 @@ def move_joints_smoothly(publishers, start_positions, end_positions, duration):
         time.sleep(1.0 / rate)  # Espera o tempo necessário para a próxima atualização
 
 def levantar_de_tras():
-    rospy.loginfo("Iniciando movimento de levantamento de trás...")
+    rospy.loginfo("Iniciando movimento de levantamento de costas...")
 
-    # Phase 1: Preparing to lift
-    rospy.loginfo("Fase 1: Preparando para levantar...")
+    # Fase 1: Puxar o braço para trás
+    rospy.loginfo("Fase 1: Puxando o braço para trás para apoio...")
+
     publishers_phase1 = [
         pub_r_shoulder_pitch, pub_l_shoulder_pitch,
-        pub_r_hip_pitch, pub_l_hip_pitch,
-        pub_r_knee, pub_l_knee
-    ]
-    start_positions_phase1 = [0.0] * len(publishers_phase1)
-    end_positions_phase1 = [
-        -1.5, 1.5,  # Shoulders: move arms towards the shoulders
-        -0.5, -0.5,  # Hips: flex hips to bring feet closer
-        1.5, 1.5     # Knees: slightly bend
-    ]
-    move_joints_smoothly(publishers_phase1, start_positions_phase1, end_positions_phase1, 2)
-    time.sleep(10)
-    # Phase 2: Pushing up
-    rospy.loginfo("Fase 2: Empurrando para cima...")
-    publishers_phase2 = [
-        pub_r_elbow, pub_l_elbow,
-        pub_r_knee, pub_l_knee,
-        pub_r_hip_pitch, pub_l_hip_pitch
-    ]
-    start_positions_phase2 = [
-        0.0, 0.0,      # Elbows: start from initial position
-        0.5, 0.5,      # Knees: from the end of Phase 1
-        -0.5, -0.5     # Hips: from the end of Phase 1
-    ]
-    end_positions_phase2 = [
-        -1.5, -1.5,    # Elbows: extend to push up
-        1.0, 1.0,      # Knees: bend further
-        -1.0, -1.0     # Hips: flex slightly more
-    ]
-    move_joints_smoothly(publishers_phase2, start_positions_phase2, end_positions_phase2, 2)
-    time.sleep(10)
-    # Phase 3: Standing up and moving into T-pose
-    rospy.loginfo("Fase 3: Levantando e posicionando em T...")
-    publishers_phase3 = [
-        pub_r_hip_pitch, pub_l_hip_pitch,
-        pub_r_knee, pub_l_knee,
-        pub_r_ankle_pitch, pub_l_ankle_pitch,
-        pub_r_shoulder_pitch, pub_l_shoulder_pitch,
-        pub_r_shoulder_roll, pub_l_shoulder_roll,
         pub_r_elbow, pub_l_elbow
     ]
-    start_positions_phase3 = [
-        -1.0, -1.0,    # Hips: from the end of Phase 2
-        1.0, 1.0,      # Knees: from the end of Phase 2
-        0.0, 0.0,      # Ankles: initial position
-        -1.0, 1.0,     # Shoulders pitch: from the end of Phase 1
-        0.0, 0.0,      # Shoulders roll: initial position
-        -1.5, -1.5     # Elbows: from the end of Phase 2
+    start_positions_phase1 = [0.0, 0.0, 0.0, 0.0]
+    end_positions_phase1 = [
+        -1.5, 1.5,  # Ombros: continuar puxando o braço para trás
+        -1.5, -1.5    # Cotovelos: levantados para trás
     ]
-    end_positions_phase3 = [
-        0.0, 0.0,      # Hips: stand up straight
-        0.0, 0.0,      # Knees: fully extended
-        0.0, 0.0,      # Ankles: maintain balance
-        0.0, 0.0,      # Shoulders pitch: arms down
-        0.0, 0.0,      # Shoulders roll: arms to the sides (T-pose)
-        0.0, 0.0       # Elbows: relax arms
-    ]
-    move_joints_smoothly(publishers_phase3, start_positions_phase3, end_positions_phase3, 3)
+    move_joints_smoothly(publishers_phase1, start_positions_phase1, end_positions_phase1, 1)
 
-    rospy.loginfo("Robô levantado de trás e em T-pose.")
+    rospy.sleep(1)  # Pequena pausa para garantir que o braço foi puxado para trás
+
+    # Fase 2: Zerar antebraço e ajustar pernas e tornozelos
+    rospy.loginfo("Fase 2: Zerando o antebraço e ajustando pernas e tornozelos...")
+
+    publishers_phase2 = [
+        pub_r_elbow, pub_l_elbow,
+        #pub_r_knee, pub_l_knee,
+        #pub_r_ankle_pitch, pub_l_ankle_pitch,
+        #pub_r_hip_pitch, pub_l_hip_pitch,
+    ]
+    start_positions_phase2 = [
+        -1.0, -1.0,   # Cotovelos: posição final da Fase 1
+        #0.0, 0.0,   # Joelhos: posição inicial
+        #0.0, 0.0,   # Tornozelos: posição inicial
+        #0.0, 0.0    # Quadril: posição inicial
+    ]
+    end_positions_phase2 = [
+        0.0, 0.0,   # Cotovelos: zerados para empurrar o chão
+        #1.5, 1.5,   # Joelhos: dobrados para encolher as pernas
+        #-1.0, -1.0,  # Tornozelos: girados ao contrário para equilíbrio
+        #1.5, 1.5    # Quadril: posição final
+    ]
+    move_joints_smoothly(publishers_phase2, start_positions_phase2, end_positions_phase2, 2)
+
+    rospy.sleep(3)  # Pausa para garantir que as pernas e tornozelos estejam ajustados
+
+    # Passo final: Levantar o tronco e assumir a T-pose
+    rospy.loginfo("Levantando o tronco para a T-pose...")
+
+    publishers_step3 = [
+        # pub_r_hip_pitch, pub_l_hip_pitch,
+        # pub_r_knee, pub_l_knee,
+        # pub_r_shoulder_roll, pub_l_shoulder_roll,
+        pub_r_shoulder_pitch, pub_l_shoulder_pitch,
+        #pub_r_elbow, pub_l_elbow,
+        # pub_r_ankle_pitch, pub_l_ankle_pitch  # Manter tornozelos no movimento final
+    ]
+    start_positions_step3 = [
+        # 1.5, 1.5,    # Quadris: posição final do passo anterior
+        # 1.5, 1.5,    # Joelhos: posição final do passo anterior
+        # 0.0, 0.0,    # Ombros roll: posição inicial para elevação
+        # 1.5, -1.5,   # Ombros pitch: posição inicial para elevação
+        -1.5, 1.5,    # Cotovelos: posição final do passo anterior
+        # -1.0, -1.0   # Tornozelos: posição final do passo anterior para equilíbrio
+    ]
+    end_positions_step3 = [
+        # 0.0, 0.0,    # Quadris: posição ereta
+        # 0.0, 0.0,    # Joelhos: completamente estendidos
+        # 0.0, 0.0,    # Ombros roll: T-pose
+        # 0.0, 0.0,    # Ombros pitch: T-pose
+        0.0, 1.5,    # Cotovelos: relaxar para a posição T-pose
+        # 0.0, 0.0     # Tornozelos: posição de equilíbrio final na T-pose
+    ]
+    move_joints_smoothly(publishers_step3, start_positions_step3, end_positions_step3, 3)
+
+    rospy.loginfo("Robô levantado em T-pose.")
+
+# def levantar_de_tras():
+#     rospy.loginfo("Iniciando movimento de levantamento de costas...")
+
+#     # Fase 1: Puxar o braço para trás
+#     rospy.loginfo("Fase 1: Puxando o braço para trás para apoio...")
+
+#     publishers_phase1 = [
+#         pub_r_shoulder_pitch, pub_l_shoulder_pitch,
+#         pub_r_elbow, pub_l_elbow
+#     ]
+#     start_positions_phase1 = [0.0, 0.0, 0.0, 0.0]
+#     end_positions_phase1 = [
+#         -1.5, 1.5,  # Ombros: continuar puxando o braço para trás
+#         -1.5, -1.5    # Cotovelos: levantados para trás
+#     ]
+#     move_joints_smoothly(publishers_phase1, start_positions_phase1, end_positions_phase1, 1)
+
+#     rospy.sleep(1)  # Pequena pausa para garantir que o braço foi puxado para trás
+
+#     # Fase 2: Zerar antebraço e ajustar pernas e tornozelos
+#     rospy.loginfo("Fase 2: Zerando o antebraço e ajustando pernas e tornozelos...")
+
+#     publishers_phase2 = [
+#         pub_r_elbow, pub_l_elbow,
+#         pub_r_knee, pub_l_knee,
+#         pub_r_ankle_pitch, pub_l_ankle_pitch,
+#          pub_r_hip_pitch, pub_l_hip_pitch,
+#     ]
+#     start_positions_phase2 = [
+#         -1.0, -1.0,   # Cotovelos: posição final da Fase 1
+#         0.0, 0.0,   # Joelhos: posição inicial
+#         0.0, 0.0,   # Tornozelos: posição inicial
+#         0.0, 0.0    # Quadril: posição inicial
+#     ]
+#     end_positions_phase2 = [
+#         0.0, 0.0,   # Cotovelos: zerados para empurrar o chão
+#         1.5, 1.5,   # Joelhos: dobrados para encolher as pernas
+#         -1.0, -1.0,  # Tornozelos: girados ao contrário para equilíbrio
+#         1.5, 1.5    # Quadril: posição final
+#     ]
+#     move_joints_smoothly(publishers_phase2, start_positions_phase2, end_positions_phase2, 2)
+
+#     rospy.sleep(3)  # Pausa para garantir que as pernas e tornozelos estejam ajustados
+
+#     # Passo final: Levantar o tronco e assumir a T-pose
+#     rospy.loginfo("Levantando o tronco para a T-pose...")
+
+#     publishers_step3 = [
+#         pub_r_hip_pitch, pub_l_hip_pitch,
+#         pub_r_knee, pub_l_knee,
+#         pub_r_shoulder_roll, pub_l_shoulder_roll,
+#         pub_r_shoulder_pitch, pub_l_shoulder_pitch,
+#         pub_r_elbow, pub_l_elbow,
+#         pub_r_ankle_pitch, pub_l_ankle_pitch  # Manter tornozelos no movimento final
+#     ]
+#     start_positions_step3 = [
+#         1.5, 1.5,    # Quadris: posição final do passo anterior
+#         1.5, 1.5,    # Joelhos: posição final do passo anterior
+#         0.0, 0.0,    # Ombros roll: posição inicial para elevação
+#         1.5, -1.5,   # Ombros pitch: posição inicial para elevação
+#         0.0, 0.0,    # Cotovelos: posição final do passo anterior
+#         -1.0, -1.0   # Tornozelos: posição final do passo anterior para equilíbrio
+#     ]
+#     end_positions_step3 = [
+#         0.0, 0.0,    # Quadris: posição ereta
+#         0.0, 0.0,    # Joelhos: completamente estendidos
+#         0.0, 0.0,    # Ombros roll: T-pose
+#         0.0, 0.0,    # Ombros pitch: T-pose
+#         0.0, 0.0,    # Cotovelos: relaxar para a posição T-pose
+#         0.0, 0.0     # Tornozelos: posição de equilíbrio final na T-pose
+#     ]
+#     move_joints_smoothly(publishers_step3, start_positions_step3, end_positions_step3, 3)
+
+#     rospy.loginfo("Robô levantado em T-pose.")
+
+
+
+
 
 def levantar_de_frente():
     rospy.loginfo("Iniciando movimento de levantamento de frente...")
@@ -95,14 +186,14 @@ def levantar_de_frente():
         pub_r_shoulder_pitch, pub_l_shoulder_pitch,
         pub_r_elbow, pub_l_elbow
     ]
-    start_positions_step1 = [0.0, 0.0, 0.0, 0.0]
+    start_positions_step1 = [rad_to_deg(0.0), rad_to_deg(0.0), rad_to_deg(0.0), rad_to_deg(0.0)]
     end_positions_step1 = [
-        -1.0, 1.0,     # Ombros: girar para apoio
-        -2.0, -2.0     # Cotovelos: girar para perpendicularidade ao chão
+        rad_to_deg(-1.0), rad_to_deg(1.0),     # Ombros: girar para apoio
+        rad_to_deg(-2.0), rad_to_deg(-2.0)     # Cotovelos: girar para perpendicularidade ao chão
     ]
     move_joints_smoothly(publishers_step1, start_positions_step1, end_positions_step1, 1)
 
-    rospy.sleep(1)  
+    rospy.sleep(1)
 
     # Passo 2: Empurrar o chão, dobrar joelhos e girar tornozelos
     rospy.loginfo("Passo 2: Empurrando o chão, dobrando joelhos e ajustando tornozelos...")
@@ -114,20 +205,39 @@ def levantar_de_frente():
         pub_r_ankle_pitch, pub_l_ankle_pitch  # Adicionando movimento de tornozelos
     ]
     start_positions_step2 = [
-        -1.0, 1.0,     # Ombros: posição final do passo 1
-        0.0, 0.0,      # Joelhos: posição inicial
-        0.0, 0.0,      # Quadris: posição inicial
-        0.0, 0.0       # Tornozelos: posição inicial
+        rad_to_deg(-1.0), rad_to_deg(1.0),     # Ombros: posição final do passo 1
+        rad_to_deg(0.0), rad_to_deg(0.0),      # Joelhos: posição inicial
+        rad_to_deg(0.0), rad_to_deg(0.0),      # Quadris: posição inicial
+        rad_to_deg(0.0), rad_to_deg(0.0)       # Tornozelos: posição inicial
     ]
     end_positions_step2 = [
-        1.0, -1.0,     # Ombros: estender para empurrar o chão
-        1.5, 1.5,      # Joelhos: dobrar para trazer o peso para frente
-        1.0, 1.0,      # Quadris: inclinar levemente para frente
-        1.0, 1.0       # Tornozelos: inclinar para frente para auxiliar no equilíbrio
+        rad_to_deg(2.0), rad_to_deg(-2.0),     # Ombros: estender para empurrar o chão
+        rad_to_deg(1.7), rad_to_deg(1.7),      # Joelhos: dobrar para trazer o peso para frente
+        rad_to_deg(1.5), rad_to_deg(1.5),      # Quadris: inclinar levemente para frente
+        rad_to_deg(1.2), rad_to_deg(1.2)       # Tornozelos: inclinar para frente para auxiliar no equilíbrio
     ]
     move_joints_smoothly(publishers_step2, start_positions_step2, end_positions_step2, 2)
 
-    rospy.sleep(1)  # Pausa de 10 segundos
+    rospy.sleep(3)
+
+    # Passo 2.5: Retornar cotovelos para posição 0.0 e dobrar mais os joelhos
+    rospy.loginfo("Passo 2.5: Retornando cotovelos para posição 0.0 e dobrando mais os joelhos...")
+
+    publishers_step2_5 = [
+        pub_r_elbow, pub_l_elbow,
+        pub_r_knee, pub_l_knee
+    ]
+    start_positions_step2_5 = [
+        rad_to_deg(-2.0), rad_to_deg(-2.0),     # Cotovelos: posição final do passo 2
+        rad_to_deg(1.7), rad_to_deg(1.7)        # Joelhos: posição final do passo 2
+    ]
+    end_positions_step2_5 = [
+        rad_to_deg(0.0), rad_to_deg(0.0),       # Cotovelos: retornar para posição inicial
+        rad_to_deg(2.5), rad_to_deg(2.5)        # Joelhos: dobrar completamente para agachamento total
+    ]
+    move_joints_smoothly(publishers_step2_5, start_positions_step2_5, end_positions_step2_5, 1)
+
+    rospy.sleep(1)
 
     # Passo 3: Levantar o tronco e assumir a T-pose
     rospy.loginfo("Passo 3: Levantando o tronco para a T-pose...")
@@ -141,27 +251,24 @@ def levantar_de_frente():
         pub_r_ankle_pitch, pub_l_ankle_pitch  # Manter tornozelos no movimento final
     ]
     start_positions_step3 = [
-        1.0, 1.0,    # Quadris: posição final do passo 2
-        1.5, 1.5,      # Joelhos: posição final do passo 2
-        0.0, 0.0,      # Ombros roll: posição inicial para elevação
-        1.0, -1.0,     # Ombros pitch: posição inicial para elevação
-        -2.0, -2.0,      # Cotovelos: posição final do passo 2
-        0.5, 0.5       # Tornozelos: posição final do passo 2 para auxiliar no equilíbrio
+        rad_to_deg(1.5), rad_to_deg(1.5),    # Quadris: posição final do passo 2
+        rad_to_deg(2.5), rad_to_deg(2.5),      # Joelhos: posição final do passo 2.5
+        rad_to_deg(0.0), rad_to_deg(0.0),      # Ombros roll: posição inicial para elevação
+        rad_to_deg(2.0), rad_to_deg(-2.0),     # Ombros pitch: posição inicial para elevação
+        rad_to_deg(0.0), rad_to_deg(0.0),      # Cotovelos: posição final do passo 2.5
+        rad_to_deg(1.2), rad_to_deg(1.2)       # Tornozelos: posição final do passo 2 para auxiliar no equilíbrio
     ]
     end_positions_step3 = [
-        0.0, 0.0,      # Quadris: posição ereta
-        0.0, 0.0,      # Joelhos: completamente estendidos
-        0.0, 0.0,      # Ombros roll: T-pose
-        0.0, 0.0,      # Ombros pitch: T-pose
-        0.0, 0.0,      # Cotovelos: relaxar para a posição T-pose
-        0.0, 0.0       # Tornozelos: posição de equilíbrio final na T-pose
+        rad_to_deg(0.0), rad_to_deg(0.0),      # Quadris: posição ereta
+        rad_to_deg(0.0), rad_to_deg(0.0),      # Joelhos: completamente estendidos
+        rad_to_deg(0.0), rad_to_deg(0.0),      # Ombros roll: T-pose
+        rad_to_deg(0.0), rad_to_deg(0.0),      # Ombros pitch: T-pose
+        rad_to_deg(0.0), rad_to_deg(0.0),      # Cotovelos: relaxar para a posição T-pose
+        rad_to_deg(0.0), rad_to_deg(0.0)       # Tornozelos: posição de equilíbrio final na T-pose
     ]
     move_joints_smoothly(publishers_step3, start_positions_step3, end_positions_step3, 3)
 
     rospy.loginfo("Robô levantado em T-pose.")
-
-
-
 
 def set_joint_positions():
     rospy.init_node('humanoid_lift_node', anonymous=True)
@@ -208,7 +315,6 @@ if __name__ == '__main__':
         set_joint_positions()
     except rospy.ROSInterruptException:
         pass
-
 
 # afsbdfbggb
 # dfbbtrbtr
