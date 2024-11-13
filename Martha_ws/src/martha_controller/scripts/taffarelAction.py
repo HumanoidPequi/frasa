@@ -5,7 +5,7 @@ import json, jsonschema
 import rospy, actionlib
 from itertools import combinations
 import rospy
-from std_msgs.msg import Float64
+from std_msgs.msg import Float64, Int16MultiArray
 import time
 from marta_msgs.msg import TaffarelAction, TaffarelActionFeedback, TaffarelActionResult
 
@@ -39,19 +39,25 @@ class Taffarel(object):
         self._as = actionlib.SimpleActionServer(self._action_name, TaffarelAction, execute_cb=self.runAction, auto_start = False)
         
         # Publishers para as articulações do braço e pernas da Martha
-        self.pub_r_shoulder_pitch = rospy.Publisher('/martha/r_sho_pitch_position/command', Float64, queue_size=10)
-        self.pub_r_shoulder_roll = rospy.Publisher('/martha/r_sho_roll_position/command', Float64, queue_size=10)
-        self.pub_r_elbow = rospy.Publisher('/martha/r_el_position/command', Float64, queue_size=10)
+        
+        #self.pub_r_shoulder_pitch = rospy.Publisher('/martha/r_sho_pitch_position/command', Float64, queue_size=10)
+        #self.pub_r_shoulder_roll = rospy.Publisher('/martha/r_sho_roll_position/command', Float64, queue_size=10)
+        #self.pub_r_elbow = rospy.Publisher('/martha/r_el_position/command', Float64, queue_size=10)
 
-        self.pub_l_shoulder_pitch = rospy.Publisher('/martha/l_sho_pitch_position/command', Float64, queue_size=10)
-        self.pub_l_shoulder_roll = rospy.Publisher('/martha/l_sho_roll_position/command', Float64, queue_size=10)
-        self.pub_l_elbow = rospy.Publisher('/martha/l_el_position/command', Float64, queue_size=10)
+        #self.pub_l_shoulder_pitch = rospy.Publisher('/martha/l_sho_pitch_position/command', Float64, queue_size=10)
+        #self.pub_l_shoulder_roll = rospy.Publisher('/martha/l_sho_roll_position/command', Float64, queue_size=10)
+        #self.pub_l_elbow = rospy.Publisher('/martha/l_el_position/command', Float64, queue_size=10)
 
-        self.pub_r_hip_roll = rospy.Publisher('/martha/r_hip_roll_position/command', Float64, queue_size=10)
-        self.pub_r_ankle_roll = rospy.Publisher('/martha/r_ank_roll_position/command', Float64, queue_size=10)
+        #self.pub_r_hip_roll = rospy.Publisher('/martha/r_hip_roll_position/command', Float64, queue_size=10)
+        #self.pub_r_ankle_roll = rospy.Publisher('/martha/r_ank_roll_position/command', Float64, queue_size=10)
 
-        self.pub_l_hip_roll = rospy.Publisher('/martha/l_hip_roll_position/command', Float64, queue_size=10)
-        self.pub_l_ankle_roll = rospy.Publisher('/martha/l_ank_roll_position/command', Float64, queue_size=10)
+        #self.pub_l_hip_roll = rospy.Publisher('/martha/l_hip_roll_position/command', Float64, queue_size=10)
+        #self.pub_l_ankle_roll = rospy.Publisher('/martha/l_ank_roll_position/command', Float64, queue_size=10)
+        
+        self.pub_r_arm = rospy.Publisher('/marta/arm_r/command', Int16MultiArray, queue_size=10)
+        self.pub_l_head = rospy.Publisher('/marta/arm_l_head/command', Int16MultiArray, queue_size=10)
+        self.pub_r_leg = rospy.Publisher('/marta/right_leg/command', Int16MultiArray, queue_size=10)
+        self.pub_l_leg = rospy.Publisher('/marta/left_leg/command', Int16MultiArray, queue_size=10)
 
         self._as.start()
 
@@ -106,12 +112,17 @@ class Taffarel(object):
         self.pub_r_shoulder_pitch.publish(0.0)
         self.pub_r_shoulder_roll.publish(0.0)
         self.pub_r_elbow.publish(0.0)
+        msg = Int16MultiArray()
+        msg.data = [0,0,0,0,0]
+        self.pub_r_arm(msg)
 
         rospy.sleep(1)
 
         # Mover as pernas para cair para o lado esquerdo
         self.pub_l_hip_roll.publish(-0.5)
         self.pub_l_ankle_roll.publish(0.3)
+        msg_r = Int16MultiArray()
+        msg_r.data = 
 
         self.pub_r_hip_roll.publish(-0.5)
         self.pub_r_ankle_roll.publish(0.3)
@@ -135,18 +146,20 @@ class Taffarel(object):
 
 
         # Coloca o braço esquerdo para baixo
-        self.pub_l_shoulder_pitch.publish(0.0)
+        self.pub_l_shoulder_pitch.publish(0.0) 16, 17 e 18
         self.pub_l_shoulder_roll.publish(0.0)
         self.pub_l_elbow.publish(0.0)
 
         rospy.sleep(1)
 
         # Mover as pernas para cair para o lado direito
-        self.pub_r_hip_roll.publish(0.5)
+        self.pub_r_hip_roll.publish(0.5) #2 e 6
         self.pub_r_ankle_roll.publish(-0.3)
 
-        self.pub_l_hip_roll.publish(0.5)
+        self.pub_l_hip_roll.publish(0.5)#8 e 12
         self.pub_l_ankle_roll.publish(-0.3)
+
+        self.pub_right_leg()
 
         rospy.sleep(1)  # Espera para que as posições sejam atingidas
 
