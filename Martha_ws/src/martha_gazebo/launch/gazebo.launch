@@ -47,5 +47,7 @@
   <group if="$(arg rviz)">
     <include file="$(find martha_gazebo)/launch/rviz.launch"/>
   </group>
+
+  <node pkg="martha_controller" type="taffarelAction.py" name="taffarel_node" output="screen"/>
  
 </launch>
