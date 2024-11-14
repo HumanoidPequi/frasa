@@ -54,10 +54,10 @@ class Taffarel(object):
         #self.pub_l_hip_roll = rospy.Publisher('/martha/l_hip_roll_position/command', Float64, queue_size=10)
         #self.pub_l_ankle_roll = rospy.Publisher('/martha/l_ank_roll_position/command', Float64, queue_size=10)
         
-        self.pub_r_arm = rospy.Publisher('/marta/arm_r/command', Int16MultiArray, queue_size=10)
-        self.pub_l_head = rospy.Publisher('/marta/arm_l_head/command', Int16MultiArray, queue_size=10)
-        self.pub_r_leg = rospy.Publisher('/marta/right_leg/command', Int16MultiArray, queue_size=10)
-        self.pub_l_leg = rospy.Publisher('/marta/left_leg/command', Int16MultiArray, queue_size=10)
+        self.pub_arm_r = rospy.Publisher('/marta/arm_r/command', Int16MultiArray, queue_size=10)
+        self.pub_arm_l_head = rospy.Publisher('/marta/arm_l_head/command', Int16MultiArray, queue_size=10)
+        self.pub_right_leg = rospy.Publisher('/marta/right_leg/command', Int16MultiArray, queue_size=10)
+        self.pub_left_leg = rospy.Publisher('/marta/left_leg/command', Int16MultiArray, queue_size=10)
 
         self._as.start()
 
@@ -90,8 +90,22 @@ class Taffarel(object):
         delta_position = (end_position - start_position) / steps  # Incremento por passo
 
         for i in range(int(steps)):
-            current_position = start_position + delta_position * i
-            publisher.publish(Float64(current_position))
+            current_position = Int16MultiArray()
+            current_position.data = [0,0,0,start_position + delta_position * i,0]
+            publisher.publish(current_position)
+            time.sleep(1.0 / rate)  # Espera o tempo necessário para a próxima atualização
+    
+    def move_joint_smoothly_r(self, publisher, start_position, end_position, duration):
+        #Move a articulação suavemente de start_position para end_position em 'duration' segundos.
+        
+        rate = 50  # Hz, número de atualizações por segundo
+        steps = rate * duration  # Número total de passos para completar o movimento
+        delta_position = (end_position - start_position) / steps  # Incremento por passo
+
+        for i in range(int(steps)):
+            current_position = Int16MultiArray()
+            current_position.data = [0,start_position + delta_position * i,0]
+            publisher.publish(current_position)
             time.sleep(1.0 / rate)  # Espera o tempo necessário para a próxima atualização
 
     def CairEsquerda(self):
@@ -101,7 +115,7 @@ class Taffarel(object):
         duration = 2.0                         # Tempo para levantar o braço
 
         # Mover o braço esquerdo suavemente ao longo de 5 segundos
-        self.move_joint_smoothly(self.pub_l_shoulder_pitch, start_position_l_shoulder_pitch, end_position_l_shoulder_pitch, duration)
+        self.move_joint_smoothly(self.pub_arm_r, start_position_l_shoulder_pitch, end_position_l_shoulder_pitch, duration)
 
         # Publicar posições fixas para as outras articulações
         self.pub_r_shoulder_roll.publish(0.0)  # Para o lado direito
@@ -112,20 +126,33 @@ class Taffarel(object):
         self.pub_r_shoulder_pitch.publish(0.0)
         self.pub_r_shoulder_roll.publish(0.0)
         self.pub_r_elbow.publish(0.0)
-        msg = Int16MultiArray()
-        msg.data = [0,0,0,0,0]
-        self.pub_r_arm(msg)
+        angles_arm_r = [0,0,0]
+        angles_left_leg = [0,-0.5,0,0,0,0.3]
+        angles_right_leg = [0,-0.5,0,0,0,0.3]
+
+        msg_arm_r = Int16MultiArray()
+        msg_arm_r.data = angles_arm_r
+        self.pub_r_arm(msg_arm_r)
 
         rospy.sleep(1)
 
         # Mover as pernas para cair para o lado esquerdo
         self.pub_l_hip_roll.publish(-0.5)
         self.pub_l_ankle_roll.publish(0.3)
-        msg_r = Int16MultiArray()
-        msg_r.data = 
+
+        msg_left_leg = Int16MultiArray()
+        msg_left_leg.data = angles_left_leg
 
         self.pub_r_hip_roll.publish(-0.5)
         self.pub_r_ankle_roll.publish(0.3)
+
+        msg_right_leg = Int16MultiArray()
+        msg_right_leg.data = angles_right_leg
+
+        self.pub_r_arm(msg_arm_r)
+        self.pub_left_leg(msg_left_leg)
+        self.pub_right_leg(msg_right_leg)
+
 
         rospy.sleep(1)  # Espera para que as posições sejam atingidas
 
@@ -138,7 +165,7 @@ class Taffarel(object):
         duration = 2.0                         # Tempo para levantar o braço
 
         # Mover o braço direito suavemente ao longo de 5 segundos
-        self.move_joint_smoothly(self.pub_r_shoulder_pitch, start_position_r_shoulder_pitch, end_position_r_shoulder_pitch, duration)
+        self.move_joint_smoothly_r(self.pub_arm_r, start_position_r_shoulder_pitch, end_position_r_shoulder_pitch, duration)
 
         # Publicar posições fixas para as outras articulações
         self.pub_r_shoulder_roll.publish(0.0)  # Para o lado direito
@@ -146,9 +173,17 @@ class Taffarel(object):
 
 
         # Coloca o braço esquerdo para baixo
-        self.pub_l_shoulder_pitch.publish(0.0) 16, 17 e 18
+        self.pub_l_shoulder_pitch.publish(0.0) 
         self.pub_l_shoulder_roll.publish(0.0)
         self.pub_l_elbow.publish(0.0)
+        
+        angles_arm_l_head = [0,0,0,0,0]
+        angles_left_leg = [0,0.5,0,0,0,-0.3]
+        angles_right_leg = [0,-0.5,0,0,0,0.3]
+
+        msg_arm_l_head = Int16MultiArray()
+        msg_arm_l_head.data = angles_arm_l_head
+        self.pub_r_arm(msg_arm_l_head)
 
         rospy.sleep(1)
 
@@ -158,8 +193,18 @@ class Taffarel(object):
 
         self.pub_l_hip_roll.publish(0.5)#8 e 12
         self.pub_l_ankle_roll.publish(-0.3)
+        
+        msg_left_leg = Int16MultiArray()
+        msg_left_leg.data = angles_left_leg
 
-        self.pub_right_leg()
+        self.pub_r_hip_roll.publish(-0.5)
+        self.pub_r_ankle_roll.publish(0.3)
+        msg_right_leg = Int16MultiArray()
+        msg_right_leg.data = [0,-0.5,0,0,0,0.3]
+
+        self.pub_r_arm(msg_arm_l_head)
+        self.pub_left_leg(msg_left_leg)
+        self.pub_right_leg(msg_right_leg)
 
         rospy.sleep(1)  # Espera para que as posições sejam atingidas
 
@@ -197,7 +242,7 @@ class Taffarel(object):
 
 
 def main():
-    rospy.init_node('taffarel_node')
+    rospy.init_node('taffarel_server_node')
     server = Taffarel(rospy.get_name())
     rospy.spin()
 

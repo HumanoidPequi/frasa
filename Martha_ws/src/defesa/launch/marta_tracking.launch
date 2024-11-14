@@ -1,0 +1,7 @@
+<launch>
+    
+    <node name="ball_tracking_node" pkg="defesa" type="ball_tracking.py" output="screen"/>
+
+    <node name="head_control_node" pkg="defesa" type="servo_angles.py" output="screen"/>
+
+</launch>

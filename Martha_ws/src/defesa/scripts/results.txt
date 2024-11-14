@@ -1,0 +1,1012 @@
+Inference time: 27.83 ms
+Inference time: 26.84 ms
+Inference time: 26.97 ms
+[INFO] [1687146291.777100]: (yolo) the ball coordinates are  587.000000,296.000000
+Inference time: 26.90 ms
+[INFO] [1687146292.348320]: (yolo) the ball coordinates are  356.000000,247.000000
+[INFO] [1687146292.864508]: (optical flow) the ball coordinate are 335.876190,267.316132
+[INFO] [1687146293.380178]: (optical flow) the ball coordinate are 329.392700,280.459869
+[INFO] [1687146293.895744]: (optical flow) the ball coordinate are 304.730194,300.848877
+[INFO] [1687146294.410070]: (optical flow) the ball coordinate are 317.790161,287.886108
+Inference time: 17.27 ms
+[INFO] [1687146294.964943]: (yolo) the ball coordinates are  338.000000,256.000000
+Inference time: 18.47 ms
+[INFO] [1687146295.520942]: (yolo) the ball coordinates are  386.000000,241.000000
+[INFO] [1687146296.034564]: (optical flow) the ball coordinate are 420.708191,231.392807
+[INFO] [1687146296.552156]: (optical flow) the ball coordinate are 393.441589,253.590042
+[INFO] [1687146297.068428]: (optical flow) the ball coordinate are 371.884888,290.128693
+[INFO] [1687146297.585263]: (optical flow) the ball coordinate are 379.102112,265.162964
+Inference time: 26.58 ms
+[INFO] [1687146298.153800]: (yolo) the ball coordinates are  283.000000,344.000000
+Inference time: 26.24 ms
+[INFO] [1687146298.721912]: (yolo) the ball coordinates are  303.000000,343.000000
+[INFO] [1687146299.232142]: (optical flow) the ball coordinate are 311.420380,336.235413
+[INFO] [1687146299.741403]: (optical flow) the ball coordinate are 312.593506,325.590576
+[INFO] [1687146300.252443]: (optical flow) the ball coordinate are 300.868469,302.713745
+[INFO] [1687146300.763534]: (optical flow) the ball coordinate are 304.768738,273.567627
+Inference time: 26.12 ms
+[INFO] [1687146301.331878]: (yolo) the ball coordinates are  317.000000,331.000000
+Inference time: 17.57 ms
+[INFO] [1687146301.886000]: (yolo) the ball coordinates are  318.000000,329.000000
+[INFO] [1687146302.397060]: (optical flow) the ball coordinate are 309.402557,327.270691
+[INFO] [1687146302.906501]: (optical flow) the ball coordinate are 316.024048,324.889832
+[INFO] [1687146303.416198]: (optical flow) the ball coordinate are 315.822327,323.980682
+[INFO] [1687146303.923895]: (optical flow) the ball coordinate are 314.671570,322.316345
+Inference time: 17.60 ms
+[INFO] [1687146304.481008]: (yolo) the ball coordinates are  321.000000,327.000000
+Inference time: 17.69 ms
+[INFO] [1687146305.042758]: (yolo) the ball coordinates are  321.000000,326.000000
+[INFO] [1687146305.553788]: (optical flow) the ball coordinate are 321.850891,323.534363
+[INFO] [1687146306.062822]: (optical flow) the ball coordinate are 320.628815,322.537506
+[INFO] [1687146306.572756]: (optical flow) the ball coordinate are 318.792084,322.009155
+[INFO] [1687146307.096817]: (optical flow) the ball coordinate are 317.523499,321.403900
+Inference time: 17.68 ms
+[INFO] [1687146307.656727]: (yolo) the ball coordinates are  321.000000,327.000000
+Inference time: 17.55 ms
+[INFO] [1687146308.210326]: (yolo) the ball coordinates are  322.000000,326.000000
+[INFO] [1687146308.719333]: (optical flow) the ball coordinate are 321.375031,325.712769
+[INFO] [1687146309.230844]: (optical flow) the ball coordinate are 323.603729,321.619019
+[INFO] [1687146309.740717]: (optical flow) the ball coordinate are 321.175476,320.894836
+[INFO] [1687146310.248713]: (optical flow) the ball coordinate are 320.470215,319.435211
+Inference time: 26.07 ms
+[INFO] [1687146310.818368]: (yolo) the ball coordinates are  321.000000,327.000000
+Inference time: 26.07 ms
+[INFO] [1687146311.385930]: (yolo) the ball coordinates are  321.000000,327.000000
+[INFO] [1687146311.894619]: (optical flow) the ball coordinate are 320.492706,326.481018
+[INFO] [1687146312.403166]: (optical flow) the ball coordinate are 319.496490,325.480530
+[INFO] [1687146312.910657]: (optical flow) the ball coordinate are 318.498993,324.534332
+[INFO] [1687146313.418169]: (optical flow) the ball coordinate are 317.452576,323.465637
+Inference time: 26.07 ms
+[INFO] [1687146313.986117]: (yolo) the ball coordinates are  321.000000,327.000000
+Inference time: 26.68 ms
+[INFO] [1687146314.556201]: (yolo) the ball coordinates are  321.000000,326.000000
+[INFO] [1687146315.064578]: (optical flow) the ball coordinate are 320.497681,325.545868
+[INFO] [1687146315.573221]: (optical flow) the ball coordinate are 319.481171,324.485687
+[INFO] [1687146316.080748]: (optical flow) the ball coordinate are 318.500153,323.476105
+[INFO] [1687146316.588310]: (optical flow) the ball coordinate are 317.503723,322.495056
+Inference time: 26.70 ms
+[INFO] [1687146317.155966]: (yolo) the ball coordinates are  321.000000,326.000000
+Inference time: 26.80 ms
+[INFO] [1687146317.725322]: (yolo) the ball coordinates are  320.000000,326.000000
+[INFO] [1687146318.233947]: (optical flow) the ball coordinate are 319.472351,325.479492
+[INFO] [1687146318.741733]: (optical flow) the ball coordinate are 318.447418,324.417511
+[INFO] [1687146319.250140]: (optical flow) the ball coordinate are 317.574432,323.611206
+[INFO] [1687146319.757514]: (optical flow) the ball coordinate are 316.488678,322.503998
+Inference time: 27.69 ms
+[INFO] [1687146320.327888]: (yolo) the ball coordinates are  320.000000,326.000000
+Inference time: 26.13 ms
+[INFO] [1687146320.895871]: (yolo) the ball coordinates are  321.000000,327.000000
+[INFO] [1687146321.404029]: (optical flow) the ball coordinate are 320.622528,326.603516
+[INFO] [1687146321.912019]: (optical flow) the ball coordinate are 319.357971,325.371429
+[INFO] [1687146322.419476]: (optical flow) the ball coordinate are 318.530457,324.598267
+[INFO] [1687146322.927386]: (optical flow) the ball coordinate are 317.548340,323.503815
+Inference time: 26.84 ms
+[INFO] [1687146323.497701]: (yolo) the ball coordinates are  320.000000,326.000000
+Inference time: 26.76 ms
+[INFO] [1687146324.067426]: (yolo) the ball coordinates are  321.000000,327.000000
+[INFO] [1687146324.575358]: (optical flow) the ball coordinate are 320.504211,326.496368
+[INFO] [1687146325.083297]: (optical flow) the ball coordinate are 319.504059,325.506714
+[INFO] [1687146325.591518]: (optical flow) the ball coordinate are 318.475342,324.502808
+[INFO] [1687146326.099095]: (optical flow) the ball coordinate are 317.521454,323.459625
+Inference time: 26.97 ms
+[INFO] [1687146326.668483]: (yolo) the ball coordinates are  320.000000,327.000000
+Inference time: 26.43 ms
+[INFO] [1687146327.240229]: (yolo) the ball coordinates are  320.000000,326.000000
+[INFO] [1687146327.749107]: (optical flow) the ball coordinate are 319.554474,325.498810
+[INFO] [1687146328.274448]: (optical flow) the ball coordinate are 318.492523,324.531311
+[INFO] [1687146328.787697]: (optical flow) the ball coordinate are 317.502716,323.474701
+[INFO] [1687146329.295896]: (optical flow) the ball coordinate are 316.543762,322.518921
+Inference time: 27.25 ms
+[INFO] [1687146329.867939]: (yolo) the ball coordinates are  320.000000,326.000000
+Inference time: 26.94 ms
+[INFO] [1687146330.438382]: (yolo) the ball coordinates are  320.000000,326.000000
+[INFO] [1687146330.946979]: (optical flow) the ball coordinate are 319.461670,325.451416
+[INFO] [1687146331.454458]: (optical flow) the ball coordinate are 318.520203,324.533264
+[INFO] [1687146331.962833]: (optical flow) the ball coordinate are 317.491730,323.503784
+[INFO] [1687146332.470828]: (optical flow) the ball coordinate are 316.527649,322.499176
+Inference time: 26.78 ms
+[INFO] [1687146333.039414]: (yolo) the ball coordinates are  320.000000,326.000000
+Inference time: 26.20 ms
+[INFO] [1687146333.608502]: (yolo) the ball coordinates are  320.000000,326.000000
+[INFO] [1687146334.117121]: (optical flow) the ball coordinate are 319.475830,325.522369
+[INFO] [1687146334.624618]: (optical flow) the ball coordinate are 318.510742,324.465637
+[INFO] [1687146335.133001]: (optical flow) the ball coordinate are 317.511597,323.528778
+[INFO] [1687146335.641552]: (optical flow) the ball coordinate are 316.513916,322.505005
+Inference time: 26.32 ms
+[INFO] [1687146336.210658]: (yolo) the ball coordinates are  320.000000,326.000000
+Inference time: 28.63 ms
+[INFO] [1687146336.783167]: (yolo) the ball coordinates are  320.000000,326.000000
+[INFO] [1687146337.292256]: (optical flow) the ball coordinate are 319.523712,325.534119
+[INFO] [1687146337.800406]: (optical flow) the ball coordinate are 318.496826,324.490173
+[INFO] [1687146338.311223]: (optical flow) the ball coordinate are 317.501068,323.477570
+[INFO] [1687146338.818876]: (optical flow) the ball coordinate are 316.487823,322.492401
+Inference time: 26.53 ms
+[INFO] [1687146339.386744]: (yolo) the ball coordinates are  320.000000,326.000000
+Inference time: 28.79 ms
+[INFO] [1687146339.959040]: (yolo) the ball coordinates are  320.000000,326.000000
+[INFO] [1687146340.467401]: (optical flow) the ball coordinate are 319.473572,325.451508
+[INFO] [1687146340.978585]: (optical flow) the ball coordinate are 318.568970,324.539886
+[INFO] [1687146341.487656]: (optical flow) the ball coordinate are 317.468445,323.527740
+[INFO] [1687146341.995713]: (optical flow) the ball coordinate are 316.527222,322.436920
+Inference time: 26.42 ms
+[INFO] [1687146342.567615]: (yolo) the ball coordinates are  320.000000,326.000000
+Inference time: 17.51 ms
+[INFO] [1687146343.134007]: (yolo) the ball coordinates are  320.000000,327.000000
+[INFO] [1687146343.643650]: (optical flow) the ball coordinate are 319.602753,326.496674
+[INFO] [1687146344.152691]: (optical flow) the ball coordinate are 318.390686,325.361938
+[INFO] [1687146344.661644]: (optical flow) the ball coordinate are 317.295685,324.069702
+[INFO] [1687146345.170604]: (optical flow) the ball coordinate are 316.491852,323.504608
+Inference time: 25.91 ms
+[INFO] [1687146345.738206]: (yolo) the ball coordinates are  320.000000,326.000000
+Inference time: 25.95 ms
+[INFO] [1687146346.306473]: (yolo) the ball coordinates are  320.000000,327.000000
+[INFO] [1687146346.815193]: (optical flow) the ball coordinate are 319.499908,326.468231
+[INFO] [1687146347.322889]: (optical flow) the ball coordinate are 318.520752,325.512817
+[INFO] [1687146347.830745]: (optical flow) the ball coordinate are 317.479858,324.500153
+[INFO] [1687146348.339599]: (optical flow) the ball coordinate are 316.519226,323.510803
+Inference time: 26.32 ms
+[INFO] [1687146348.907586]: (yolo) the ball coordinates are  320.000000,326.000000
+Inference time: 37.57 ms
+[INFO] [1687146349.490248]: (yolo) the ball coordinates are  320.000000,326.000000
+[INFO] [1687146350.016083]: (optical flow) the ball coordinate are 323.680695,323.192047
+[INFO] [1687146350.534248]: (optical flow) the ball coordinate are 310.116852,259.793793
+[INFO] [1687146351.051024]: (optical flow) the ball coordinate are 315.414215,128.644989
+[INFO] [1687146351.564813]: (optical flow) the ball coordinate are 323.265350,99.891365
+Inference time: 27.05 ms
+[INFO] [1687146352.133917]: (yolo) the ball coordinates are  316.000000,133.000000
+Inference time: 26.49 ms
+Inference time: 26.21 ms
+[INFO] [1687146353.271734]: (yolo) the ball coordinates are  322.000000,133.000000
+[INFO] [1687146353.782903]: (optical flow) the ball coordinate are 326.251343,128.138519
+[INFO] [1687146354.292685]: (optical flow) the ball coordinate are 329.453339,124.345871
+[INFO] [1687146354.810406]: (optical flow) the ball coordinate are 371.950562,101.754951
+[INFO] [1687146355.322156]: (optical flow) the ball coordinate are 127.142189,7.736784
+Inference time: 26.02 ms
+Inference time: 27.27 ms
+[INFO] [1687146356.455908]: (yolo) the ball coordinates are  442.000000,386.000000
+Inference time: 25.91 ms
+[INFO] [1687146357.022743]: (yolo) the ball coordinates are  340.000000,223.000000
+[INFO] [1687146357.538331]: (optical flow) the ball coordinate are 401.655548,192.136353
+[INFO] [1687146358.053870]: (optical flow) the ball coordinate are 392.286530,185.286972
+[INFO] [1687146358.570667]: (optical flow) the ball coordinate are 398.612213,232.675491
+[INFO] [1687146359.085907]: (optical flow) the ball coordinate are 383.254211,201.214752
+Inference time: 25.90 ms
+[INFO] [1687146359.653134]: (yolo) the ball coordinates are  261.000000,278.000000
+Inference time: 25.89 ms
+[INFO] [1687146360.220803]: (yolo) the ball coordinates are  249.000000,262.000000
+[INFO] [1687146360.736926]: (optical flow) the ball coordinate are 225.476654,250.412323
+[INFO] [1687146361.253528]: (optical flow) the ball coordinate are 223.229065,282.099945
+[INFO] [1687146361.770380]: (optical flow) the ball coordinate are 269.572296,213.870193
+[INFO] [1687146362.287663]: (optical flow) the ball coordinate are 216.634781,233.064880
+Inference time: 17.57 ms
+[INFO] [1687146362.844383]: (yolo) the ball coordinates are  254.000000,237.000000
+Inference time: 17.61 ms
+[INFO] [1687146363.402035]: (yolo) the ball coordinates are  232.000000,210.000000
+[INFO] [1687146363.920785]: (optical flow) the ball coordinate are 243.215652,195.785156
+[INFO] [1687146364.436691]: (optical flow) the ball coordinate are 323.388550,241.442062
+[INFO] [1687146364.946777]: (optical flow) the ball coordinate are 322.535370,241.611130
+[INFO] [1687146365.456205]: (optical flow) the ball coordinate are 323.390320,240.065811
+Inference time: 26.94 ms
+[INFO] [1687146366.022094]: (yolo) the ball coordinates are  505.000000,316.000000
+Inference time: 27.43 ms
+[INFO] [1687146366.591300]: (yolo) the ball coordinates are  227.000000,190.000000
+[INFO] [1687146367.109617]: (optical flow) the ball coordinate are 228.132553,214.187164
+[INFO] [1687146367.622309]: (optical flow) the ball coordinate are 301.479523,228.047501
+[INFO] [1687146368.132854]: (optical flow) the ball coordinate are 304.683655,227.272293
+[INFO] [1687146368.646326]: (optical flow) the ball coordinate are 291.118744,227.300980
+Inference time: 26.86 ms
+[INFO] [1687146369.212485]: (yolo) the ball coordinates are  560.000000,315.000000
+Inference time: 17.55 ms
+[INFO] [1687146369.767704]: (yolo) the ball coordinates are  307.000000,207.000000
+[INFO] [1687146370.283271]: (optical flow) the ball coordinate are 360.361389,220.002640
+[INFO] [1687146370.799210]: (optical flow) the ball coordinate are 402.034485,207.831772
+[INFO] [1687146371.331339]: (optical flow) the ball coordinate are 380.564331,220.845535
+[INFO] [1687146371.846673]: (optical flow) the ball coordinate are 387.644165,228.701843
+Inference time: 17.39 ms
+[INFO] [1687146372.407936]: (yolo) the ball coordinates are  417.000000,255.000000
+Inference time: 26.50 ms
+[INFO] [1687146372.977106]: (yolo) the ball coordinates are  372.000000,247.000000
+[INFO] [1687146373.494014]: (optical flow) the ball coordinate are 353.784302,224.032455
+[INFO] [1687146374.009980]: (optical flow) the ball coordinate are 347.097626,232.348190
+[INFO] [1687146374.526973]: (optical flow) the ball coordinate are 298.095825,245.854691
+[INFO] [1687146375.041513]: (optical flow) the ball coordinate are 261.329163,262.733002
+Inference time: 25.84 ms
+[INFO] [1687146375.609216]: (yolo) the ball coordinates are  273.000000,259.000000
+Inference time: 25.86 ms
+[INFO] [1687146376.178779]: (yolo) the ball coordinates are  247.000000,274.000000
+[INFO] [1687146376.694890]: (optical flow) the ball coordinate are 264.964417,237.323563
+[INFO] [1687146377.206582]: (optical flow) the ball coordinate are 276.952789,206.553894
+[INFO] [1687146377.722646]: (optical flow) the ball coordinate are 252.705017,234.942780
+[INFO] [1687146378.238297]: (optical flow) the ball coordinate are 296.406555,230.205887
+Inference time: 17.48 ms
+[INFO] [1687146378.800249]: (yolo) the ball coordinates are  234.000000,267.000000
+Inference time: 27.13 ms
+[INFO] [1687146379.369769]: (yolo) the ball coordinates are  253.000000,231.000000
+[INFO] [1687146379.885295]: (optical flow) the ball coordinate are 261.160858,235.517883
+[INFO] [1687146380.401922]: (optical flow) the ball coordinate are 255.116898,223.381180
+[INFO] [1687146380.919207]: (optical flow) the ball coordinate are 303.326782,237.852539
+[INFO] [1687146381.434676]: (optical flow) the ball coordinate are 350.171967,244.998688
+Inference time: 25.85 ms
+[INFO] [1687146382.001850]: (yolo) the ball coordinates are  426.000000,256.000000
+Inference time: 25.83 ms
+[INFO] [1687146382.569606]: (yolo) the ball coordinates are  413.000000,249.000000
+[INFO] [1687146383.086973]: (optical flow) the ball coordinate are 403.528473,237.133911
+[INFO] [1687146383.601552]: (optical flow) the ball coordinate are 368.284454,223.721741
+[INFO] [1687146384.124779]: (optical flow) the ball coordinate are 369.806610,227.081879
+[INFO] [1687146384.640785]: (optical flow) the ball coordinate are 401.347565,225.257812
+Inference time: 25.90 ms
+[INFO] [1687146385.209212]: (yolo) the ball coordinates are  386.000000,240.000000
+Inference time: 25.99 ms
+[INFO] [1687146385.777132]: (yolo) the ball coordinates are  356.000000,228.000000
+[INFO] [1687146386.295303]: (optical flow) the ball coordinate are 318.229675,212.441376
+[INFO] [1687146386.811322]: (optical flow) the ball coordinate are 348.139771,190.225464
+[INFO] [1687146387.326343]: (optical flow) the ball coordinate are 308.245239,256.973572
+[INFO] [1687146387.841309]: (optical flow) the ball coordinate are 307.094086,280.769379
+Inference time: 17.50 ms
+[INFO] [1687146388.395973]: (yolo) the ball coordinates are  273.000000,291.000000
+Inference time: 17.49 ms
+[INFO] [1687146388.954744]: (yolo) the ball coordinates are  238.000000,270.000000
+[INFO] [1687146389.470489]: (optical flow) the ball coordinate are 233.445312,224.773300
+[INFO] [1687146389.986248]: (optical flow) the ball coordinate are 281.578308,210.171829
+[INFO] [1687146390.501552]: (optical flow) the ball coordinate are 262.278168,217.982773
+[INFO] [1687146391.017799]: (optical flow) the ball coordinate are 276.800690,245.897186
+Inference time: 26.89 ms
+[INFO] [1687146391.586339]: (yolo) the ball coordinates are  237.000000,267.000000
+Inference time: 26.92 ms
+[INFO] [1687146392.155547]: (yolo) the ball coordinates are  244.000000,249.000000
+[INFO] [1687146392.672330]: (optical flow) the ball coordinate are 270.648773,237.102234
+[INFO] [1687146393.200446]: (optical flow) the ball coordinate are 318.760437,238.472183
+[INFO] [1687146393.717332]: (optical flow) the ball coordinate are 350.949432,246.586746
+[INFO] [1687146394.230726]: (optical flow) the ball coordinate are 375.482330,239.786423
+Inference time: 27.43 ms
+[INFO] [1687146394.800476]: (yolo) the ball coordinates are  413.000000,254.000000
+Inference time: 26.97 ms
+[INFO] [1687146395.373253]: (yolo) the ball coordinates are  423.000000,240.000000
+[INFO] [1687146395.890886]: (optical flow) the ball coordinate are 376.659821,218.410995
+[INFO] [1687146396.408388]: (optical flow) the ball coordinate are 368.217957,227.261093
+[INFO] [1687146396.922518]: (optical flow) the ball coordinate are 380.760437,230.539963
+[INFO] [1687146397.438189]: (optical flow) the ball coordinate are 386.056274,218.172363
+Inference time: 26.07 ms
+[INFO] [1687146398.005910]: (yolo) the ball coordinates are  381.000000,240.000000
+Inference time: 17.63 ms
+[INFO] [1687146398.560040]: (yolo) the ball coordinates are  360.000000,227.000000
+[INFO] [1687146399.073256]: (optical flow) the ball coordinate are 355.337677,260.738190
+[INFO] [1687146399.588662]: (optical flow) the ball coordinate are 344.518219,251.050491
+[INFO] [1687146400.105817]: (optical flow) the ball coordinate are 294.411621,261.974731
+[INFO] [1687146400.621679]: (optical flow) the ball coordinate are 261.012512,253.965073
+Inference time: 17.97 ms
+[INFO] [1687146401.175793]: (yolo) the ball coordinates are  238.000000,267.000000
+Inference time: 18.16 ms
+[INFO] [1687146401.731081]: (yolo) the ball coordinates are  244.000000,239.000000
+[INFO] [1687146402.246966]: (optical flow) the ball coordinate are 241.632263,213.743164
+[INFO] [1687146402.763742]: (optical flow) the ball coordinate are 245.522781,227.920410
+[INFO] [1687146403.278286]: (optical flow) the ball coordinate are 262.522491,251.205643
+[INFO] [1687146403.795635]: (optical flow) the ball coordinate are 235.651535,249.066864
+Inference time: 26.30 ms
+[INFO] [1687146404.363909]: (yolo) the ball coordinates are  268.000000,260.000000
+Inference time: 26.53 ms
+[INFO] [1687146404.933898]: (yolo) the ball coordinates are  364.000000,254.000000
+[INFO] [1687146405.452357]: (optical flow) the ball coordinate are 384.333313,238.578659
+[INFO] [1687146405.968897]: (optical flow) the ball coordinate are 401.776031,241.200317
+[INFO] [1687146406.489803]: (optical flow) the ball coordinate are 406.546417,214.838425
+[INFO] [1687146407.005781]: (optical flow) the ball coordinate are 399.699799,238.441528
+Inference time: 26.84 ms
+[INFO] [1687146407.574136]: (yolo) the ball coordinates are  401.000000,236.000000
+Inference time: 26.94 ms
+[INFO] [1687146408.142429]: (yolo) the ball coordinates are  382.000000,210.000000
+[INFO] [1687146408.658600]: (optical flow) the ball coordinate are 360.562592,214.240021
+[INFO] [1687146409.170096]: (optical flow) the ball coordinate are 333.674927,227.190994
+[INFO] [1687146409.680171]: (optical flow) the ball coordinate are 331.191711,231.674362
+[INFO] [1687146410.194103]: (optical flow) the ball coordinate are 303.416046,237.599380
+Inference time: 26.98 ms
+[INFO] [1687146410.762396]: (yolo) the ball coordinates are  227.000000,270.000000
+Inference time: 27.16 ms
+[INFO] [1687146411.331068]: (yolo) the ball coordinates are  203.000000,253.000000
+[INFO] [1687146411.845763]: (optical flow) the ball coordinate are 257.162506,241.668396
+[INFO] [1687146412.356033]: (optical flow) the ball coordinate are 290.626221,232.510559
+[INFO] [1687146412.866342]: (optical flow) the ball coordinate are 301.257080,234.917465
+[INFO] [1687146413.376367]: (optical flow) the ball coordinate are 304.319885,230.269836
+Inference time: 18.47 ms
+[INFO] [1687146413.934327]: (yolo) the ball coordinates are  324.000000,233.000000
+Inference time: 17.90 ms
+[INFO] [1687146414.489757]: (yolo) the ball coordinates are  329.000000,231.000000
+[INFO] [1687146415.013675]: (optical flow) the ball coordinate are 338.251465,238.353943
+[INFO] [1687146415.523815]: (optical flow) the ball coordinate are 333.378601,243.687103
+[INFO] [1687146416.035394]: (optical flow) the ball coordinate are 350.870728,253.672989
+[INFO] [1687146416.554364]: (optical flow) the ball coordinate are 330.657104,228.460190
+Inference time: 26.67 ms
+[INFO] [1687146417.123341]: (yolo) the ball coordinates are  319.000000,221.000000
+Inference time: 26.87 ms
+[INFO] [1687146417.691696]: (yolo) the ball coordinates are  318.000000,221.000000
+[INFO] [1687146418.201553]: (optical flow) the ball coordinate are 318.528320,216.711060
+[INFO] [1687146418.710710]: (optical flow) the ball coordinate are 315.837555,214.438721
+[INFO] [1687146419.218998]: (optical flow) the ball coordinate are 314.210876,214.107651
+[INFO] [1687146419.729017]: (optical flow) the ball coordinate are 314.825348,212.759857
+Inference time: 26.85 ms
+[INFO] [1687146420.296920]: (yolo) the ball coordinates are  320.000000,221.000000
+Inference time: 26.67 ms
+[INFO] [1687146420.867501]: (yolo) the ball coordinates are  320.000000,221.000000
+[INFO] [1687146421.377666]: (optical flow) the ball coordinate are 318.852875,219.931396
+[INFO] [1687146421.885923]: (optical flow) the ball coordinate are 317.277771,218.961685
+[INFO] [1687146422.394466]: (optical flow) the ball coordinate are 316.170288,215.646210
+[INFO] [1687146422.904676]: (optical flow) the ball coordinate are 313.740204,211.637360
+Inference time: 27.16 ms
+[INFO] [1687146423.473100]: (yolo) the ball coordinates are  317.000000,218.000000
+Inference time: 27.08 ms
+[INFO] [1687146424.041839]: (yolo) the ball coordinates are  320.000000,187.000000
+[INFO] [1687146424.556933]: (optical flow) the ball coordinate are 325.707367,146.860718
+[INFO] [1687146425.074097]: (optical flow) the ball coordinate are 304.611938,204.436493
+[INFO] [1687146425.590265]: (optical flow) the ball coordinate are 326.015594,225.893158
+[INFO] [1687146426.105713]: (optical flow) the ball coordinate are 326.515533,268.362976
+Inference time: 26.62 ms
+Inference time: 27.15 ms
+[INFO] [1687146427.240461]: (yolo) the ball coordinates are  231.000000,165.000000
+Inference time: 27.05 ms
+[INFO] [1687146427.813585]: (yolo) the ball coordinates are  324.000000,257.000000
+[INFO] [1687146428.329313]: (optical flow) the ball coordinate are 344.929779,285.862427
+[INFO] [1687146428.847185]: (optical flow) the ball coordinate are 353.645630,330.578339
+[INFO] [1687146429.363882]: (optical flow) the ball coordinate are 263.477661,197.187698
+[INFO] [1687146429.879937]: (optical flow) the ball coordinate are 307.978302,210.331558
+Inference time: 27.29 ms
+[INFO] [1687146430.448624]: (yolo) the ball coordinates are  369.000000,134.000000
+Inference time: 27.28 ms
+[INFO] [1687146431.019053]: (yolo) the ball coordinates are  341.000000,212.000000
+[INFO] [1687146431.533685]: (optical flow) the ball coordinate are 362.976227,179.576248
+[INFO] [1687146432.058629]: (optical flow) the ball coordinate are 337.627563,196.978561
+[INFO] [1687146432.574387]: (optical flow) the ball coordinate are 335.505371,189.368958
+[INFO] [1687146433.088592]: (optical flow) the ball coordinate are 348.385834,156.690643
+Inference time: 26.46 ms
+[INFO] [1687146433.657068]: (yolo) the ball coordinates are  300.000000,310.000000
+Inference time: 26.74 ms
+[INFO] [1687146434.225950]: (yolo) the ball coordinates are  300.000000,262.000000
+[INFO] [1687146434.742029]: (optical flow) the ball coordinate are 304.005737,280.216339
+[INFO] [1687146435.254264]: (optical flow) the ball coordinate are 321.445618,267.130951
+[INFO] [1687146435.789062]: (optical flow) the ball coordinate are 318.503754,271.663300
+[INFO] [1687146436.302085]: (optical flow) the ball coordinate are 292.474518,270.176025
+Inference time: 26.97 ms
+[INFO] [1687146436.873870]: (yolo) the ball coordinates are  299.000000,278.000000
+Inference time: 27.04 ms
+[INFO] [1687146437.445107]: (yolo) the ball coordinates are  320.000000,285.000000
+[INFO] [1687146437.962156]: (optical flow) the ball coordinate are 332.621155,240.437195
+[INFO] [1687146438.477210]: (optical flow) the ball coordinate are 339.491913,187.704529
+[INFO] [1687146438.987723]: (optical flow) the ball coordinate are 338.789337,182.829346
+[INFO] [1687146439.500662]: (optical flow) the ball coordinate are 327.849487,201.061279
+Inference time: 28.17 ms
+[INFO] [1687146440.071810]: (yolo) the ball coordinates are  314.000000,270.000000
+Inference time: 26.55 ms
+[INFO] [1687146440.641966]: (yolo) the ball coordinates are  314.000000,234.000000
+[INFO] [1687146441.154581]: (optical flow) the ball coordinate are 339.273193,199.402359
+[INFO] [1687146441.672081]: (optical flow) the ball coordinate are 342.561829,180.982697
+[INFO] [1687146442.186320]: (optical flow) the ball coordinate are 349.279785,131.468857
+[INFO] [1687146442.704310]: (optical flow) the ball coordinate are 323.590820,116.079033
+Inference time: 27.17 ms
+[INFO] [1687146443.272759]: (yolo) the ball coordinates are  345.000000,236.000000
+Inference time: 27.34 ms
+[INFO] [1687146443.841711]: (yolo) the ball coordinates are  349.000000,218.000000
+[INFO] [1687146444.354285]: (optical flow) the ball coordinate are 333.499023,198.646027
+[INFO] [1687146444.869119]: (optical flow) the ball coordinate are 339.552734,161.328415
+[INFO] [1687146445.385084]: (optical flow) the ball coordinate are 343.428925,151.891525
+[INFO] [1687146445.897885]: (optical flow) the ball coordinate are 333.147095,166.837784
+Inference time: 25.87 ms
+[INFO] [1687146446.467104]: (yolo) the ball coordinates are  331.000000,212.000000
+Inference time: 17.31 ms
+[INFO] [1687146447.022966]: (yolo) the ball coordinates are  329.000000,253.000000
+[INFO] [1687146447.540289]: (optical flow) the ball coordinate are 320.723450,284.974060
+[INFO] [1687146448.050599]: (optical flow) the ball coordinate are 320.381897,260.920563
+[INFO] [1687146448.566226]: (optical flow) the ball coordinate are 316.753326,296.360809
+[INFO] [1687146449.084004]: (optical flow) the ball coordinate are 332.459137,253.837646
+Inference time: 25.96 ms
+[INFO] [1687146449.651447]: (yolo) the ball coordinates are  337.000000,259.000000
+Inference time: 26.12 ms
+[INFO] [1687146450.214580]: (yolo) the ball coordinates are  333.000000,216.000000
+[INFO] [1687146450.730461]: (optical flow) the ball coordinate are 325.491119,138.905380
+[INFO] [1687146451.243012]: (optical flow) the ball coordinate are 327.071899,114.856369
+[INFO] [1687146451.755461]: (optical flow) the ball coordinate are 330.303833,97.682655
+[INFO] [1687146452.274870]: (optical flow) the ball coordinate are 322.705231,80.419922
+Inference time: 17.85 ms
+[INFO] [1687146452.831193]: (yolo) the ball coordinates are  339.000000,120.000000
+Inference time: 17.33 ms
+[INFO] [1687146453.387097]: (yolo) the ball coordinates are  351.000000,102.000000
+[INFO] [1687146453.906775]: (optical flow) the ball coordinate are 324.257996,90.787399
+[INFO] [1687146454.417382]: (optical flow) the ball coordinate are 323.522980,89.864113
+[INFO] [1687146454.929968]: (optical flow) the ball coordinate are 325.654510,86.659676
+[INFO] [1687146455.442166]: (optical flow) the ball coordinate are 325.840668,82.525101
+Inference time: 26.81 ms
+[INFO] [1687146456.012596]: (yolo) the ball coordinates are  276.000000,198.000000
+Inference time: 26.77 ms
+[INFO] [1687146456.587559]: (yolo) the ball coordinates are  339.000000,230.000000
+[INFO] [1687146457.103660]: (optical flow) the ball coordinate are 345.974304,212.849808
+[INFO] [1687146457.633094]: (optical flow) the ball coordinate are 330.192200,191.328827
+[INFO] [1687146458.148724]: (optical flow) the ball coordinate are 344.674988,190.656799
+[INFO] [1687146458.658982]: (optical flow) the ball coordinate are 344.203827,173.859634
+Inference time: 17.18 ms
+[INFO] [1687146459.213773]: (yolo) the ball coordinates are  318.000000,213.000000
+Inference time: 17.60 ms
+[INFO] [1687146459.768925]: (yolo) the ball coordinates are  316.000000,236.000000
+[INFO] [1687146460.286135]: (optical flow) the ball coordinate are 325.130402,258.715820
+[INFO] [1687146460.800003]: (optical flow) the ball coordinate are 329.397400,285.402832
+[INFO] [1687146461.316037]: (optical flow) the ball coordinate are 319.668854,282.120605
+[INFO] [1687146461.828417]: (optical flow) the ball coordinate are 310.379822,253.882156
+Inference time: 27.07 ms
+[INFO] [1687146462.396496]: (yolo) the ball coordinates are  318.000000,248.000000
+Inference time: 27.03 ms
+[INFO] [1687146462.965951]: (yolo) the ball coordinates are  317.000000,257.000000
+[INFO] [1687146463.480079]: (optical flow) the ball coordinate are 337.507538,292.833923
+[INFO] [1687146463.996768]: (optical flow) the ball coordinate are 315.907440,251.565384
+[INFO] [1687146464.512558]: (optical flow) the ball coordinate are 303.701447,278.867767
+[INFO] [1687146465.025936]: (optical flow) the ball coordinate are 327.966644,272.793365
+Inference time: 26.42 ms
+[INFO] [1687146465.594097]: (yolo) the ball coordinates are  289.000000,260.000000
+Inference time: 26.33 ms
+[INFO] [1687146466.162082]: (yolo) the ball coordinates are  297.000000,260.000000
+[INFO] [1687146466.679296]: (optical flow) the ball coordinate are 304.233124,256.796173
+[INFO] [1687146467.192038]: (optical flow) the ball coordinate are 312.223022,220.103561
+[INFO] [1687146467.706458]: (optical flow) the ball coordinate are 315.771454,182.615677
+[INFO] [1687146468.217384]: (optical flow) the ball coordinate are 321.930267,162.564362
+Inference time: 26.26 ms
+[INFO] [1687146468.785743]: (yolo) the ball coordinates are  332.000000,165.000000
+Inference time: 26.22 ms
+[INFO] [1687146469.353421]: (yolo) the ball coordinates are  331.000000,159.000000
+[INFO] [1687146469.864548]: (optical flow) the ball coordinate are 331.280243,175.944717
+[INFO] [1687146470.380372]: (optical flow) the ball coordinate are 345.062042,178.509918
+[INFO] [1687146470.898522]: (optical flow) the ball coordinate are 272.890381,226.582336
+[INFO] [1687146471.415588]: (optical flow) the ball coordinate are 243.956757,239.101791
+Inference time: 25.78 ms
+[INFO] [1687146471.977648]: (yolo) the ball coordinates are  394.000000,274.000000
+Inference time: 18.23 ms
+[INFO] [1687146472.531835]: (yolo) the ball coordinates are  349.000000,211.000000
+[INFO] [1687146473.046702]: (optical flow) the ball coordinate are 336.715057,209.763397
+[INFO] [1687146473.558968]: (optical flow) the ball coordinate are 346.111420,170.050064
+[INFO] [1687146474.072330]: (optical flow) the ball coordinate are 320.497650,223.334702
+[INFO] [1687146474.588900]: (optical flow) the ball coordinate are 327.245697,206.196228
+Inference time: 17.76 ms
+[INFO] [1687146475.145167]: (yolo) the ball coordinates are  332.000000,231.000000
+Inference time: 25.84 ms
+[INFO] [1687146475.709561]: (yolo) the ball coordinates are  323.000000,211.000000
+[INFO] [1687146476.224981]: (optical flow) the ball coordinate are 313.762329,159.867157
+[INFO] [1687146476.739375]: (optical flow) the ball coordinate are 312.017365,130.496796
+[INFO] [1687146477.253521]: (optical flow) the ball coordinate are 293.969727,123.508385
+[INFO] [1687146477.791945]: (optical flow) the ball coordinate are 321.254456,111.821899
+Inference time: 25.96 ms
+[INFO] [1687146478.358806]: (yolo) the ball coordinates are  292.000000,239.000000
+Inference time: 26.00 ms
+[INFO] [1687146478.927207]: (yolo) the ball coordinates are  304.000000,220.000000
+[INFO] [1687146479.445690]: (optical flow) the ball coordinate are 296.733063,205.739273
+[INFO] [1687146479.958503]: (optical flow) the ball coordinate are 288.720154,178.551132
+[INFO] [1687146480.471345]: (optical flow) the ball coordinate are 314.989014,210.250458
+[INFO] [1687146480.982390]: (optical flow) the ball coordinate are 316.272522,199.164520
+Inference time: 27.89 ms
+[INFO] [1687146481.552361]: (yolo) the ball coordinates are  340.000000,231.000000
+Inference time: 26.80 ms
+[INFO] [1687146482.123664]: (yolo) the ball coordinates are  381.000000,236.000000
+[INFO] [1687146482.634527]: (optical flow) the ball coordinate are 358.644836,238.735931
+[INFO] [1687146483.149625]: (optical flow) the ball coordinate are 355.643829,254.719925
+[INFO] [1687146483.663278]: (optical flow) the ball coordinate are 332.691772,273.393921
+[INFO] [1687146484.183494]: (optical flow) the ball coordinate are 294.171570,238.405029
+Inference time: 26.75 ms
+[INFO] [1687146484.746809]: (yolo) the ball coordinates are  320.000000,266.000000
+Inference time: 17.55 ms
+[INFO] [1687146485.302924]: (yolo) the ball coordinates are  322.000000,278.000000
+[INFO] [1687146485.819223]: (optical flow) the ball coordinate are 325.314545,235.078751
+[INFO] [1687146486.334048]: (optical flow) the ball coordinate are 326.303772,249.847778
+[INFO] [1687146486.850584]: (optical flow) the ball coordinate are 311.320740,269.376282
+[INFO] [1687146487.362674]: (optical flow) the ball coordinate are 308.498138,262.355896
+Inference time: 25.95 ms
+[INFO] [1687146487.930148]: (yolo) the ball coordinates are  325.000000,320.000000
+Inference time: 25.85 ms
+[INFO] [1687146488.499029]: (yolo) the ball coordinates are  315.000000,277.000000
+[INFO] [1687146489.016227]: (optical flow) the ball coordinate are 375.728149,237.102066
+[INFO] [1687146489.531355]: (optical flow) the ball coordinate are 328.143677,260.900360
+[INFO] [1687146490.045126]: (optical flow) the ball coordinate are 326.260529,257.549744
+[INFO] [1687146490.560827]: (optical flow) the ball coordinate are 305.331970,262.489380
+Inference time: 26.07 ms
+[INFO] [1687146491.128297]: (yolo) the ball coordinates are  233.000000,243.000000
+Inference time: 26.05 ms
+[INFO] [1687146491.695671]: (yolo) the ball coordinates are  257.000000,216.000000
+[INFO] [1687146492.214329]: (optical flow) the ball coordinate are 232.742950,178.832932
+[INFO] [1687146492.731209]: (optical flow) the ball coordinate are 300.529205,208.225128
+[INFO] [1687146493.245507]: (optical flow) the ball coordinate are 308.703705,156.200134
+[INFO] [1687146493.760941]: (optical flow) the ball coordinate are 328.358307,121.106735
+Inference time: 26.91 ms
+[INFO] [1687146494.329165]: (yolo) the ball coordinates are  357.000000,138.000000
+Inference time: 26.82 ms
+[INFO] [1687146494.898895]: (yolo) the ball coordinates are  340.000000,216.000000
+[INFO] [1687146495.416797]: (optical flow) the ball coordinate are 360.952271,187.828293
+[INFO] [1687146495.932836]: (optical flow) the ball coordinate are 350.787537,200.217148
+[INFO] [1687146496.448152]: (optical flow) the ball coordinate are 351.564087,239.313080
+[INFO] [1687146496.963473]: (optical flow) the ball coordinate are 366.321503,240.792450
+Inference time: 17.55 ms
+[INFO] [1687146497.527591]: (yolo) the ball coordinates are  380.000000,259.000000
+Inference time: 25.97 ms
+[INFO] [1687146498.096358]: (yolo) the ball coordinates are  368.000000,260.000000
+[INFO] [1687146498.611114]: (optical flow) the ball coordinate are 360.787811,276.739594
+[INFO] [1687146499.126222]: (optical flow) the ball coordinate are 342.823914,262.524933
+[INFO] [1687146499.657291]: (optical flow) the ball coordinate are 329.224731,256.172974
+[INFO] [1687146500.173202]: (optical flow) the ball coordinate are 323.731903,281.647095
+Inference time: 17.72 ms
+[INFO] [1687146500.727805]: (yolo) the ball coordinates are  358.000000,274.000000
+Inference time: 17.39 ms
+[INFO] [1687146501.285697]: (yolo) the ball coordinates are  329.000000,275.000000
+[INFO] [1687146501.805570]: (optical flow) the ball coordinate are 327.196503,258.102112
+[INFO] [1687146502.321025]: (optical flow) the ball coordinate are 337.716461,282.355530
+[INFO] [1687146502.836422]: (optical flow) the ball coordinate are 287.117157,288.304199
+[INFO] [1687146503.352332]: (optical flow) the ball coordinate are 230.647232,272.019684
+Inference time: 26.93 ms
+[INFO] [1687146503.920708]: (yolo) the ball coordinates are  208.000000,309.000000
+Inference time: 26.81 ms
+[INFO] [1687146504.491038]: (yolo) the ball coordinates are  235.000000,270.000000
+[INFO] [1687146505.009676]: (optical flow) the ball coordinate are 186.596634,168.063431
+[INFO] [1687146505.527091]: (optical flow) the ball coordinate are 326.547119,174.075562
+[INFO] [1687146506.040677]: (optical flow) the ball coordinate are 342.380981,145.333084
+[INFO] [1687146506.558891]: (optical flow) the ball coordinate are 372.717529,120.889259
+Inference time: 26.32 ms
+[INFO] [1687146507.127449]: (yolo) the ball coordinates are  342.000000,273.000000
+Inference time: 26.96 ms
+[INFO] [1687146507.697053]: (yolo) the ball coordinates are  322.000000,216.000000
+[INFO] [1687146508.213151]: (optical flow) the ball coordinate are 318.464569,197.218384
+[INFO] [1687146508.728000]: (optical flow) the ball coordinate are 339.709900,161.707550
+[INFO] [1687146509.243513]: (optical flow) the ball coordinate are 348.364655,154.115326
+[INFO] [1687146509.759658]: (optical flow) the ball coordinate are 340.478790,195.719055
+Inference time: 26.00 ms
+[INFO] [1687146510.327764]: (yolo) the ball coordinates are  406.000000,219.000000
+Inference time: 26.24 ms
+[INFO] [1687146510.897373]: (yolo) the ball coordinates are  363.000000,227.000000
+[INFO] [1687146511.413688]: (optical flow) the ball coordinate are 377.082245,234.179016
+[INFO] [1687146511.934932]: (optical flow) the ball coordinate are 338.501221,227.099670
+[INFO] [1687146512.449791]: (optical flow) the ball coordinate are 377.999908,227.576782
+[INFO] [1687146512.967036]: (optical flow) the ball coordinate are 371.039642,235.211716
+Inference time: 26.89 ms
+[INFO] [1687146513.535632]: (yolo) the ball coordinates are  337.000000,259.000000
+Inference time: 27.50 ms
+[INFO] [1687146514.104460]: (yolo) the ball coordinates are  356.000000,281.000000
+[INFO] [1687146514.620903]: (optical flow) the ball coordinate are 330.960999,247.590836
+[INFO] [1687146515.138002]: (optical flow) the ball coordinate are 329.674225,254.252594
+[INFO] [1687146515.652422]: (optical flow) the ball coordinate are 329.409027,273.592560
+[INFO] [1687146516.171001]: (optical flow) the ball coordinate are 315.351166,262.843201
+Inference time: 26.82 ms
+[INFO] [1687146516.738869]: (yolo) the ball coordinates are  319.000000,332.000000
+Inference time: 27.64 ms
+[INFO] [1687146517.309363]: (yolo) the ball coordinates are  294.000000,287.000000
+[INFO] [1687146517.830852]: (optical flow) the ball coordinate are 305.410461,304.306000
+[INFO] [1687146518.346824]: (optical flow) the ball coordinate are 318.686249,218.742172
+[INFO] [1687146518.864420]: (optical flow) the ball coordinate are 245.659378,246.316376
+[INFO] [1687146519.380654]: (optical flow) the ball coordinate are 248.878860,253.903244
+Inference time: 18.56 ms
+[INFO] [1687146519.938545]: (yolo) the ball coordinates are  210.000000,356.000000
+Inference time: 17.54 ms
+[INFO] [1687146520.495348]: (yolo) the ball coordinates are  248.000000,349.000000
+[INFO] [1687146521.012419]: (optical flow) the ball coordinate are 239.912308,340.578278
+[INFO] [1687146521.546032]: (optical flow) the ball coordinate are 344.886047,246.436081
+[INFO] [1687146522.063361]: (optical flow) the ball coordinate are 383.096619,228.471649
+[INFO] [1687146522.576630]: (optical flow) the ball coordinate are 199.484543,183.257202
+Inference time: 26.85 ms
+[INFO] [1687146523.147353]: (yolo) the ball coordinates are  512.000000,409.000000
+Inference time: 17.40 ms
+[INFO] [1687146523.704227]: (yolo) the ball coordinates are  373.000000,311.000000
+[INFO] [1687146524.226171]: (optical flow) the ball coordinate are 368.870972,299.606354
+[INFO] [1687146524.736201]: (optical flow) the ball coordinate are 359.812439,291.971466
+[INFO] [1687146525.245789]: (optical flow) the ball coordinate are 339.476532,288.152649
+[INFO] [1687146525.754808]: (optical flow) the ball coordinate are 331.532806,286.784668
+Inference time: 27.17 ms
+[INFO] [1687146526.325737]: (yolo) the ball coordinates are  289.000000,295.000000
+Inference time: 26.76 ms
+[INFO] [1687146526.895500]: (yolo) the ball coordinates are  298.000000,294.000000
+[INFO] [1687146527.405535]: (optical flow) the ball coordinate are 309.662872,293.154572
+[INFO] [1687146527.914860]: (optical flow) the ball coordinate are 308.339478,292.649780
+[INFO] [1687146528.424625]: (optical flow) the ball coordinate are 314.151672,291.236450
+[INFO] [1687146528.932306]: (optical flow) the ball coordinate are 313.527924,290.589142
+Inference time: 17.66 ms
+[INFO] [1687146529.492395]: (yolo) the ball coordinates are  317.000000,293.000000
+Inference time: 27.19 ms
+[INFO] [1687146530.063352]: (yolo) the ball coordinates are  318.000000,294.000000
+[INFO] [1687146530.573210]: (optical flow) the ball coordinate are 317.531769,293.484680
+[INFO] [1687146531.080716]: (optical flow) the ball coordinate are 316.514954,292.584595
+[INFO] [1687146531.588393]: (optical flow) the ball coordinate are 315.442261,291.425995
+[INFO] [1687146532.095767]: (optical flow) the ball coordinate are 314.487915,290.448486
+Inference time: 27.09 ms
+[INFO] [1687146532.664864]: (yolo) the ball coordinates are  318.000000,293.000000
+Inference time: 26.11 ms
+[INFO] [1687146533.232501]: (yolo) the ball coordinates are  317.000000,293.000000
+[INFO] [1687146533.740960]: (optical flow) the ball coordinate are 316.559296,292.552887
+[INFO] [1687146534.248752]: (optical flow) the ball coordinate are 315.481598,291.501099
+[INFO] [1687146534.757179]: (optical flow) the ball coordinate are 314.463043,290.534241
+[INFO] [1687146535.264729]: (optical flow) the ball coordinate are 313.541351,289.476074
+Inference time: 26.24 ms
+[INFO] [1687146535.834107]: (yolo) the ball coordinates are  317.000000,294.000000
+Inference time: 27.68 ms
+[INFO] [1687146536.405527]: (yolo) the ball coordinates are  317.000000,294.000000
+[INFO] [1687146536.914203]: (optical flow) the ball coordinate are 316.516174,293.539398
+[INFO] [1687146537.422512]: (optical flow) the ball coordinate are 315.448029,292.511536
+[INFO] [1687146537.930823]: (optical flow) the ball coordinate are 314.598328,291.433563
+[INFO] [1687146538.438409]: (optical flow) the ball coordinate are 313.468414,290.497314
+Inference time: 26.79 ms
+[INFO] [1687146539.007562]: (yolo) the ball coordinates are  317.000000,293.000000
+Inference time: 26.93 ms
+[INFO] [1687146539.577679]: (yolo) the ball coordinates are  317.000000,294.000000
+[INFO] [1687146540.086470]: (optical flow) the ball coordinate are 316.479645,293.462006
+[INFO] [1687146540.594719]: (optical flow) the ball coordinate are 315.569031,292.539642
+[INFO] [1687146541.104128]: (optical flow) the ball coordinate are 314.489166,291.548279
+[INFO] [1687146541.627317]: (optical flow) the ball coordinate are 313.483215,290.505463
+Inference time: 26.19 ms
+[INFO] [1687146542.195557]: (yolo) the ball coordinates are  317.000000,294.000000
+Inference time: 26.55 ms
+[INFO] [1687146542.765543]: (yolo) the ball coordinates are  317.000000,295.000000
+[INFO] [1687146543.273834]: (optical flow) the ball coordinate are 316.587799,294.446991
+[INFO] [1687146543.781623]: (optical flow) the ball coordinate are 315.479309,293.516022
+[INFO] [1687146544.290123]: (optical flow) the ball coordinate are 314.497406,292.517426
+[INFO] [1687146544.798272]: (optical flow) the ball coordinate are 313.424957,291.503296
+Inference time: 25.87 ms
+[INFO] [1687146545.365677]: (yolo) the ball coordinates are  317.000000,294.000000
+Inference time: 27.90 ms
+[INFO] [1687146545.938250]: (yolo) the ball coordinates are  317.000000,294.000000
+[INFO] [1687146546.446653]: (optical flow) the ball coordinate are 316.530762,293.558472
+[INFO] [1687146546.956793]: (optical flow) the ball coordinate are 315.212616,292.047729
+[INFO] [1687146547.468125]: (optical flow) the ball coordinate are 321.788391,285.722137
+[INFO] [1687146547.984247]: (optical flow) the ball coordinate are 318.889923,285.477631
+Inference time: 28.29 ms
+[INFO] [1687146548.554564]: (yolo) the ball coordinates are  318.000000,294.000000
+Inference time: 17.73 ms
+[INFO] [1687146549.109915]: (yolo) the ball coordinates are  317.000000,294.000000
+[INFO] [1687146549.618533]: (optical flow) the ball coordinate are 316.449677,293.551819
+[INFO] [1687146550.126199]: (optical flow) the ball coordinate are 315.560791,292.495453
+[INFO] [1687146550.634833]: (optical flow) the ball coordinate are 314.541046,291.604126
+[INFO] [1687146551.143796]: (optical flow) the ball coordinate are 313.407837,290.435913
+Inference time: 27.23 ms
+[INFO] [1687146551.713010]: (yolo) the ball coordinates are  317.000000,294.000000
+Inference time: 26.43 ms
+[INFO] [1687146552.281254]: (yolo) the ball coordinates are  317.000000,294.000000
+[INFO] [1687146552.790241]: (optical flow) the ball coordinate are 316.510071,293.507751
+[INFO] [1687146553.299290]: (optical flow) the ball coordinate are 315.547729,292.500000
+[INFO] [1687146553.807315]: (optical flow) the ball coordinate are 314.482147,291.435394
+[INFO] [1687146554.315252]: (optical flow) the ball coordinate are 313.496552,290.487976
+Inference time: 27.02 ms
+[INFO] [1687146554.886055]: (yolo) the ball coordinates are  317.000000,294.000000
+Inference time: 26.80 ms
+[INFO] [1687146555.457694]: (yolo) the ball coordinates are  318.000000,295.000000
+[INFO] [1687146555.965808]: (optical flow) the ball coordinate are 317.502075,294.510529
+[INFO] [1687146556.473360]: (optical flow) the ball coordinate are 316.496796,293.502930
+[INFO] [1687146556.981112]: (optical flow) the ball coordinate are 315.493500,292.495544
+[INFO] [1687146557.489251]: (optical flow) the ball coordinate are 314.473480,291.461243
+Inference time: 25.84 ms
+[INFO] [1687146558.056147]: (yolo) the ball coordinates are  318.000000,294.000000
+Inference time: 25.79 ms
+[INFO] [1687146558.623497]: (yolo) the ball coordinates are  277.000000,266.000000
+[INFO] [1687146559.138547]: (optical flow) the ball coordinate are 237.414612,243.106506
+[INFO] [1687146559.652947]: (optical flow) the ball coordinate are 254.641678,195.944153
+[INFO] [1687146560.169947]: (optical flow) the ball coordinate are 311.812897,196.549927
+[INFO] [1687146560.686893]: (optical flow) the ball coordinate are 351.010223,119.868675
+Inference time: 26.55 ms
+[INFO] [1687146561.255847]: (yolo) the ball coordinates are  348.000000,251.000000
+Inference time: 27.19 ms
+[INFO] [1687146561.826445]: (yolo) the ball coordinates are  338.000000,195.000000
+[INFO] [1687146562.342671]: (optical flow) the ball coordinate are 317.171326,147.959717
+[INFO] [1687146562.856530]: (optical flow) the ball coordinate are 336.120483,139.583511
+[INFO] [1687146563.390596]: (optical flow) the ball coordinate are 368.035065,144.627731
+[INFO] [1687146563.909433]: (optical flow) the ball coordinate are 348.901123,201.332367
+Inference time: 25.98 ms
+[INFO] [1687146564.476497]: (yolo) the ball coordinates are  417.000000,262.000000
+Inference time: 24.26 ms
+[INFO] [1687146565.039687]: (yolo) the ball coordinates are  369.000000,237.000000
+[INFO] [1687146565.555566]: (optical flow) the ball coordinate are 370.087006,239.924103
+[INFO] [1687146566.071389]: (optical flow) the ball coordinate are 369.571045,223.379272
+[INFO] [1687146566.585064]: (optical flow) the ball coordinate are 361.164490,245.373962
+[INFO] [1687146567.100310]: (optical flow) the ball coordinate are 342.607513,239.036575
+Inference time: 26.57 ms
+[INFO] [1687146567.670128]: (yolo) the ball coordinates are  340.000000,278.000000
+Inference time: 26.64 ms
+[INFO] [1687146568.239975]: (yolo) the ball coordinates are  338.000000,275.000000
+[INFO] [1687146568.754637]: (optical flow) the ball coordinate are 340.149506,242.191055
+[INFO] [1687146569.269446]: (optical flow) the ball coordinate are 328.707062,255.989120
+[INFO] [1687146569.788182]: (optical flow) the ball coordinate are 313.397278,281.768707
+[INFO] [1687146570.303416]: (optical flow) the ball coordinate are 303.835846,265.697662
+Inference time: 26.95 ms
+[INFO] [1687146570.872685]: (yolo) the ball coordinates are  309.000000,327.000000
+Inference time: 27.57 ms
+[INFO] [1687146571.441754]: (yolo) the ball coordinates are  302.000000,277.000000
+[INFO] [1687146571.957627]: (optical flow) the ball coordinate are 277.953583,254.573013
+[INFO] [1687146572.473634]: (optical flow) the ball coordinate are 288.819977,273.830780
+[INFO] [1687146572.992309]: (optical flow) the ball coordinate are 290.591461,239.923141
+[INFO] [1687146573.506514]: (optical flow) the ball coordinate are 260.801880,220.281296
+Inference time: 26.97 ms
+[INFO] [1687146574.075457]: (yolo) the ball coordinates are  213.000000,224.000000
+Inference time: 27.19 ms
+[INFO] [1687146574.645914]: (yolo) the ball coordinates are  261.000000,188.000000
+[INFO] [1687146575.163004]: (optical flow) the ball coordinate are 329.231750,163.594345
+[INFO] [1687146575.679527]: (optical flow) the ball coordinate are 314.390289,145.150833
+[INFO] [1687146576.195441]: (optical flow) the ball coordinate are 343.871918,113.717827
+[INFO] [1687146576.711406]: (optical flow) the ball coordinate are 351.963867,108.667786
+Inference time: 27.01 ms
+[INFO] [1687146577.279338]: (yolo) the ball coordinates are  304.000000,219.000000
+Inference time: 26.75 ms
+[INFO] [1687146577.849822]: (yolo) the ball coordinates are  339.000000,198.000000
+[INFO] [1687146578.365191]: (optical flow) the ball coordinate are 332.054749,174.320312
+[INFO] [1687146578.880833]: (optical flow) the ball coordinate are 343.512543,157.378113
+[INFO] [1687146579.396478]: (optical flow) the ball coordinate are 361.230133,158.248840
+[INFO] [1687146579.914438]: (optical flow) the ball coordinate are 385.478973,164.994553
+Inference time: 26.77 ms
+[INFO] [1687146580.484273]: (yolo) the ball coordinates are  341.000000,335.000000
+Inference time: 26.55 ms
+[INFO] [1687146581.053899]: (yolo) the ball coordinates are  362.000000,245.000000
+[INFO] [1687146581.567760]: (optical flow) the ball coordinate are 354.029022,249.831772
+[INFO] [1687146582.082107]: (optical flow) the ball coordinate are 364.687317,256.231720
+[INFO] [1687146582.597627]: (optical flow) the ball coordinate are 347.216675,274.380432
+[INFO] [1687146583.119564]: (optical flow) the ball coordinate are 322.159943,258.895111
+Inference time: 26.86 ms
+[INFO] [1687146583.688696]: (yolo) the ball coordinates are  328.000000,276.000000
+Inference time: 27.32 ms
+[INFO] [1687146584.257578]: (yolo) the ball coordinates are  340.000000,270.000000
+[INFO] [1687146584.789966]: (optical flow) the ball coordinate are 332.897491,297.707672
+[INFO] [1687146585.305798]: (optical flow) the ball coordinate are 327.431244,255.043900
+[INFO] [1687146585.822392]: (optical flow) the ball coordinate are 324.049286,281.741089
+[INFO] [1687146586.338149]: (optical flow) the ball coordinate are 340.276367,256.389435
+Inference time: 26.60 ms
+[INFO] [1687146586.907560]: (yolo) the ball coordinates are  285.000000,308.000000
+Inference time: 27.46 ms
+[INFO] [1687146587.478414]: (yolo) the ball coordinates are  285.000000,279.000000
+[INFO] [1687146587.996395]: (optical flow) the ball coordinate are 284.192505,265.386627
+[INFO] [1687146588.511282]: (optical flow) the ball coordinate are 212.128021,251.009872
+[INFO] [1687146589.027965]: (optical flow) the ball coordinate are 215.674820,229.688919
+[INFO] [1687146589.546397]: (optical flow) the ball coordinate are 269.136932,205.539474
+Inference time: 26.84 ms
+Inference time: 27.12 ms
+[INFO] [1687146590.682282]: (yolo) the ball coordinates are  310.000000,114.000000
+Inference time: 27.01 ms
+[INFO] [1687146591.251924]: (yolo) the ball coordinates are  328.000000,65.000000
+[INFO] [1687146591.763856]: (optical flow) the ball coordinate are 336.801941,55.777538
+[INFO] [1687146592.280550]: (optical flow) the ball coordinate are 385.048096,103.292458
+[INFO] [1687146592.799282]: (optical flow) the ball coordinate are 299.834625,122.396782
+[INFO] [1687146593.311345]: (optical flow) the ball coordinate are 338.403717,113.241127
+Inference time: 26.91 ms
+[INFO] [1687146593.881711]: (yolo) the ball coordinates are  430.000000,273.000000
+Inference time: 26.67 ms
+[INFO] [1687146594.450494]: (yolo) the ball coordinates are  398.000000,209.000000
+[INFO] [1687146594.966309]: (optical flow) the ball coordinate are 374.733032,176.349716
+[INFO] [1687146595.482862]: (optical flow) the ball coordinate are 345.607849,209.343201
+[INFO] [1687146595.998332]: (optical flow) the ball coordinate are 344.183807,222.482346
+[INFO] [1687146596.513990]: (optical flow) the ball coordinate are 339.358521,204.137802
+Inference time: 17.60 ms
+[INFO] [1687146597.071974]: (yolo) the ball coordinates are  306.000000,192.000000
+Inference time: 17.65 ms
+[INFO] [1687146597.627177]: (yolo) the ball coordinates are  276.000000,187.000000
+[INFO] [1687146598.141738]: (optical flow) the ball coordinate are 281.979279,251.813934
+[INFO] [1687146598.657053]: (optical flow) the ball coordinate are 269.464569,247.205063
+[INFO] [1687146599.174396]: (optical flow) the ball coordinate are 288.447968,252.430069
+[INFO] [1687146599.689944]: (optical flow) the ball coordinate are 270.965057,270.313538
+Inference time: 17.43 ms
+[INFO] [1687146600.244277]: (yolo) the ball coordinates are  299.000000,249.000000
+Inference time: 17.43 ms
+[INFO] [1687146600.803669]: (yolo) the ball coordinates are  293.000000,272.000000
+[INFO] [1687146601.318776]: (optical flow) the ball coordinate are 298.919342,267.674011
+[INFO] [1687146601.841264]: (optical flow) the ball coordinate are 291.400055,270.197784
+[INFO] [1687146602.354357]: (optical flow) the ball coordinate are 297.086792,280.042480
+[INFO] [1687146602.868233]: (optical flow) the ball coordinate are 310.763947,266.992340
+Inference time: 26.72 ms
+[INFO] [1687146603.438987]: (yolo) the ball coordinates are  331.000000,238.000000
+Inference time: 26.57 ms
+[INFO] [1687146604.008235]: (yolo) the ball coordinates are  332.000000,269.000000
+[INFO] [1687146604.524770]: (optical flow) the ball coordinate are 305.189087,279.764984
+[INFO] [1687146605.040513]: (optical flow) the ball coordinate are 379.880127,266.617920
+[INFO] [1687146605.555607]: (optical flow) the ball coordinate are 416.101715,238.578201
+[INFO] [1687146606.086906]: (optical flow) the ball coordinate are 420.619263,208.207001
+Inference time: 28.29 ms
+[INFO] [1687146606.656813]: (yolo) the ball coordinates are  328.000000,264.000000
+Inference time: 26.20 ms
+[INFO] [1687146607.226117]: (yolo) the ball coordinates are  350.000000,247.000000
+[INFO] [1687146607.742824]: (optical flow) the ball coordinate are 348.095428,241.593735
+[INFO] [1687146608.259770]: (optical flow) the ball coordinate are 365.785828,205.963318
+[INFO] [1687146608.777355]: (optical flow) the ball coordinate are 315.978149,207.822250
+[INFO] [1687146609.292919]: (optical flow) the ball coordinate are 311.237457,161.493835
+Inference time: 26.23 ms
+[INFO] [1687146609.860302]: (yolo) the ball coordinates are  335.000000,138.000000
+Inference time: 26.07 ms
+[INFO] [1687146610.431683]: (yolo) the ball coordinates are  334.000000,108.000000
+[INFO] [1687146610.945565]: (optical flow) the ball coordinate are 313.054199,76.309250
+[INFO] [1687146611.462077]: (optical flow) the ball coordinate are 303.701080,74.861870
+[INFO] [1687146611.978102]: (optical flow) the ball coordinate are 227.853470,90.051353
+[INFO] [1687146612.495359]: (optical flow) the ball coordinate are 245.666977,78.617752
+Inference time: 25.98 ms
+[INFO] [1687146613.061981]: (yolo) the ball coordinates are  192.000000,240.000000
+Inference time: 26.28 ms
+Inference time: 26.13 ms
+[INFO] [1687146614.197900]: (yolo) the ball coordinates are  364.000000,340.000000
+[INFO] [1687146614.715515]: (optical flow) the ball coordinate are 328.581543,322.675690
+[INFO] [1687146615.229215]: (optical flow) the ball coordinate are 308.256653,239.769318
+[INFO] [1687146615.744311]: (optical flow) the ball coordinate are 217.690353,289.476135
+[INFO] [1687146616.258364]: (optical flow) the ball coordinate are 581.625793,313.028320
+Inference time: 27.16 ms
+[INFO] [1687146616.826981]: (yolo) the ball coordinates are  103.000000,103.000000
+Inference time: 27.17 ms
+[INFO] [1687146617.393929]: (yolo) the ball coordinates are  279.000000,218.000000
+[INFO] [1687146617.907320]: (optical flow) the ball coordinate are 272.418243,244.846436
+[INFO] [1687146618.422404]: (optical flow) the ball coordinate are 272.464630,264.159729
+[INFO] [1687146618.939286]: (optical flow) the ball coordinate are 321.313812,259.691345
+[INFO] [1687146619.454482]: (optical flow) the ball coordinate are 302.748047,287.831787
+Inference time: 26.32 ms
+[INFO] [1687146620.022552]: (yolo) the ball coordinates are  297.000000,245.000000
+Inference time: 26.35 ms
+[INFO] [1687146620.590645]: (yolo) the ball coordinates are  304.000000,267.000000
+[INFO] [1687146621.102230]: (optical flow) the ball coordinate are 321.111786,267.125610
+[INFO] [1687146621.616969]: (optical flow) the ball coordinate are 343.997284,287.627014
+[INFO] [1687146622.132206]: (optical flow) the ball coordinate are 352.614685,267.443512
+[INFO] [1687146622.648445]: (optical flow) the ball coordinate are 358.995453,269.595795
+Inference time: 27.24 ms
+[INFO] [1687146623.216858]: (yolo) the ball coordinates are  403.000000,260.000000
+Inference time: 27.09 ms
+[INFO] [1687146623.785128]: (yolo) the ball coordinates are  392.000000,246.000000
+[INFO] [1687146624.302654]: (optical flow) the ball coordinate are 418.112488,204.100967
+[INFO] [1687146624.816149]: (optical flow) the ball coordinate are 394.821289,204.110504
+[INFO] [1687146625.331391]: (optical flow) the ball coordinate are 302.390106,168.418182
+[INFO] [1687146625.848572]: (optical flow) the ball coordinate are 282.466644,149.037582
+Inference time: 17.69 ms
+[INFO] [1687146626.414307]: (yolo) the ball coordinates are  351.000000,290.000000
+Inference time: 17.63 ms
+[INFO] [1687146626.969164]: (yolo) the ball coordinates are  345.000000,210.000000
+[INFO] [1687146627.486548]: (optical flow) the ball coordinate are 376.186035,177.353973
+[INFO] [1687146628.000235]: (optical flow) the ball coordinate are 305.921936,183.223038
+[INFO] [1687146628.529987]: (optical flow) the ball coordinate are 302.544800,177.527847
+[INFO] [1687146629.043784]: (optical flow) the ball coordinate are 290.716888,134.376785
+Inference time: 27.02 ms
+[INFO] [1687146629.611918]: (yolo) the ball coordinates are  303.000000,262.000000
+Inference time: 26.82 ms
+[INFO] [1687146630.179981]: (yolo) the ball coordinates are  296.000000,222.000000
+[INFO] [1687146630.696356]: (optical flow) the ball coordinate are 282.181000,211.817108
+[INFO] [1687146631.212040]: (optical flow) the ball coordinate are 281.327637,195.210281
+[INFO] [1687146631.728186]: (optical flow) the ball coordinate are 287.227234,226.327988
+[INFO] [1687146632.243733]: (optical flow) the ball coordinate are 286.758179,234.445847
+Inference time: 27.41 ms
+[INFO] [1687146632.814266]: (yolo) the ball coordinates are  303.000000,250.000000
+Inference time: 26.19 ms
+[INFO] [1687146633.382677]: (yolo) the ball coordinates are  269.000000,250.000000
+[INFO] [1687146633.895061]: (optical flow) the ball coordinate are 286.072266,254.260483
+[INFO] [1687146634.409249]: (optical flow) the ball coordinate are 288.283691,253.623718
+[INFO] [1687146634.925065]: (optical flow) the ball coordinate are 299.878540,254.586823
+[INFO] [1687146635.440993]: (optical flow) the ball coordinate are 290.489227,254.059982
+Inference time: 25.88 ms
+[INFO] [1687146636.008151]: (yolo) the ball coordinates are  274.000000,237.000000
+Inference time: 17.68 ms
+[INFO] [1687146636.565007]: (yolo) the ball coordinates are  282.000000,250.000000
+[INFO] [1687146637.081398]: (optical flow) the ball coordinate are 286.780182,252.780411
+[INFO] [1687146637.596353]: (optical flow) the ball coordinate are 301.250092,254.561752
+[INFO] [1687146638.113419]: (optical flow) the ball coordinate are 335.071594,228.691010
+[INFO] [1687146638.628314]: (optical flow) the ball coordinate are 315.668579,248.059143
+Inference time: 26.04 ms
+[INFO] [1687146639.196980]: (yolo) the ball coordinates are  260.000000,336.000000
+Inference time: 27.28 ms
+[INFO] [1687146639.766294]: (yolo) the ball coordinates are  292.000000,251.000000
+[INFO] [1687146640.282186]: (optical flow) the ball coordinate are 324.212372,240.167358
+[INFO] [1687146640.798614]: (optical flow) the ball coordinate are 328.122223,260.975250
+[INFO] [1687146641.312646]: (optical flow) the ball coordinate are 333.803772,281.330841
+[INFO] [1687146641.825157]: (optical flow) the ball coordinate are 349.609558,270.718567
+Inference time: 25.87 ms
+[INFO] [1687146642.392114]: (yolo) the ball coordinates are  321.000000,266.000000
+Inference time: 27.04 ms
+[INFO] [1687146642.961641]: (yolo) the ball coordinates are  353.000000,270.000000
+[INFO] [1687146643.476814]: (optical flow) the ball coordinate are 389.642426,272.546173
+[INFO] [1687146643.992815]: (optical flow) the ball coordinate are 376.313446,240.986893
+[INFO] [1687146644.517064]: (optical flow) the ball coordinate are 374.279999,203.031052
+[INFO] [1687146645.032896]: (optical flow) the ball coordinate are 359.119293,226.380646
+Inference time: 27.58 ms
+[INFO] [1687146645.603626]: (yolo) the ball coordinates are  386.000000,272.000000
+Inference time: 26.90 ms
+[INFO] [1687146646.175555]: (yolo) the ball coordinates are  383.000000,228.000000
+[INFO] [1687146646.692419]: (optical flow) the ball coordinate are 397.084015,204.887299
+[INFO] [1687146647.209478]: (optical flow) the ball coordinate are 323.819000,193.995041
+[INFO] [1687146647.725886]: (optical flow) the ball coordinate are 310.140076,155.700516
+[INFO] [1687146648.242920]: (optical flow) the ball coordinate are 331.727295,91.232941
+Inference time: 17.58 ms
+[INFO] [1687146648.799316]: (yolo) the ball coordinates are  339.000000,116.000000
+Inference time: 17.89 ms
+[INFO] [1687146649.354891]: (yolo) the ball coordinates are  340.000000,97.000000
+[INFO] [1687146649.884401]: (optical flow) the ball coordinate are 337.328064,60.084389
+[INFO] [1687146650.397570]: (optical flow) the ball coordinate are 301.822845,6.245898
+[INFO] [1687146650.911419]: (optical flow) the ball coordinate are 289.392822,-6.465766
+[INFO] [1687146651.425004]: (optical flow) the ball coordinate are 332.011017,0.205718
+Inference time: 17.40 ms
+[INFO] [1687146651.977911]: (yolo) the ball coordinates are  274.000000,295.000000
+Inference time: 17.88 ms
+[INFO] [1687146652.544990]: (yolo) the ball coordinates are  295.000000,241.000000
+[INFO] [1687146653.060162]: (optical flow) the ball coordinate are 255.032883,243.974625
+[INFO] [1687146653.570807]: (optical flow) the ball coordinate are 285.608093,244.937119
+[INFO] [1687146654.084878]: (optical flow) the ball coordinate are 283.124390,256.853119
+[INFO] [1687146654.598294]: (optical flow) the ball coordinate are 286.923553,251.018539
+Inference time: 25.98 ms
+[INFO] [1687146655.167500]: (yolo) the ball coordinates are  317.000000,225.000000
+Inference time: 26.97 ms
+[INFO] [1687146655.736672]: (yolo) the ball coordinates are  276.000000,231.000000
+[INFO] [1687146656.251178]: (optical flow) the ball coordinate are 289.318695,228.298050
+[INFO] [1687146656.766839]: (optical flow) the ball coordinate are 274.731964,239.633087
+[INFO] [1687146657.282569]: (optical flow) the ball coordinate are 279.437714,251.154388
+[INFO] [1687146657.798843]: (optical flow) the ball coordinate are 301.031647,227.144302
+Inference time: 26.88 ms
+[INFO] [1687146658.366825]: (yolo) the ball coordinates are  307.000000,282.000000
+Inference time: 27.21 ms
+[INFO] [1687146658.938440]: (yolo) the ball coordinates are  285.000000,238.000000
+[INFO] [1687146659.454588]: (optical flow) the ball coordinate are 353.144806,228.243469
+[INFO] [1687146659.970279]: (optical flow) the ball coordinate are 367.326263,226.154755
+[INFO] [1687146660.483877]: (optical flow) the ball coordinate are 365.869995,238.285858
+[INFO] [1687146661.000948]: (optical flow) the ball coordinate are 335.764130,241.859772
+Inference time: 26.28 ms
+[INFO] [1687146661.575939]: (yolo) the ball coordinates are  379.000000,256.000000
+Inference time: 18.06 ms
+[INFO] [1687146662.133317]: (yolo) the ball coordinates are  365.000000,250.000000
+[INFO] [1687146662.649394]: (optical flow) the ball coordinate are 346.139435,221.292328
+[INFO] [1687146663.162956]: (optical flow) the ball coordinate are 374.653961,220.573914
+[INFO] [1687146663.675646]: (optical flow) the ball coordinate are 360.798981,220.272736
+[INFO] [1687146664.188064]: (optical flow) the ball coordinate are 360.514069,231.267746
+Inference time: 27.50 ms
+[INFO] [1687146664.757943]: (yolo) the ball coordinates are  336.000000,272.000000
+Inference time: 27.46 ms
+[INFO] [1687146665.328542]: (yolo) the ball coordinates are  349.000000,243.000000
+[INFO] [1687146665.842274]: (optical flow) the ball coordinate are 371.701355,242.204681
+[INFO] [1687146666.353459]: (optical flow) the ball coordinate are 357.673370,230.288849
+[INFO] [1687146666.865556]: (optical flow) the ball coordinate are 348.868652,211.389114
+[INFO] [1687146667.377156]: (optical flow) the ball coordinate are 337.372833,215.337097
+Inference time: 27.31 ms
+[INFO] [1687146667.946200]: (yolo) the ball coordinates are  294.000000,252.000000
+Inference time: 17.38 ms
+[INFO] [1687146668.501068]: (yolo) the ball coordinates are  279.000000,256.000000
+[INFO] [1687146669.017473]: (optical flow) the ball coordinate are 295.334320,246.501175
+[INFO] [1687146669.532288]: (optical flow) the ball coordinate are 250.347733,265.932953
+[INFO] [1687146670.044134]: (optical flow) the ball coordinate are 253.339340,244.899902
+[INFO] [1687146670.574454]: (optical flow) the ball coordinate are 260.796997,252.941162
+Inference time: 27.27 ms
+[INFO] [1687146671.145810]: (yolo) the ball coordinates are  308.000000,248.000000
+Inference time: 17.48 ms
+[INFO] [1687146671.701041]: (yolo) the ball coordinates are  270.000000,249.000000
+[INFO] [1687146672.214550]: (optical flow) the ball coordinate are 267.114624,241.942368
+[INFO] [1687146672.729560]: (optical flow) the ball coordinate are 293.543610,238.061600
+[INFO] [1687146673.243832]: (optical flow) the ball coordinate are 296.655670,226.491104
+[INFO] [1687146673.759170]: (optical flow) the ball coordinate are 269.342896,222.373352
+Inference time: 27.06 ms
+[INFO] [1687146674.327625]: (yolo) the ball coordinates are  245.000000,270.000000
+Inference time: 26.93 ms
+[INFO] [1687146674.898189]: (yolo) the ball coordinates are  376.000000,248.000000
+[INFO] [1687146675.414233]: (optical flow) the ball coordinate are 360.667419,244.306503
+[INFO] [1687146675.930127]: (optical flow) the ball coordinate are 378.234375,227.411255
+[INFO] [1687146676.447236]: (optical flow) the ball coordinate are 375.403076,213.348404
+[INFO] [1687146676.962172]: (optical flow) the ball coordinate are 375.901733,227.650940
+Inference time: 17.64 ms
+[INFO] [1687146677.527403]: (yolo) the ball coordinates are  411.000000,261.000000
+Inference time: 17.56 ms
+[INFO] [1687146678.085717]: (yolo) the ball coordinates are  381.000000,230.000000
+[INFO] [1687146678.605515]: (optical flow) the ball coordinate are 322.125183,189.197479
+[INFO] [1687146679.121137]: (optical flow) the ball coordinate are 336.851349,172.349701
+[INFO] [1687146679.637520]: (optical flow) the ball coordinate are 352.439117,146.472870
+[INFO] [1687146680.153850]: (optical flow) the ball coordinate are 298.173676,214.524277
+Inference time: 26.53 ms
+[INFO] [1687146680.722402]: (yolo) the ball coordinates are  238.000000,227.000000
+Inference time: 27.28 ms
+[INFO] [1687146681.293623]: (yolo) the ball coordinates are  235.000000,248.000000
+[INFO] [1687146681.806406]: (optical flow) the ball coordinate are 272.308472,250.530548
+[INFO] [1687146682.318148]: (optical flow) the ball coordinate are 308.117462,242.188705
+[INFO] [1687146682.828377]: (optical flow) the ball coordinate are 306.757141,240.611435
+[INFO] [1687146683.339180]: (optical flow) the ball coordinate are 306.776245,240.151215
+Inference time: 26.41 ms
+[INFO] [1687146683.909393]: (yolo) the ball coordinates are  317.000000,242.000000
+Inference time: 26.28 ms
+[INFO] [1687146684.478583]: (yolo) the ball coordinates are  316.000000,241.000000
+[INFO] [1687146684.988023]: (optical flow) the ball coordinate are 315.418640,240.408493
+[INFO] [1687146685.498381]: (optical flow) the ball coordinate are 314.412842,239.396973
+[INFO] [1687146686.008666]: (optical flow) the ball coordinate are 313.433624,238.327591
+[INFO] [1687146686.521459]: (optical flow) the ball coordinate are 313.685211,237.958267
+Inference time: 26.78 ms
+[INFO] [1687146687.089759]: (yolo) the ball coordinates are  316.000000,240.000000
+Inference time: 26.73 ms
+[INFO] [1687146687.658878]: (yolo) the ball coordinates are  317.000000,241.000000
+[INFO] [1687146688.175959]: (optical flow) the ball coordinate are 344.550964,225.467194
+[INFO] [1687146688.687104]: (optical flow) the ball coordinate are 344.195740,223.769409
+[INFO] [1687146689.199847]: (optical flow) the ball coordinate are 342.204163,220.426163
+[INFO] [1687146689.708790]: (optical flow) the ball coordinate are 342.426697,221.176956
+Inference time: 26.60 ms
+[INFO] [1687146690.278695]: (yolo) the ball coordinates are  316.000000,240.000000
+Inference time: 26.68 ms
+[INFO] [1687146690.849412]: (yolo) the ball coordinates are  315.000000,235.000000
+[INFO] [1687146691.360834]: (optical flow) the ball coordinate are 311.461548,221.423904
+[INFO] [1687146691.888102]: (optical flow) the ball coordinate are 308.534210,213.275787
+[INFO] [1687146692.400419]: (optical flow) the ball coordinate are 306.430267,214.712830
+[INFO] [1687146692.909458]: (optical flow) the ball coordinate are 305.601379,213.010834
+Inference time: 27.19 ms
+[INFO] [1687146693.478283]: (yolo) the ball coordinates are  311.000000,228.000000
+Inference time: 27.80 ms
+[INFO] [1687146694.048668]: (yolo) the ball coordinates are  311.000000,228.000000
+[INFO] [1687146694.557191]: (optical flow) the ball coordinate are 310.443237,227.514725

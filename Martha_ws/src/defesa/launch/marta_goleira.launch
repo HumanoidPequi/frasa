@@ -1,10 +1,11 @@
 <launch>
-    <!-- Launch the ball tracking script -->
-    <node name="ball_tracking" pkg="defesa" type="ball_tracking.py" output="screen"/>
+    
+    <node name="ball_tracking_node" pkg="defesa" type="ball_tracking.py" output="screen"/>
 
-    <!-- Launch the servo angles script -->
-    <node name="servo_angles" pkg="defesa" type="servo_angles.py" output="screen"/>
+    <node name="head_control_node" pkg="defesa" type="servo_angles.py" output="screen"/>
 
-    <!-- Launch the action server from martha_controller -->
-    <node name="taffarel_node" pkg="martha_controller" type="taffarelAction.py" output="screen"/>
+    <node name="taffarel_client_node" pkg="defesa" type="taffarelClient.py" output="screen"/>
+
+    <node name="taffarel_server_node" pkg="martha_controller" type="taffarelAction_2.py" output="screen"/>
+
 </launch>

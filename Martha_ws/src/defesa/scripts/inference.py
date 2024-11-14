@@ -12,41 +12,44 @@ os.environ['ORT_TENSORRT_ENGINE_CACHE_ENABLE']='1'
 os.environ['ORT_TENSORRT_CACHE_PATH']='/home/marta/.cache/triton-tensorrt'
 class ObjectDetection:
 
-    def __init__(self,onnx_path):
+    def __init__(self,onnx_path): #os parametros de toda classe são passados no init/construtor
         self.onnx_path = onnx_path
         self.ort_sess = ort.InferenceSession(self.onnx_path,providers=['TensorrtExecutionProvider'])
-        self.SCORE_THRESHOLD = 0.8
-        self.IOU_THRESHOLD = 0.8
+        self.SCORE_THRESHOLD = 0.3
+        self.IOU_THRESHOLD = 0.6
+        self.CONF_THRESHOLD = 0.6
         self.class_list = []
 
-        self.img_size = (640, 640)
+        self.img_size = (512, 640)
 
         self.predictions = []
         self.col_names = ['score', 'cls_id','xmin','ymin','xmax','ymax']
         self.cls_names = {'ball','goalpost','robot','L-Intersection','T-Intersection','X-Intersection'}
-
-    def format_yolov8(self, frame):
+        #self.cls_names = {'person'}
+    #pega a imagem e redimensiona pro tamanho que o onnx recebe
+    def format_yolov8(self, frame): #tirando o init, os demais são métodos/funções da classe
         row, col, _ = frame.shape
         _max = max(col, row)
         result = np.zeros((_max, _max, 3), np.uint8)
         result[0:row, 0:col] = frame
         return result
-
+    #faz a predição/dá as classes/as bounding boxes
     def prediction_onnx(self,image):
         image = self.format_yolov8(image)
-
+        #print('image',image.shape)
         input_img = np.zeros((self.img_size[0],self.img_size[1]))
         input_img = image[:self.img_size[0],:self.img_size[1]]/255.0
 
         input_img = input_img.transpose(2, 0, 1)
         normalized_image = input_img[np.newaxis, :, :, :].astype(np.float32)
         #normalized_image = cv2.dnn.blobFromImage(image, 1 / 255, self.img_size, swapRB=False)
-        start = time.perf_counter()
+        #start = time.perf_counter()
         outputs = self.ort_sess.run(None, {'images': normalized_image})
-        print(f"Inference time: {(time.perf_counter() - start)*1000:.2f} ms")
+        #print(f"Inference time: {(time.perf_counter() - start)*1000:.2f} ms")
         self.predictions = outputs[0][0]
         return image
-
+    
+    #pós processamento que está sendo usado
     def unwrap_detection(self,image):
 
         yolo_img = self.prediction_onnx(image)    
@@ -66,12 +69,12 @@ class ObjectDetection:
         for r in range(rows):
             row = self.predictions[r]
             confidence = row[4]
-            if confidence >= 0.8:
+            if confidence >= self.CONF_THRESHOLD:
 
                 classes_scores = row[5:]
                 _, _, _, max_indx = cv2.minMaxLoc(classes_scores)
                 class_id = max_indx[1]
-                if (classes_scores[class_id] > .25):
+                if (classes_scores[class_id] > self.SCORE_THRESHOLD):
 
                     confidences.append(confidence)
 
@@ -82,18 +85,35 @@ class ObjectDetection:
                     # top = int((y - 0.5 * h) * y_factor)
                     # width = int(w * x_factor)
                     # height = int(h * y_factor)
-                    box = np.array([int(x), int(y)])
+                    box = [int(x), int(y),w,h]
                     boxes.append(box)
-        return class_ids, confidences, boxes
 
+        #print(boxes)
+        indexes = nms(boxes,confidences, self.IOU_THRESHOLD)
+        if indexes != []:
+            #print(indexes)
+            boxes = np.array(boxes)
+            boxes = boxes[indexes]
+            confidences = np.array(confidences)
+            class_ids = np.array(class_ids)
+            
+            conf = 100*confidences[indexes]
+            class_ids = class_ids[indexes]
+        else:
+            boxes = []
+            class_ids = []
+            conf = []
+        return class_ids, conf, boxes
 
+    #pós processamento - não tá sendo usado
     def predict(self, image):
     
         yolo_img = self.prediction_onnx(image)    
         results = pd.DataFrame([], columns=self.col_names)
 
         if len(self.predictions)>0:
-            output_data = self.predictions[0]
+            output_data = self.predictions
+            print(output_data)
             image_height,image_width,_ = yolo_img.shape
             x_factor =   image_width / self.img_size[0]
             y_factor =   image_height / self.img_size[1]
@@ -116,16 +136,21 @@ class ObjectDetection:
             boxes_nparray = np.stack((xs, ys,ws,hs), axis=1).astype(np.int64)
             # Non-maximum Suppression (NMS) algorithm to remove overlapping/duplicated detections
             indexes = nms(boxes_nparray, f_confidences_nparray, self.IOU_THRESHOLD)
+            #print(indexes)
             #cv2.dnn.NMSBoxes(boxes_nparray, f_confidences_nparray, self.SCORE_THRESHOLD, self.IOU_THRESHOLD)
+            boxes = boxes_nparray[indexes]
             
-            out_array = np.concatenate([np.int0(100*f_confidences_nparray[:,None]), class_ids_np_array[:,None], boxes_nparray], 1)
-            results = pd.DataFrame(out_array[indexes], columns=self.col_names)
+            conf_array = np.int0(100*f_confidences_nparray[indexes,None])
+            class_id = class_ids_np_array[indexes,None]
+        
+        #     out_array = np.concatenate([np.int0(100*f_confidences_nparray[:,None]), class_ids_np_array[:,None], boxes_nparray], 1)
+        #     results = pd.DataFrame(out_array[indexes], columns=self.col_names)
 
-        results.xmax += results.xmin
-        results.ymax += results.ymin
+        # results.xmax += results.xmin
+        # results.ymax += results.ymin
         #results.cls_id = results.cls_id.replace(self.cls_names)
         
-        return results
+        return class_id, conf_array, boxes
 
 if __name__=='__main__':
 
