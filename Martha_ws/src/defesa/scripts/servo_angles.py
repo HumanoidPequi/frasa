@@ -27,7 +27,7 @@ cy = 240
 theta_z = 0   #< >
 theta_y = -50 #cima e baixo ^v
 
-h_cam = 30 #cm originalmente 68
+h_cam = 57 #cm originalmente 68
 ball_distance = Float32()
 
 pub_distance = rospy.Publisher("ball_distance", Float32, queue_size = 1)
@@ -68,12 +68,12 @@ def angles_callback(msg):#toda vez wue eu receber a posicao da bola eu vou execu
         
     rospy.loginfo('the angles are %i, %i', theta_y,theta_z)
     pub_angles.publish(angles)
-    alpha = 90 - angles.data[1]
+    alpha = 90 - angles.data[1]/10
     #print(mt.tan(alpha))
-    abacate = mt.radians(alpha)
+    alpha_rad = mt.radians(alpha)
     #print(abacate)
     #rospy.loginfo("este é alpha %s", alpha)
-    ball_distance.data = mt.tan(abacate) * h_cam
+    ball_distance.data = h_cam / mt.tan(alpha_rad) 
     #print(mt.tan(abacate))
     rospy.loginfo("este é ball_distance.data %s", ball_distance.data)
     pub_distance.publish(ball_distance)
