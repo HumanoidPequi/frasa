@@ -10,7 +10,7 @@ import math as mt
 
 
 #pub_angles = rospy.Publisher('/ball_tracking', Int16MultiArray,queue_size=1) ball tracing original
-pub_angles = rospy.Publisher('/ball_tracking', Int16MultiArray,queue_size=1)
+pub_angles = rospy.Publisher('/marta/arm_l_head/command', Int16MultiArray,queue_size=1)
 angles = Int16MultiArray()
 import time
 
