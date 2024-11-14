@@ -36,7 +36,7 @@ pub_distance = rospy.Publisher("ball_distance", Float32, queue_size = 1)
 def angles_callback(msg):#toda vez wue eu receber a posicao da bola eu vou executar o callback
     #esse calback calcula os 2 angulos da cabeça e publica
     global theta_y, theta_z
-    angles.data = [theta_z,theta_y,0,0,0]
+    angles.data = [theta_z * 10,theta_y * 10,0,0,0]
     if msg.data[0] !=1000 and msg.data[1] !=1000:
         
         v = msg.data[0]
@@ -58,13 +58,13 @@ def angles_callback(msg):#toda vez wue eu receber a posicao da bola eu vou execu
             if theta_z > 50:
                 theta_z = 50
 
-            angles.data = [theta_z,theta_y,0,0,0]
+            angles.data = [theta_z * 10,theta_y * 10,0,0,0]
         
     else:
         rospy.loginfo("não to entrando em porra nenhuma")
         theta_z = 0
         theta_y = -50
-        angles.data = [theta_z,theta_y,0,0,0]
+        angles.data = [theta_z * 10,theta_y * 10,0,0,0]
         
     rospy.loginfo('the angles are %i, %i', theta_y,theta_z)
     pub_angles.publish(angles)
