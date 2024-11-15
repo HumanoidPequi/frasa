@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 import rospy
-from std_msgs.msg import Float64
+from std_msgs.msg import Float64, Int16MultiArray
 import time
 import math
 
@@ -277,6 +277,7 @@ def set_joint_positions():
     global pub_l_shoulder_pitch, pub_l_shoulder_roll, pub_l_elbow
     global pub_r_hip_pitch, pub_r_hip_roll, pub_r_knee, pub_r_ankle_pitch
     global pub_l_hip_pitch, pub_l_hip_roll, pub_l_knee, pub_l_ankle_pitch
+    global pub_arm_r, pub_arm_l_head, pub_right_leg, pub_left_leg
 
     # Publishers para as articulações dos braços e pernas
     pub_r_shoulder_pitch = rospy.Publisher('/martha/r_sho_pitch_position/command', Float64, queue_size=10)
@@ -300,6 +301,11 @@ def set_joint_positions():
 
     rospy.sleep(1)
 
+    pub_arm_r = rospy.Publisher('/marta/arm_r/command', Int16MultiArray, queue_size=10)
+    pub_arm_l_head = rospy.Publisher('/marta/arm_l_head/command', Int16MultiArray, queue_size=10)
+    pub_right_leg = rospy.Publisher('/marta/right_leg/command', Int16MultiArray, queue_size=10)
+    pub_left_leg = rospy.Publisher('/marta/left_leg/command', Int16MultiArray, queue_size=10)    
+
     # Escolher o movimento
     movimento = input("Digite 'frente' para levantar de frente ou 'tras' para levantar de trás: ")
 
@@ -315,12 +321,6 @@ if __name__ == '__main__':
         set_joint_positions()
     except rospy.ROSInterruptException:
         pass
-
-# afsbdfbggb
-# dfbbtrbtr
-# tsbtrtr
-
-
 
 # #!/usr/bin/env python3
 
@@ -436,3 +436,5 @@ if __name__ == '__main__':
 #         set_joint_positions()
 #     except rospy.ROSInterruptException:
 #         pass
+
+
