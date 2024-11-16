@@ -325,7 +325,7 @@
 #!/usr/bin/env python3
 
 import rospy
-from std_msgs.msg import Float64
+from std_msgs.msg import Float64, Int16MultiArray
 import time
 import math
 
@@ -417,36 +417,69 @@ import math
 
      rospy.loginfo("Robô levantado de trás.")
 
- # A função set_joint_positions permanece inalterada
- def set_joint_positions():
-     rospy.init_node('humanoid_lift_node', anonymous=True)
+# Inicializa o nó
+rospy.init_node('martha_controller')
 
-     global pub_r_shoulder_pitch, pub_r_shoulder_roll, pub_r_elbow, pub_l_shoulder_pitch, pub_l_shoulder_roll, pub_l_elbow
-     global pub_r_hip_yaw, pub_r_hip_roll, pub_r_hip_pitch, pub_r_knee, pub_r_ankle_pitch, pub_r_ankle_roll
-     global pub_l_hip_yaw, pub_l_hip_roll, pub_l_hip_pitch, pub_l_knee, pub_l_ankle_pitch, pub_l_ankle_roll
+# Arrays de publishers
+right_leg_publishers = [
+    rospy.Publisher('/martha/r_hip_yaw_position/command', Float64, queue_size=10),
+    rospy.Publisher('/martha/r_hip_roll_position/command', Float64, queue_size=10),
+    rospy.Publisher('/martha/r_hip_pitch_position/command', Float64, queue_size=10),
+    rospy.Publisher('/martha/r_knee_position/command', Float64, queue_size=10),
+    rospy.Publisher('/martha/r_ank_pitch_position/command', Float64, queue_size=10),
+    rospy.Publisher('/martha/r_ank_roll_position/command', Float64, queue_size=10)
+]
 
-      Publishers para as articulações do braço e pernas
-     pub_r_shoulder_pitch = rospy.Publisher('/martha/r_sho_pitch_position/command', Float64, queue_size=10)
-     pub_r_shoulder_roll = rospy.Publisher('/martha/r_sho_roll_position/command', Float64, queue_size=10)
-     pub_r_elbow = rospy.Publisher('/martha/r_el_position/command', Float64, queue_size=10)
+left_leg_publishers = [
+    rospy.Publisher('/martha/l_hip_yaw_position/command', Float64, queue_size=10),
+    rospy.Publisher('/martha/l_hip_roll_position/command', Float64, queue_size=10),
+    rospy.Publisher('/martha/l_hip_pitch_position/command', Float64, queue_size=10),
+    rospy.Publisher('/martha/l_knee_position/command', Float64, queue_size=10),
+    rospy.Publisher('/martha/l_ank_pitch_position/command', Float64, queue_size=10),
+    rospy.Publisher('/martha/l_ank_roll_position/command', Float64, queue_size=10)
+]
 
-     pub_l_shoulder_pitch = rospy.Publisher('/martha/l_sho_pitch_position/command', Float64, queue_size=10)
-     pub_l_shoulder_roll = rospy.Publisher('/martha/l_sho_roll_position/command', Float64, queue_size=10)
-     pub_l_elbow = rospy.Publisher('/martha/l_el_position/command', Float64, queue_size=10)
+right_arm_publishers = [
+    rospy.Publisher('/martha/r_sho_pitch_position/command', Float64, queue_size=10),
+    rospy.Publisher('/martha/r_sho_roll_position/command', Float64, queue_size=10),
+    rospy.Publisher('/martha/r_el_position/command', Float64, queue_size=10)
+]
 
-     pub_r_hip_yaw = rospy.Publisher('/martha/r_hip_yaw_position/command', Float64, queue_size=10)
-     pub_r_hip_roll = rospy.Publisher('/martha/r_hip_roll_position/command', Float64, queue_size=10)
-     pub_r_hip_pitch = rospy.Publisher('/martha/r_hip_pitch_position/command', Float64, queue_size=10)
-     pub_r_knee = rospy.Publisher('/martha/r_knee_position/command', Float64, queue_size=10)
-     pub_r_ankle_pitch = rospy.Publisher('/martha/r_ank_pitch_position/command', Float64, queue_size=10)
-     pub_r_ankle_roll = rospy.Publisher('/martha/r_ank_roll_position/command', Float64, queue_size=10)
+left_arm_publishers = [
+    rospy.Publisher('/martha/l_sho_pitch_position/command', Float64, queue_size=10),
+    rospy.Publisher('/martha/l_sho_roll_position/command', Float64, queue_size=10),
+    rospy.Publisher('/martha/l_el_position/command', Float64, queue_size=10)
+]
 
-     pub_l_hip_yaw = rospy.Publisher('/martha/l_hip_yaw_position/command', Float64, queue_size=10)
-     pub_l_hip_roll = rospy.Publisher('/martha/l_hip_roll_position/command', Float64, queue_size=10)
-     pub_l_hip_pitch = rospy.Publisher('/martha/l_hip_pitch_position/command', Float64, queue_size=10)
-     pub_l_knee = rospy.Publisher('/martha/l_knee_position/command', Float64, queue_size=10)
-     pub_l_ankle_pitch = rospy.Publisher('/martha/l_ank_pitch_position/command', Float64, queue_size=10)
-     pub_l_ankle_roll = rospy.Publisher('/martha/l_ank_roll_position/command', Float64, queue_size=10)
+# Callbacks
+def right_leg_cb(msg):
+    for i, command in enumerate(msg.data):
+        if i < len(right_leg_publishers):
+            right_leg_publishers[i].publish(command)
+
+def left_leg_cb(msg):
+    for i, command in enumerate(msg.data):
+        if i < len(left_leg_publishers):
+            left_leg_publishers[i].publish(command)
+
+def arm_r_cb(msg):
+    for i, command in enumerate(msg.data):
+        if i < len(right_arm_publishers):
+            right_arm_publishers[i].publish(command)
+
+def arm_l_head_cb(msg):
+    for i, command in enumerate(msg.data):
+        if i < len(left_arm_publishers):
+            left_arm_publishers[i].publish(command)
+
+# Subscribers
+rospy.Subscriber('/marta/right_leg/command', Int16MultiArray, right_leg_cb)
+rospy.Subscriber('/marta/left_leg/command', Int16MultiArray, left_leg_cb)
+rospy.Subscriber('/marta/arm_r/command', Int16MultiArray, arm_r_cb)
+rospy.Subscriber('/marta/arm_l_head/command', Int16MultiArray, arm_l_head_cb)
+
+# Mantém o nó ativo
+rospy.spin()
 
      rospy.sleep(1)
 
