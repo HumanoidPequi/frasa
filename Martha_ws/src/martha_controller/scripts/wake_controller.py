@@ -346,7 +346,7 @@ import math
       Movimento para levantar o robô de frente usando move_joint_smoothly
 
      move_joint_smoothly(pub_l_shoulder_pitch, 0.0, 1.0, 1.5)
-     move_joint_smoothly(pub_r_shoulder_pitch, 0.0, -1.0, -1.0)
+     move_joint_smoothly(pub_r_shoulder_pitch, 0.0, -1.0, -1.5)
 
      move_joint_smoothly(pub_l_elbow, 0.0, -1.0, -1.5)
      move_joint_smoothly(pub_r_elbow, 0.0, -1.0, -1.5)
@@ -356,9 +356,6 @@ import math
 
      move_joint_smoothly(pub_l_knee, 0.0, 1.0, 1.5)
      move_joint_smoothly(pub_r_knee, 0.0, 0.0, 1.5)
-
-     move_joint_smoothly(pub_l_shoulder_pitch, 1.5, 1.5, 1.5)
-     move_joint_smoothly(pub_r_shoulder_pitch, -1.5, -1.5, -1.5)
 
      move_joint_smoothly(pub_l_elbow, -1.5, -1.0, 0.0)
      move_joint_smoothly(pub_r_elbow, -1,5, -1.0, 0.0)
@@ -377,6 +374,7 @@ import math
 
      move_joint_smoothly(pub_l_elbow, -1.5, -1.0, 0.0)
      move_joint_smoothly(pub_r_elbow, -1,5, -1.0, 0.0)
+
      rospy.loginfo("Robô levantado de frente.")
 
  def levantar_de_tras():
@@ -404,9 +402,6 @@ import math
 
      move_joint_smoothly(pub_l_ankle_pitch, 0.0, -0.5, -1.0)
      move_joint_smoothly(pub_r_ankle_pitch, 0.0, -0.5, -1.0)
-
-     move_joint_smoothly(pub_r_elbow, 0.0, 0.0, 0.0)
-     move_joint_smoothly(pub_l_elbow, 0.0, 0.0, 0.0)
 
      move_joint_smoothly(pub_r_shoulder_pitch, -1.5, -1.0, 0.0)
      move_joint_smoothly(pub_l_shoulder_pitch, 1.5, 1.0, 0.0)
