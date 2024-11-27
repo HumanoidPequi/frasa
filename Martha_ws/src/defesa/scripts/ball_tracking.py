@@ -137,7 +137,7 @@ class Ball_tracking():
 
                 img_detect = draw_detections(image, boxes, confidences, class_ids, mask_alpha=0.3)
                 imgMsg = bridge.cv2_to_imgmsg(img_detect, "bgr8")
-                rospy.loginfo('(yolo) the ball coordinates are  %f,%f', xx, yy)#ólives was here
+                #rospy.loginfo('(yolo) the ball coordinates are  %f,%f', xx, yy)#ólives was here
                 self.ball_position.data = [xx,yy] #pega os dados da posicao da bola
                 self.pub_ball_pos.publish(self.ball_position) #e publica essa posicao num topico do ros
                 self.i = self.i + 1
@@ -221,7 +221,6 @@ class Ball_tracking():
                         angulo.data = ang_aux
                         #angulo.data = list(angulo.data)
                         # angulo = float(angulo)
-                        print('angulo',angulo.data)
                         #print(type(angulo.data))
                         #self.opt_flux.data = ang
                         self.pub_optical_flow.publish(angulo) #dreca was here
@@ -276,7 +275,7 @@ class Ball_tracking():
             #theta_y = -80
 
         self.angles.data = [self.theta_z,self.theta_y]
-        rospy.loginfo('the ball coordinate is  %i,%i', u,v)
+        #rospy.loginfo('the ball coordinate is  %i,%i', u,v)
         self.pub_angles.publish(self.angles)
         time.sleep(1)
 
