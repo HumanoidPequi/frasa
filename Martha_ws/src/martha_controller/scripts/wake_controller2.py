@@ -113,8 +113,8 @@ def set_joint_positions():
     rospy.init_node('humanoid_lift_node', anonymous=True)
 
     global simulation_mode
-    simulation_input = input("Digite 'sim' se estiver usando a simulação, ou 'nao' caso contrário: ")
-    simulation_mode = (simulation_input.lower() == 'sim')
+    simulation_input = input("Digite 'y' se estiver usando a simulação, ou 'n' caso contrário: ")
+    simulation_mode = (simulation_input.lower() == 'y')
 
     global joint_publishers, joint_array_mapping, arrays, array_publishers
 
