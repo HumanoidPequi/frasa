@@ -22,7 +22,7 @@ def move_joints_smoothly(joints, start_positions, end_positions, duration):
             else:
                 # Atualiza as posições nos arrays combinados
                 array_name, index = joint_array_mapping[joint]
-                arrays[array_name][index] = current_positions[joint]  # Usando valores em radianos
+                arrays[array_name][index] = int(current_positions[joint])  # Usando valores em radianos
 
         if not simulation_mode:
             # Publica os arrays combinados
@@ -40,8 +40,8 @@ def levantar_de_tras():
     rospy.loginfo("Fase 1: Puxando o braço para trás para apoio...")
 
     joints_phase1 = ['r_shoulder_pitch', 'l_shoulder_pitch', 'r_elbow', 'l_elbow']
-    start_positions_phase1 = [0.0, 0.0, 0.0, 0.0]
-    end_positions_phase1 = [-1.5, 1.5, -1.5, -1.5]
+    start_positions_phase1 = [0, 0, 0, 0]
+    end_positions_phase1 = [-15, 15, -15, -15]
     move_joints_smoothly(joints_phase1, start_positions_phase1, end_positions_phase1, 1)
 
     rospy.sleep(1)
@@ -50,8 +50,8 @@ def levantar_de_tras():
     rospy.loginfo("Fase 2: Zerando o antebraço e ajustando pernas e tornozelos...")
 
     joints_phase2 = ['r_elbow', 'l_elbow']
-    start_positions_phase2 = [-1.5, -1.5]
-    end_positions_phase2 = [0.0, 0.0]
+    start_positions_phase2 = [-15, -15]
+    end_positions_phase2 = [0, 0]
     move_joints_smoothly(joints_phase2, start_positions_phase2, end_positions_phase2, 2)
 
     rospy.sleep(3)
@@ -60,8 +60,8 @@ def levantar_de_tras():
     rospy.loginfo("Levantando o tronco para a T-pose...")
 
     joints_step3 = ['r_shoulder_pitch', 'l_shoulder_pitch']
-    start_positions_step3 = [-1.5, 1.5]
-    end_positions_step3 = [0.0, 0.0]
+    start_positions_step3 = [-15, 15]
+    end_positions_step3 = [0, 0]
     move_joints_smoothly(joints_step3, start_positions_step3, end_positions_step3, 3)
 
     rospy.loginfo("Robô levantado em T-pose.")
@@ -73,8 +73,8 @@ def levantar_de_frente():
     rospy.loginfo("Passo 1: Girando o ombro e ajustando o antebraço para apoio...")
 
     joints_step1 = ['r_shoulder_pitch', 'l_shoulder_pitch', 'r_elbow', 'l_elbow']
-    start_positions_step1 = [0.0, 0.0, 0.0, 0.0]
-    end_positions_step1 = [-1.0, 1.0, -2.0, -2.0]
+    start_positions_step1 = [0, 0, 0, 0]
+    end_positions_step1 = [-10, 10, -20, -20]
     move_joints_smoothly(joints_step1, start_positions_step1, end_positions_step1, 1)
 
     rospy.sleep(1)
@@ -83,8 +83,8 @@ def levantar_de_frente():
     rospy.loginfo("Passo 2: Empurrando o chão, dobrando joelhos e ajustando tornozelos...")
 
     joints_step2 = ['r_shoulder_pitch', 'l_shoulder_pitch', 'r_knee', 'l_knee', 'r_hip_pitch', 'l_hip_pitch', 'r_ankle_pitch', 'l_ankle_pitch']
-    start_positions_step2 = [-1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-    end_positions_step2 = [2.0, -2.0, 1.7, 1.7, 1.5, 1.5, 1.2, 1.2]
+    start_positions_step2 = [-10, 10, 0, 0, 0, 0, 0, 0]
+    end_positions_step2 = [20, -20, 17, 17, -15, -15, -12, -12]
     move_joints_smoothly(joints_step2, start_positions_step2, end_positions_step2, 2)
 
     rospy.sleep(3)
@@ -93,8 +93,8 @@ def levantar_de_frente():
     rospy.loginfo("Passo 2.5: Retornando cotovelos para posição 0.0 e dobrando mais os joelhos...")
 
     joints_step2_5 = ['r_elbow', 'l_elbow', 'r_knee', 'l_knee']
-    start_positions_step2_5 = [-2.0, -2.0, 1.7, 1.7]
-    end_positions_step2_5 = [0.0, 0.0, 2.5, 2.5]
+    start_positions_step2_5 = [-20, -20, 17, 17]
+    end_positions_step2_5 = [0, 0, -35, -35]
     move_joints_smoothly(joints_step2_5, start_positions_step2_5, end_positions_step2_5, 1)
 
     rospy.sleep(1)
@@ -103,8 +103,8 @@ def levantar_de_frente():
     rospy.loginfo("Passo 3: Levantando o tronco para a T-pose...")
 
     joints_step3 = ['r_hip_pitch', 'l_hip_pitch', 'r_knee', 'l_knee', 'r_shoulder_roll', 'l_shoulder_roll', 'r_shoulder_pitch', 'l_shoulder_pitch', 'r_elbow', 'l_elbow', 'r_ankle_pitch', 'l_ankle_pitch']
-    start_positions_step3 = [1.5, 1.5, 2.5, 2.5, 0.0, 0.0, 2.0, -2.0, 0.0, 0.0, 1.2, 1.2]
-    end_positions_step3 = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+    start_positions_step3 = [-15, -15, 25, 25, 0, 0, 20, -20, 0, 0, -12, -12]
+    end_positions_step3 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
     move_joints_smoothly(joints_step3, start_positions_step3, end_positions_step3, 3)
 
     rospy.loginfo("Robô levantado em T-pose.")
@@ -146,10 +146,10 @@ def set_joint_positions():
     else:
         # Publishers combinados
         array_publishers = {}
-        array_publishers['right_leg'] = rospy.Publisher('/martha/right_leg/command', Int16MultiArray, queue_size=10)
-        array_publishers['left_leg'] = rospy.Publisher('/martha/left_leg/command', Int16MultiArray, queue_size=10)
-        array_publishers['right_arm'] = rospy.Publisher('/martha/arm_r/command', Int16MultiArray, queue_size=10)
-        array_publishers['left_arm_head'] = rospy.Publisher('/martha/arm_l_head/command', Int16MultiArray, queue_size=10)
+        array_publishers['right_leg'] = rospy.Publisher('/marta/right_leg/command', Int16MultiArray, queue_size=10)
+        array_publishers['left_leg'] = rospy.Publisher('/marta/left_leg/command', Int16MultiArray, queue_size=10)
+        array_publishers['right_arm'] = rospy.Publisher('/marta/arm_r/command', Int16MultiArray, queue_size=10)
+        array_publishers['left_arm_head'] = rospy.Publisher('/marta/arm_l_head/command', Int16MultiArray, queue_size=10)
 
         # Inicializa os arrays de posições
         arrays = {}
@@ -164,11 +164,11 @@ def set_joint_positions():
             'r_shoulder_roll': ('right_arm', 1),
             'r_elbow': ('right_arm', 2),
 
-            'l_shoulder_pitch': ('left_arm_head', 3),
-            'l_shoulder_roll': ('left_arm_head', 4),
-            'l_elbow': ('left_arm_head', 5),
-            'neck_yaw': ('left_arm_head', 1),
-            'neck_pitch': ('left_arm_head', 2),
+            'l_shoulder_pitch': ('left_arm_head', 2),
+            'l_shoulder_roll': ('left_arm_head', 3),
+            'l_elbow': ('left_arm_head', 4),
+            'neck_yaw': ('left_arm_head', 0),
+            'neck_pitch': ('left_arm_head', 1),
 
             'r_hip_pitch': ('right_leg', 2),
             'r_hip_roll': ('right_leg', 1),
