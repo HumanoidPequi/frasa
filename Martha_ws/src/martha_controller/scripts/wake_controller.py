@@ -343,7 +343,7 @@ import math
  def levantar_de_frente():
      rospy.loginfo("Iniciando movimento de levantamento de frente...")
 
-      Movimento para levantar o robô de frente usando move_joint_smoothly
+#      Movimento para levantar o robô de frente usando move_joint_smoothly
 
      move_joint_smoothly(pub_l_shoulder_pitch, 0.0, 1.0, 1.5)
      move_joint_smoothly(pub_r_shoulder_pitch, 0.0, -1.0, -1.5)

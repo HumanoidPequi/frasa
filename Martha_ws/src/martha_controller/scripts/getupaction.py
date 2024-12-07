@@ -3,7 +3,7 @@
 import rospy
 import actionlib
 from std_msgs.msg import Int16MultiArray
-from humanoid_msgs.msg import LiftAction, LiftActionFeedback, LiftActionResult
+#from humanoid_msgs.msg import LiftAction, LiftActionFeedback, LiftActionResult
 import time
 
 
@@ -19,13 +19,16 @@ def move_joints_smoothly(publisher, start_positions, end_positions, duration):
 
 
 class LiftActionServer:
-    _feedback = LiftActionFeedback()
-    _result = LiftActionResult()
+    #_feedback = LiftActionFeedback()
+    #_result = LiftActionResult()
 
     def __init__(self, name):
         self._action_name = name
         self._as = actionlib.SimpleActionServer(
-            self._action_name, LiftAction, execute_cb=self.execute_action, auto_start=False
+            self._action_name,
+            #LiftAction,
+            execute_cb=self.execute_action,
+            auto_start=False
         )
 
         # Publishers organizados por grupo
@@ -76,10 +79,27 @@ class LiftActionServer:
         self._as.set_succeeded(self._result)
 
 
-def main():
-    rospy.init_node('lift_action_server')
-    server = LiftActionServer(rospy.get_name())
-    rospy.spin()
+# def main():
+#     rospy.init_node('lift_action_server')
+#     #server = LiftActionServer(rospy.get_name())
+#     rospy.spin()
+# Mantém o nó ativo
+rospy.spin()
+     # Escolher o movimento 
+movimento = input("Digite 'frente' para levantar de frente ou 'tras' para levantar de trás: ")
+
+if movimento == 'frente':
+    levantar_de_frente()
+elif movimento == 'tras':
+    levantar_de_tras()
+else:
+    rospy.loginfo("Movimento inválido.")
+
+#  if __name__ == '__main__':
+#      try:
+#          set_joint_positions()
+#      except rospy.ROSInterruptException:
+#          pass
 
 
 if __name__ == '__main__':
