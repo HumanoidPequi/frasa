@@ -1,0 +1,172 @@
+<?xml version="1.0" ?>
+<robot name="marta" xmlns:xacro="http://www.ros.org/wiki/xacro" >
+
+<xacro:property name="body_color" value="Gazebo/Silver" />
+
+<xacro:property name="Kp_pe" value="1e15" />
+<xacro:property name="Kd_pe" value="1e13" />
+
+<gazebo>
+  <plugin name="control" filename="libgazebo_ros_control.so">
+    <robotNamespace>/marta</robotNamespace>
+  </plugin>
+</gazebo>
+<gazebo reference="base_link">
+  <material>${body_color}</material>
+  <mu1>500</mu1>
+  <mu2>400</mu2>
+  <selfCollide>false</selfCollide>
+  <gravity>true</gravity>
+</gazebo>
+
+<gazebo reference="neck_1">
+  <material>${body_color}</material>
+  <mu1>500</mu1>
+  <mu2>400</mu2>
+  <selfCollide>false</selfCollide>
+</gazebo>
+
+<gazebo reference="head_1">
+  <material>${body_color}</material>
+  <mu1>500</mu1>
+  <mu2>400</mu2>
+  <selfCollide>false</selfCollide>
+</gazebo>
+
+<gazebo reference="r_hip_1">
+  <material>${body_color}</material>
+  <mu1>500</mu1>
+  <mu2>400</mu2>
+  <selfCollide>false</selfCollide>
+</gazebo>
+
+<gazebo reference="l_hip_1">
+  <material>${body_color}</material>
+  <mu1>500</mu1>
+  <mu2>400</mu2>
+  <selfCollide>false</selfCollide>
+</gazebo>
+
+<gazebo reference="l_waist_1">
+  <material>${body_color}</material>
+  <mu1>500</mu1>
+  <mu2>400</mu2>
+  <selfCollide>false</selfCollide>
+</gazebo>
+
+<gazebo reference="r_waist_1">
+  <material>${body_color}</material>
+  <mu1>500</mu1>
+  <mu2>400</mu2>
+  <selfCollide>false</selfCollide>
+</gazebo>
+
+<gazebo reference="r_tight_1">
+  <material>${body_color}</material>
+  <mu1>500</mu1>
+  <mu2>400</mu2>
+  <selfCollide>false</selfCollide>
+</gazebo>
+
+<gazebo reference="l_tight_1">
+  <material>${body_color}</material>
+  <mu1>500</mu1>
+  <mu2>400</mu2>
+  <selfCollide>false</selfCollide>
+</gazebo>
+
+<gazebo reference="r_shin_1">
+  <material>${body_color}</material>
+  <mu1>500</mu1>
+  <mu2>400</mu2>
+  <selfCollide>false</selfCollide>
+</gazebo>
+
+<gazebo reference="l_shin_1">
+  <material>${body_color}</material>
+  <mu1>500</mu1>
+  <mu2>400</mu2>
+  <selfCollide>false</selfCollide>
+</gazebo>
+
+<gazebo reference="l_ankle_1">
+  <material>${body_color}</material>
+  <mu1>500</mu1>
+  <mu2>400</mu2>
+  <selfCollide>false</selfCollide>
+</gazebo>
+
+<gazebo reference="r_ankle_1">
+  <material>${body_color}</material>
+  <mu1>500</mu1>
+  <mu2>400</mu2>
+  <selfCollide>false</selfCollide>
+</gazebo>
+
+<gazebo reference="l_shoulder_1">
+  <material>${body_color}</material>
+  <mu1>500</mu1>
+  <mu2>400</mu2>
+  <selfCollide>false</selfCollide>
+</gazebo>
+
+<gazebo reference="r_shoulder_1">
+  <material>${body_color}</material>
+  <mu1>500</mu1>
+  <mu2>400</mu2>
+  <selfCollide>false</selfCollide>
+</gazebo>
+
+<gazebo reference="l_arm_1">
+  <material>${body_color}</material>
+  <mu1>500</mu1>
+  <mu2>400</mu2>
+  <selfCollide>false</selfCollide>
+</gazebo>
+
+<gazebo reference="r_arm_1">
+  <material>${body_color}</material>
+  <mu1>500</mu1>
+  <mu2>400</mu2>
+  <selfCollide>false</selfCollide>
+</gazebo>
+
+<gazebo reference="l_feet_1">
+  <material>${body_color}</material>
+  <mu1>1e10</mu1>
+  <mu2>1e10</mu2>
+  <kp>1000000.0</kp>
+  <kd>10000.0</kd>
+  <minDepth>0.003</minDepth>
+  <maxContacts>10000</maxContacts>
+  <max_vel>0.0</max_vel>
+  <selfCollide>false</selfCollide>
+</gazebo>
+
+<gazebo reference="r_feet_1">
+  <material>${body_color}</material>
+  <mu1>1e10</mu1>
+  <mu2>1e10</mu2>
+  <kp>1000000.0</kp>
+  <kd>10000.0</kd>
+  <minDepth>0.003</minDepth>
+  <maxContacts>10000</maxContacts>
+  <max_vel>0.0</max_vel>
+  <selfCollide>false</selfCollide>
+</gazebo>
+
+<gazebo reference="r_hand_1">
+  <material>${body_color}</material>
+  <mu1>500</mu1>
+  <mu2>400</mu2>
+  <selfCollide>false</selfCollide>
+</gazebo>
+
+<gazebo reference="l_hand_1">
+  <material>${body_color}</material>
+  <mu1>500</mu1>
+  <mu2>400</mu2>
+  <selfCollide>false</selfCollide>
+</gazebo>
+
+</robot>

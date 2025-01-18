@@ -23,14 +23,14 @@ RUN apt-get update && apt-get install -y \
 
 
 # Copiar o diretório pacotes da Martha
-RUN mkdir -p /root/Martha_ws/src
-COPY ../Martha_ws/src /root/Martha_ws/src
+RUN mkdir -p /root/Marta_ws/src
+COPY ../Marta_ws/src /root/Marta_ws/src
 
 # Construir o workspace
-RUN /bin/bash -c "source /opt/ros/$ROS_DISTRO/setup.bash && cd /root/Martha_ws && catkin_make"
+RUN /bin/bash -c "source /opt/ros/$ROS_DISTRO/setup.bash && cd /root/Marta_ws && catkin_make"
 
 # Fazer o source do setup.bash do workspace
-RUN echo "source /root/Martha_ws/devel/setup.bash" >> ~/.bashrc
+RUN echo "source /root/Marta_ws/devel/setup.bash" >> ~/.bashrc
 
 # So pra usuarios de Windows
 

@@ -1,7 +1,7 @@
 
-/Martha_ws/build
-/Martha_ws/devel
+/Marta_ws/build
+/Marta_ws/devel
 *.Identifier
 
-Martha_ws/.catkin_workspace
-Martha_ws/src/CMakeLists.txt
+Marta_ws/.catkin_workspace
+Marta_ws/src/CMakeLists.txt
