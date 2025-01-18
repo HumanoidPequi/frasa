@@ -12,7 +12,7 @@
   <origin xyz="0.00676 -0.000494 0.124698" rpy="0 0 0"/>
   <parent link="base_link"/>
   <child link="neck_1"/>
-  <axis xyz="-0.0 0.0 1.0"/>
+  <axis xyz="-0.0 0.0 -1.0"/>
   <!-- <dynamics damping="0.1" /> -->
   <limit lower="-3.14159" upper="3.14159" effort="1000.0" velocity="0.01"/>
 </joint>
@@ -21,7 +21,7 @@
   <origin xyz="0.0 0.0205 0.028" rpy="0 0 0"/>
   <parent link="neck_1"/>
   <child link="head_1"/>
-  <axis xyz="-0.0 1.0 -0.0"/>
+  <axis xyz="-0.0 -1.0 -0.0"/>
   <!-- <dynamics damping="0.1" /> -->
   <limit lower="-3.14159" upper="3.14159" effort="1000.0" velocity="0.01"/>
 </joint>
@@ -66,7 +66,7 @@
   <origin xyz="0.0213 -0.02075 0.0" rpy="0 0 0"/>
   <parent link="r_waist_1"/>
   <child link="r_thigh_1"/>
-  <axis xyz="0.0 -1.0 -0.0"/>
+  <axis xyz="0.0 1.0 -0.0"/>
   <!-- <dynamics damping="0.1" /> -->
   <limit lower="-3.14159" upper="3.14159" effort="1000.0" velocity="0.01"/>
 </joint>
@@ -84,7 +84,7 @@
   <origin xyz="0.0 0.0005 -0.101" rpy="0 0 0"/>
   <parent link="r_thigh_1"/>
   <child link="r_shin_1"/>
-  <axis xyz="-0.0 -1.0 -0.0"/>
+  <axis xyz="-0.0 1.0 -0.0"/>
   <!-- <dynamics damping="0.1" /> -->
   <limit lower="-3.14159" upper="3.14159" effort="1000.0" velocity="0.01"/>
 </joint>
@@ -102,7 +102,7 @@
   <origin xyz="0.0 -0.0415 -0.1" rpy="0 0 0"/>
   <parent link="l_shin_1"/>
   <child link="l_ankle_1"/>
-  <axis xyz="-0.0 -1.0 -0.0"/>
+  <axis xyz="-0.0 1.0 -0.0"/>
   <!-- <dynamics damping="0.1" /> -->
   <limit lower="-3.14159" upper="3.14159" effort="1000.0" velocity="0.01"/>
 </joint>
@@ -129,7 +129,7 @@
   <origin xyz="0.006749 0.075756 0.096678" rpy="0 0 0"/>
   <parent link="base_link"/>
   <child link="l_shoulder_1"/>
-  <axis xyz="0.0 1.0 0.0"/>
+  <axis xyz="0.0 -1.0 0.0"/>
   <!-- <dynamics damping="0.1" /> -->
   <limit lower="-3.14159" upper="3.14159" effort="1000.0" velocity="0.01"/>
 </joint>
@@ -156,7 +156,7 @@
   <origin xyz="0.021 -0.023 -0.0145" rpy="0 0 0"/>
   <parent link="r_shoulder_1"/>
   <child link="r_arm_1"/>
-  <axis xyz="1.0 0.0 -0.0"/>
+  <axis xyz="-1.0 0.0 -0.0"/>
   <!-- <dynamics damping="0.1" /> -->
   <limit lower="-3.14159" upper="3.14159" effort="1000.0" velocity="0.01"/>
 </joint>
@@ -183,7 +183,7 @@
   <origin xyz="0.02074 0.02075 -0.0996" rpy="0 0 0"/>
   <parent link="l_arm_1"/>
   <child link="l_hand_1"/>
-  <axis xyz="-0.0 1.0 0.0"/>
+  <axis xyz="-0.0 -1.0 0.0"/>
   <!-- <dynamics damping="0.1" /> -->
   <limit lower="-3.14159" upper="3.14159" effort="1000.0" velocity="0.01"/>
 </joint>
