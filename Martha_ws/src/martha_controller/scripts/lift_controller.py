@@ -3,7 +3,7 @@ import rospy
 from std_msgs.msg import Float64, Float64MultiArray
 import time
 def move_joints_smoothly(joints, start_positions, end_positions, duration):
-    rate = 50  # Hz
+    rate = 100  # Hz
     steps = rate * duration
     # Calcula o incremento por passo para cada articulação
     delta_positions = {joint: (end - start) / steps for joint, start, end in zip(joints, start_positions, end_positions)}
@@ -52,33 +52,47 @@ def levantar_de_tras():
 def levantar_de_frente():
     rospy.loginfo("Iniciando movimento de levantamento de frente...")
     # Passo 1: Girar ombro e ajustar antebraço para posição de apoio
-    rospy.loginfo("Passo 1: Girando o ombro e ajustando o antebraço para apoio...")
+    #rospy.loginfo("Passo 1: Girando o ombro e ajustando o antebraço para apoio...")
     joints_step1 = ['r_shoulder_pitch', 'l_shoulder_pitch', 'r_elbow', 'l_elbow']
     start_positions_step1 = [0.0, 0.0, 0.0, 0.0]
-    end_positions_step1 = [-1.0, 1.0, -2.0, -2.0]
+    end_positions_step1 = [-1.0, 1.0, -2.5, -2.5]
     move_joints_smoothly(joints_step1, start_positions_step1, end_positions_step1, 1)
     rospy.sleep(1)
     # Passo 2: Empurrar o chão, dobrar joelhos e girar tornozelos
-    rospy.loginfo("Passo 2: Empurrando o chão, dobrando joelhos e ajustando tornozelos...")
+    #rospy.loginfo("Passo 2: Empurrando o chão, dobrando joelhos e ajustando tornozelos...")
     joints_step2 = ['r_shoulder_pitch', 'l_shoulder_pitch', 'r_knee', 'l_knee', 'r_hip_pitch', 'l_hip_pitch', 'r_ankle_pitch', 'l_ankle_pitch']
     start_positions_step2 = [-1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-    end_positions_step2 = [2.0, -2.0, 1.7, 1.7, -1.5, -1.5, 1.2, 1.2]
-    move_joints_smoothly(joints_step2, start_positions_step2, end_positions_step2, 2)
-    rospy.sleep(3)
+    end_positions_step2 = [2.5, -2.5, 1.7, 1.7, -2.2, -2.2, -1.3, -1.3]
+    move_joints_smoothly(joints_step2, start_positions_step2, end_positions_step2, 1)
+    rospy.sleep(1)
     # Passo 2.5: Retornar cotovelos para posição 0.0 e dobrar mais os joelhos
-    rospy.loginfo("Passo 2.5: Retornando cotovelos para posição 0.0 e dobrando mais os joelhos...")
-    joints_step2_5 = ['r_elbow', 'l_elbow', 'r_knee', 'l_knee']
-    start_positions_step2_5 = [-2.0, -2.0, 1.7, 1.7]
-    end_positions_step2_5 = [0.0, 0.0, 2.0, 2.0]
+    #rospy.loginfo("Passo 2.5: Retornando cotovelos para posição 0.0 e dobrando mais os joelhos...")
+    joints_step2_5 = ['r_elbow', 'l_elbow', 'r_knee', 'l_knee', 'r_shoulder_pitch', 'l_shoulder_pitch', 'r_hip_pitch', 'l_hip_pitch', 'r_ankle_pitch', 'l_ankle_pitch']
+    start_positions_step2_5 = [-2.5, -2.5, 1.7, 1.7, 2.5, -2.0, -2.0, -2.2, -1.45, -1.45]
+    end_positions_step2_5 = [0.0, 0.0, 2.1, 2.1, 1.0, -1.0, -1.8, -1.8, -1.1, -1.1]
     move_joints_smoothly(joints_step2_5, start_positions_step2_5, end_positions_step2_5, 1)
     rospy.sleep(1)
+     # Passo 2.: Retornar cotovelos para posição 0.0 e dobrar mais os joelhos
+    #rospy.loginfo("Passo 2.8: Retornando cotovelos para posição 0.0 e dobrando mais os joelhos...")
+    joints_step2_8 = ['r_knee', 'l_knee', 'r_hip_pitch', 'l_hip_pitch', 'r_ankle_pitch', 'l_ankle_pitch']
+    start_positions_step2_8 = [2.1, 2.1, -1.8, -1.8, -1.1, -1.1]
+    end_positions_step2_8 = [2.3, 2.3, -1.3, -1.3, -1.6, -1.6]
+    move_joints_smoothly(joints_step2_8, start_positions_step2_8, end_positions_step2_8, 1)
+    rospy.sleep(1)
+    # Passo 2.5: Retornar cotovelos para posição 0.0 e dobrar mais os joelhos
+    #rospy.loginfo("Passo 2.8: Retornando cotovelos para posição 0.0 e dobrando mais os joelhos...")
+    joints_step2_9 = ['r_knee', 'l_knee', 'r_hip_pitch', 'l_hip_pitch', 'r_ankle_pitch', 'l_ankle_pitch']
+    start_positions_step2_9 = [2.3, 2.3, -1.3, -1.3, -1.6, -1.6]
+    end_positions_step2_9 = [2.5, 2.5, -1.0, -1.0, -2.0, -2.0]
+    move_joints_smoothly(joints_step2_9, start_positions_step2_9, end_positions_step2_9, 1)
+    rospy.sleep(1)
     # Passo 3: Levantar o tronco e assumir a T-pose
-    rospy.loginfo("Passo 3: Levantando o tronco para a T-pose...")
+    #rospy.loginfo("Passo 3: Levantando o tronco para a T-pose...")
     joints_step3 = ['r_hip_pitch', 'l_hip_pitch', 'r_knee', 'l_knee', 'r_shoulder_roll', 'l_shoulder_roll', 'r_shoulder_pitch', 'l_shoulder_pitch', 'r_elbow', 'l_elbow', 'r_ankle_pitch', 'l_ankle_pitch']
-    start_positions_step3 = [-1.5, -1.5, 2.0, 2.0, 0.0, 0.0, 2.0, -2.0, 0.0, 0.0, 1.2, 1.2]
-    end_positions_step3 = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-    move_joints_smoothly(joints_step3, start_positions_step3, end_positions_step3, 3)
-    rospy.loginfo("Robô levantado em T-pose.")
+    start_positions_step3 = [-1.0, -1.0, 2.5, 2.5, 0.0, 0.0, 1.0, -1.0, 0.0, 0.0, -2.0, -2.0]
+    end_positions_step3 = [-0.5, -0.5, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, -0.5, -0.5]
+    move_joints_smoothly(joints_step3, start_positions_step3, end_positions_step3, 1)
+    #rospy.loginfo("Robô levantado em T-pose.")
 
 def set_joint_positions():
     rospy.init_node('humanoid_lift_node', anonymous=True)
