@@ -1,13 +1,9 @@
 cmake_minimum_required(VERSION 2.8.3)
 project(marta_description)
 
-## Compile as C++11, supported in ROS Kinetic and newer
-# add_compile_options(-std=c++11)
-
 ## Find catkin macros and libraries
-## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
-## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
+<<<<<<< HEAD:Marta_ws/src/marta_description/CMakeLists.txt
   rospy
 )
 
@@ -105,19 +101,28 @@ catkin_package(
 #  LIBRARIES fusion2urdf
 #  CATKIN_DEPENDS rospy
 #  DEPENDS system_lib
+=======
+  message_generation
+  roscpp
+  rospy
+  std_msgs
+  trajectory_msgs
+  marta_msgs
+  genmsg
+  actionlib_msgs
+  actionlib
 )
 
-###########
-## Build ##
-###########
+catkin_package(
+  CATKIN_DEPENDS roscpp rospy std_msgs trajectory_msgs
+>>>>>>> feat/kick_controller:Martha_ws/src/martha_controller/CMakeLists.txt
+)
 
-## Specify additional locations of header files
-## Your package locations should be listed before other locations
 include_directories(
-# include
   ${catkin_INCLUDE_DIRS}
 )
 
+<<<<<<< HEAD:Marta_ws/src/marta_description/CMakeLists.txt
 ## Declare a C++ library
 # add_library(${PROJECT_NAME}
 #   src/${PROJECT_NAME}/fusion2urdf.cpp
@@ -192,6 +197,12 @@ include_directories(
 # if(TARGET ${PROJECT_NAME}-test)
 #   target_link_libraries(${PROJECT_NAME}-test ${PROJECT_NAME})
 # endif()
+=======
+## Install Python scripts
+catkin_install_python(PROGRAMS
+  scripts/kick_controller.py
+  scripts/taffarelAction.py  
+  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+)
+>>>>>>> feat/kick_controller:Martha_ws/src/martha_controller/CMakeLists.txt
 
-## Add folders to be run by python nosetests
-# catkin_add_nosetests(test)

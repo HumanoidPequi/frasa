@@ -1,3 +1,16 @@
+# ROS / Catkin
+build/
+devel/
+.catkin_workspace
+nohup.out
+
+# Python
+__pycache__/
+*.pyc
+nohup.out
+
+# Bags
+*.bag
 
 /Marta_ws/build
 /Marta_ws/devel

@@ -1,0 +1,124 @@
+[INFO] [1687148124.228588]: (yolo) Inference time: 69.980846 ms
+[INFO] [1687148124.230009]: (optical flow) Inference time: 71.441786 ms
+[INFO] [1687148124.779246]: (yolo) Inference time: 47.818453 ms
+[INFO] [1687148124.780527]: (optical flow) Inference time: 49.123846 ms
+[INFO] [1687148125.293289]: (optical flow) Inference time: 11.132512 ms
+[INFO] [1687148125.806489]: (optical flow) Inference time: 10.538861 ms
+[INFO] [1687148126.315839]: (optical flow) Inference time: 6.616048 ms
+[INFO] [1687148126.822270]: (optical flow) Inference time: 4.715947 ms
+[INFO] [1687148127.414402]: (yolo) Inference time: 90.252799 ms
+[INFO] [1687148127.415547]: (optical flow) Inference time: 91.427548 ms
+[INFO] [1687148128.026022]: (yolo) Inference time: 109.020157 ms
+[INFO] [1687148128.027133]: (optical flow) Inference time: 110.184935 ms
+[INFO] [1687148128.534159]: (optical flow) Inference time: 5.564827 ms
+[INFO] [1687148129.041698]: (optical flow) Inference time: 5.843099 ms
+[INFO] [1687148129.549173]: (optical flow) Inference time: 5.727744 ms
+[INFO] [1687148130.056201]: (optical flow) Inference time: 4.935928 ms
+[INFO] [1687148130.626833]: (yolo) Inference time: 67.840983 ms
+[INFO] [1687148130.628182]: (optical flow) Inference time: 69.231328 ms
+[INFO] [1687148131.197138]: (yolo) Inference time: 67.365762 ms
+[INFO] [1687148131.198389]: (optical flow) Inference time: 68.652211 ms
+[INFO] [1687148131.707028]: (optical flow) Inference time: 7.123076 ms
+[INFO] [1687148132.215417]: (optical flow) Inference time: 5.697702 ms
+[INFO] [1687148132.723299]: (optical flow) Inference time: 5.646667 ms
+[INFO] [1687148133.230667]: (optical flow) Inference time: 5.470745 ms
+[INFO] [1687148133.799510]: (yolo) Inference time: 66.963603 ms
+[INFO] [1687148133.800853]: (optical flow) Inference time: 68.320779 ms
+[INFO] [1687148134.350407]: (yolo) Inference time: 47.913908 ms
+[INFO] [1687148134.351620]: (optical flow) Inference time: 49.131840 ms
+[INFO] [1687148134.872098]: (optical flow) Inference time: 18.812854 ms
+[INFO] [1687148135.380384]: (optical flow) Inference time: 6.517202 ms
+[INFO] [1687148135.889682]: (optical flow) Inference time: 7.367679 ms
+[INFO] [1687148136.396263]: (optical flow) Inference time: 4.756787 ms
+[INFO] [1687148136.965102]: (yolo) Inference time: 67.132966 ms
+[INFO] [1687148136.966481]: (optical flow) Inference time: 68.536391 ms
+[INFO] [1687148137.535977]: (yolo) Inference time: 67.895598 ms
+[INFO] [1687148137.537174]: (optical flow) Inference time: 69.142958 ms
+[INFO] [1687148138.044393]: (optical flow) Inference time: 5.774952 ms
+[INFO] [1687148138.551865]: (optical flow) Inference time: 5.720464 ms
+[INFO] [1687148139.059230]: (optical flow) Inference time: 5.612810 ms
+[INFO] [1687148139.565970]: (optical flow) Inference time: 4.766860 ms
+[INFO] [1687148140.136446]: (yolo) Inference time: 68.815654 ms
+[INFO] [1687148140.137870]: (optical flow) Inference time: 70.275005 ms
+[INFO] [1687148140.731297]: (yolo) Inference time: 92.023152 ms
+[INFO] [1687148140.732601]: (optical flow) Inference time: 93.356330 ms
+[INFO] [1687148141.242525]: (optical flow) Inference time: 8.280548 ms
+[INFO] [1687148141.752552]: (optical flow) Inference time: 7.255085 ms
+[INFO] [1687148142.262174]: (optical flow) Inference time: 7.743400 ms
+[INFO] [1687148142.769898]: (optical flow) Inference time: 5.918510 ms
+[INFO] [1687148143.351669]: (yolo) Inference time: 80.040798 ms
+[INFO] [1687148143.353493]: (optical flow) Inference time: 81.901390 ms
+[INFO] [1687148143.944731]: (yolo) Inference time: 89.443670 ms
+[INFO] [1687148143.946011]: (optical flow) Inference time: 90.731547 ms
+[INFO] [1687148144.453930]: (optical flow) Inference time: 6.305717 ms
+[INFO] [1687148144.962898]: (optical flow) Inference time: 6.297296 ms
+[INFO] [1687148145.486251]: (optical flow) Inference time: 20.480111 ms
+[INFO] [1687148145.993515]: (optical flow) Inference time: 4.776529 ms
+[INFO] [1687148146.563532]: (yolo) Inference time: 67.369749 ms
+[INFO] [1687148146.564745]: (optical flow) Inference time: 68.618938 ms
+[INFO] [1687148147.134542]: (yolo) Inference time: 68.293271 ms
+[INFO] [1687148147.135656]: (optical flow) Inference time: 69.467601 ms
+[INFO] [1687148147.642853]: (optical flow) Inference time: 5.657731 ms
+[INFO] [1687148148.151190]: (optical flow) Inference time: 6.471871 ms
+[INFO] [1687148148.661018]: (optical flow) Inference time: 7.354347 ms
+[INFO] [1687148149.170128]: (optical flow) Inference time: 7.321291 ms
+[INFO] [1687148149.737843]: (yolo) Inference time: 65.842729 ms
+[INFO] [1687148149.738924]: (optical flow) Inference time: 66.958179 ms
+[INFO] [1687148150.289052]: (yolo) Inference time: 48.712321 ms
+[INFO] [1687148150.290046]: (optical flow) Inference time: 49.738384 ms
+[INFO] [1687148150.798175]: (optical flow) Inference time: 6.690163 ms
+[INFO] [1687148151.305386]: (optical flow) Inference time: 5.487380 ms
+[INFO] [1687148151.812271]: (optical flow) Inference time: 5.568969 ms
+[INFO] [1687148152.319725]: (optical flow) Inference time: 5.617748 ms
+[INFO] [1687148152.888800]: (yolo) Inference time: 67.230769 ms
+[INFO] [1687148152.889982]: (optical flow) Inference time: 68.432520 ms
+[INFO] [1687148153.443760]: (yolo) Inference time: 52.279011 ms
+[INFO] [1687148153.445014]: (optical flow) Inference time: 53.578371 ms
+[INFO] [1687148153.957067]: (optical flow) Inference time: 10.441184 ms
+[INFO] [1687148154.465688]: (optical flow) Inference time: 5.663812 ms
+[INFO] [1687148154.973897]: (optical flow) Inference time: 6.428763 ms
+[INFO] [1687148155.483535]: (optical flow) Inference time: 7.749170 ms
+[INFO] [1687148156.103725]: (yolo) Inference time: 117.340930 ms
+[INFO] [1687148156.105029]: (optical flow) Inference time: 118.683649 ms
+[INFO] [1687148156.691994]: (yolo) Inference time: 85.373325 ms
+[INFO] [1687148156.693017]: (optical flow) Inference time: 86.503679 ms
+[INFO] [1687148157.200044]: (optical flow) Inference time: 5.558815 ms
+[INFO] [1687148157.707566]: (optical flow) Inference time: 5.825317 ms
+[INFO] [1687148158.214505]: (optical flow) Inference time: 5.503928 ms
+[INFO] [1687148158.722753]: (optical flow) Inference time: 6.368024 ms
+[INFO] [1687148159.269372]: (yolo) Inference time: 44.796259 ms
+[INFO] [1687148159.270651]: (optical flow) Inference time: 46.096773 ms
+[INFO] [1687148159.818647]: (yolo) Inference time: 46.383975 ms
+[INFO] [1687148159.820006]: (optical flow) Inference time: 47.748055 ms
+[INFO] [1687148160.328651]: (optical flow) Inference time: 7.063113 ms
+[INFO] [1687148160.836607]: (optical flow) Inference time: 5.553000 ms
+[INFO] [1687148161.344012]: (optical flow) Inference time: 5.784788 ms
+[INFO] [1687148161.851892]: (optical flow) Inference time: 5.499136 ms
+[INFO] [1687148162.421311]: (yolo) Inference time: 67.435804 ms
+[INFO] [1687148162.422414]: (optical flow) Inference time: 68.585301 ms
+[INFO] [1687148162.969816]: (yolo) Inference time: 45.958764 ms
+[INFO] [1687148162.970800]: (optical flow) Inference time: 46.966655 ms
+[INFO] [1687148163.479098]: (optical flow) Inference time: 6.613071 ms
+[INFO] [1687148163.988214]: (optical flow) Inference time: 5.543529 ms
+[INFO] [1687148164.497178]: (optical flow) Inference time: 7.076465 ms
+[INFO] [1687148165.004014]: (optical flow) Inference time: 5.061457 ms
+[INFO] [1687148165.550338]: (yolo) Inference time: 44.604789 ms
+[INFO] [1687148165.551646]: (optical flow) Inference time: 45.930298 ms
+[INFO] [1687148166.146939]: (yolo) Inference time: 93.902252 ms
+[INFO] [1687148166.148155]: (optical flow) Inference time: 95.137408 ms
+[INFO] [1687148166.659026]: (optical flow) Inference time: 9.221315 ms
+[INFO] [1687148167.169586]: (optical flow) Inference time: 7.650208 ms
+[INFO] [1687148167.678605]: (optical flow) Inference time: 6.573704 ms
+[INFO] [1687148168.186180]: (optical flow) Inference time: 5.784191 ms
+[INFO] [1687148168.757645]: (yolo) Inference time: 69.779437 ms
+[INFO] [1687148168.758893]: (optical flow) Inference time: 71.066009 ms
+[INFO] [1687148169.305880]: (yolo) Inference time: 45.380749 ms
+[INFO] [1687148169.307173]: (optical flow) Inference time: 46.686570 ms
+[INFO] [1687148169.818308]: (optical flow) Inference time: 9.523311 ms
+[INFO] [1687148170.326585]: (optical flow) Inference time: 5.510717 ms
+[INFO] [1687148170.835484]: (optical flow) Inference time: 7.171007 ms
+[INFO] [1687148171.343205]: (optical flow) Inference time: 5.802374 ms
+[INFO] [1687148171.907522]: (yolo) Inference time: 62.407142 ms
+[INFO] [1687148171.908808]: (optical flow) Inference time: 63.695125 ms
+[INFO] [1687148172.464776]: (yolo) Inference time: 54.562479 ms
+[INFO] [1687148172.465848]: (optical flow) Inference time: 55.670524 ms
