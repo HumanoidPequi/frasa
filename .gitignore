@@ -18,3 +18,12 @@ nohup.out
 
 Marta_ws/.catkin_workspace
 Marta_ws/src/CMakeLists.txt
+
+sigmaban_model
+**/__pycache__
+**.pyc
+**.json
+**.pkl
+data/
+*.egg-info
+**/logs
