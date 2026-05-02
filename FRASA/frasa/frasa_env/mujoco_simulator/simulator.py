@@ -12,7 +12,7 @@ class Simulator:
     def __init__(self, model_dir: Optional[str] = None):
         # If model_dir is not provided, use the current directory
         if model_dir is None:
-            model_dir = os.path.join(os.path.dirname(__file__) + "/model/")
+            model_dir = os.path.join(os.path.dirname(__file__) + "/model")
         self.model_dir = model_dir
 
         # Load the model and data
@@ -135,7 +135,7 @@ class Simulator:
         Returns:
             np.ndarray: gyroscope data
         """
-        return self.data.sensor("gyro").data
+        return self.data.sensor("angular-velocity").data
 
     def get_T_world_body(self, body_name: str) -> np.ndarray:
         """

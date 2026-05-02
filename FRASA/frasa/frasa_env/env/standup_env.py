@@ -62,36 +62,19 @@ class StandupEnv(gymnasium.Env):
 
         # Degrees of freedom involved
         self.dofs = [
-            # Braços
-            "l_sho_pitch_link",
-            "l_sho_roll_link",
             "l_el_link",
-            "r_sho_pitch_link",
-            "r_sho_roll_link",
-            "r_el_link",
-
-            # Cabeça
-            "head_pan_link",
-            "head_tilt_link",
-
-            # Perna esquerda
-            "l_hip_yaw_link",
-            "l_hip_roll_link",
+            "l_sho_pitch_link",
             "l_hip_pitch_link",
             "l_knee_link",
             "l_ank_pitch_link",
-            "l_ank_roll_link",
+       ]
+        self.ranges = [self.sim.model.actuator(dof).ctrlrange for dof in self.dofs]
 
-            # Perna direita
-            "r_hip_yaw_link",
-            "r_hip_roll_link",
-            "r_hip_pitch_link",
-            "r_knee_link",
-            "r_ank_pitch_link",
-            "r_ank_roll_link",
-        ]
-        self.ranges = [self.sim.model.actuator(f"left_{dof}").ctrlrange for dof in self.dofs]
-
+        print("self.dofs =", self.dofs)
+        print("len(self.dofs) =", len(self.dofs))
+        print("self.ranges =", self.ranges)
+        print("len(self.ranges) =", len(self.ranges))
+        print("range_low shape =", np.array([r[0] for r in self.ranges]).shape)
         # Pre-fetching indexes and sites for faster evaluation
         self.trunk_site = self.sim.data.site("trunk")
         self.actuators_indexes = [self.sim.get_actuator_index(dof) for dof in self.dofs]
@@ -464,7 +447,7 @@ class StandupEnv(gymnasium.Env):
         self.sim.set_control("r_sho_roll_link",  np.deg2rad(5))
 
         # Initializing the history
-        q = [self.sim.get_q(f"left_{dof}") for dof in self.dofs]
+        q = [self.sim.get_q(dof) for dof in self.dofs]
         self.q_history = [q] * self.q_history_size
 
         # Initializing the tilt history
