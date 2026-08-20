@@ -1,9 +1,0 @@
-<launch>
-
-<rosparam file="$(find marta_description)/launch/controller.yaml" command="load"/>
-<node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" ns="marta" args="head_pan_link_position_controller head_tilt_link_position_controller r_hip_yaw_link_position_controller l_hip_yaw_link_position_controller l_hip_roll_link_position_controller r_hip_roll_link_position_controller r_hip_pitch_link_position_controller l_hip_pitch_link_position_controller r_knee_link_position_controller l_knee_link_position_controller l_ank_pitch_link_position_controller r_ank_pitch_link_position_controller r_ank_roll_link_position_controller l_sho_pitch_link_position_controller r_sho_pitch_link_position_controller l_sho_roll_link_position_controller r_sho_roll_link_position_controller l_ank_roll_link_position_controller r_el_link_position_controller l_el_link_position_controller joint_state_controller "/>
-<node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen">
-  <remap from="/joint_states" to="/marta/joint_states"/>
-</node>
-
-</launch>
