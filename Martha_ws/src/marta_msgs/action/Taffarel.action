@@ -1,8 +1,0 @@
-#goal definition
-string json
----
-#result definition
-string json
----
-#feedback
-string json
