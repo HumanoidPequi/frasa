@@ -111,7 +111,7 @@ class StandupEnv(gymnasium.Env):
             np.array(
                 [
                     # q (0-4)
-                    *(-np.pi * np.ones(len(self.dofs))),
+                    *self.range_low,
                     # dq (5-9)
                     *(-10 * np.ones(len(self.dofs))),
                     # ctrl (10-14)
@@ -128,7 +128,7 @@ class StandupEnv(gymnasium.Env):
             np.array(
                 [
                     # q (0-4)
-                    *(np.pi * np.ones(len(self.dofs))),
+                    *self.range_high,
                     # dq (5-9)
                     *(10 * np.ones(len(self.dofs))),
                     # ctrl (10-14)
