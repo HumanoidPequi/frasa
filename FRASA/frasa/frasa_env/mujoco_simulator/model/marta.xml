@@ -1,6 +1,7 @@
 <mujoco model="marta">
   <option iterations="50" timestep="0.001" solver="PGS" gravity="0 0 -9.81" />
-
+  <size memory="64M"/>
+  
   <compiler angle="radian" meshdir="meshes" eulerseq="zyx" autolimits="true" />
 
   <default>
