@@ -33,14 +33,25 @@ class Simulator:
     def set_floor_friction(self, friction: float) -> None:
         self.model.geom("floor").friction[0] = friction
         self.model.geom("floor").priority = 1
-
+    
     def self_collisions(self) -> float:
-        forcetorque = np.zeros(6)
+        forcetorque = np.zeros(6, dtype=np.float64)
         contacts = self.data.contact
-        selector = (contacts.geom[:, 0] != 0) * (contacts.geom[:, 1] != 0)
+
+        selector = (
+            (contacts.geom[:, 0] != 0)
+            & (contacts.geom[:, 1] != 0)
+        )
+
         forces = 0.0
-        for id in np.argwhere(selector):
-            mujoco.mj_contactForce(self.model, self.data, id, forcetorque)
+
+        for contact_id in np.flatnonzero(selector):
+            mujoco.mj_contactForce(
+                self.model,
+                self.data,
+                int(contact_id),
+                forcetorque,
+            )
             forces += np.linalg.norm(forcetorque[:3])
 
         return forces
