@@ -277,6 +277,7 @@ class StandupEnv(gymnasium.Env):
         if self.options["terminate_upside_down"]:
             tilt = self.get_tilt()
             if np.rad2deg(np.abs(tilt)) > 135:
+                print(f"[TERMINOU] upside_down: tilt={np.rad2deg(tilt):.2f} graus")
                 done = True
 
         # Penalizing high gyro
@@ -403,13 +404,17 @@ class StandupEnv(gymnasium.Env):
         initial_tilt = self.np_random.uniform(-np.pi / 2, np.pi / 2)
         if target:
             initial_tilt = my_target[-1]
+            print(f"[DEBUG] initial_tilt gerado: {np.rad2deg(initial_tilt):.2f} graus")
         T_world_trunk = tf.rotation_matrix(initial_tilt, [0, 1, 0])
         T_world_trunk[:3, 3] = [0, 0, 0.4]
         self.sim.set_T_world_site("trunk", T_world_trunk)
+        print(f"[DEBUG] tilt após set_T_world_site: {np.rad2deg(self.get_tilt()):.2f} graus")
 
         # Wait for the robot to stabilize
         for _ in range(round(self.options["stabilization_time"] / self.sim.dt)):
             self.sim.step()
+        
+        print(f"[DEBUG] tilt após estabilização: {np.rad2deg(self.get_tilt()):.2f} graus")
 
     def reset(
         self,
@@ -421,6 +426,9 @@ class StandupEnv(gymnasium.Env):
         options = options or {}
         target = options.get("target", False)
         use_cache = options.get("use_cache", True)
+
+        print(f"[DEBUG RESET] use_cache={use_cache}")
+        print(f"[DEBUG RESET] initial_config carregado={self.initial_config is not None}")
 
         if use_cache and self.initial_config is None:
             warnings.warn(
